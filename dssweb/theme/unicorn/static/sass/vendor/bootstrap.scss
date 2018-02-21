@@ -1,0 +1,17 @@
+// note: We did not end up using this; instead, just include the bootstrap folder
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/grid";
+
+//components
+@import "bootstrap/component-animations";
+@import "bootstrap/panels";
+
+
+// Components w/ JavaScript
+//@import "bootstrap/modals";
+
+// Utility classes
+@import "bootstrap/utilities";
+
+@import "bootstrap/responsive-utilities";

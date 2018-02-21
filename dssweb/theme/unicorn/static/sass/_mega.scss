@@ -1,0 +1,95 @@
+#portal-globalnav {
+    clear: both;
+    font-size: 80%;
+    background: $ucd_blue_10;
+    /* ensure top navigation dont touch portlets, content etc.. #10491 */
+    margin: 0 0 1em 0;
+}
+#portal-globalnav li {
+    display: inline;
+}
+#portal-globalnav li a {
+    display: inline-block;
+    padding: 0 0.5em;
+    background: #ddd;
+    width: 9rem;
+    white-space: normal;
+    line-height: 80px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#portal-globalnav .selected a,
+#portal-globalnav a:hover {
+    background: $ucd_blue_70;
+    color: White;
+}
+#portal-globalnav .selected a:hover {
+    background: #ddd;
+    color: #205c90;
+}
+
+
+/* drop-down menu; changed to use "dropdown" in place of "submenu" */
+#portal-globalnav {
+  list-style-image:none;
+  position: absolute;
+  right: 0;
+  zoom:1; /* fix ie */
+  z-index: 1;
+  display: inline;
+  /*background-color: $ucd_blue_100;*/  //removed to change dropdown background
+  clear: none;
+  }
+#portal-globalnav:after {
+  content:"";
+  clear:both;
+  display:block;
+  visibility:hidden;
+  }
+#portal-globalnav li {
+  float:left;
+  position:relative;
+  }
+#portal-globalnav li a {
+  display:block;
+  border: none;
+  background-color: $ucd_blue_100;
+  }
+
+/*----- DropDown -----*/
+ul.dropdown {
+  //display: none;
+  position :relative;
+  }
+#portal-globalnav:hover li > ul.dropdown {
+  /*display: block;*/
+  width: 9rem;
+  }
+ul.dropdown li {
+  float:none;
+  margin:0;
+  /*background-color:#ddd; */
+  }
+#portal-globalnav ul.dropdown li a {
+  padding:0.5em 1.5em 0.5em 1em;
+  line-height: 1.25em;
+  font-size: 80%;
+  color: $ucd_black_80;
+  background-color: $ucd_blue_10;
+  }
+#portal-globalnav ul.dropdown li a:hover {
+	background-color:$ucd_blue_30;
+  }
+ul.dropdown ul {
+  top:0;
+  left:100%;
+  }
+ul.dropdown a.state-published:hover,
+.selected ul.dropdown .state-published {
+   /* color: $ucd_black_80 !important; */
+}
+/* not more than one level */
+ul.dropdown ul.dropdown {
+    //display: none !important;
+}

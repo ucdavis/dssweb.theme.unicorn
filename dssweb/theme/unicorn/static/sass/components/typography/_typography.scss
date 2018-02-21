@@ -1,0 +1,851 @@
+/* _typography.scss */
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+body, div, p, li, a, input, textarea, select, button {
+  color: #000;
+	@include standard_font;
+}
+
+// Note: Font faces are in _mixins
+
+a { 
+	color: $link_color;
+}
+
+em {
+	font-style: italic;
+}
+
+h1 {
+	@include standard_font;
+	//@include fontface_regular_font;
+	//@include fontface_bold_font;
+}
+h4.source {
+	@include font_size(12px,!important);
+	text-transform: uppercase;
+}
+// on students t8 page
+.event-item {
+	h4 {
+		font-weight: bold;
+	}
+}
+blockquote {
+	color: $rec_blue;
+	margin-top: 35px;
+	margin-left: 70px;
+	margin-right: 70px;
+	padding: 0 0 0 55px;
+  background-image: url(../images/icons/t-T9-open-quote.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+	// JS generated inner wrap
+	.bq-content {
+		display: block;
+		padding: 20px;
+		background-color: $rec_blue_light;
+	}
+	p {
+		color: $rec_blue;
+		font-style: italic;
+		&.byline {
+			margin-bottom: 0;
+			font-style: normal;
+			@include font_size(13px,!important);
+		}
+	}
+	// JS generated inner wrap
+	.close-quote {
+		display: block;
+		padding: 0 55px 0 0;
+    background-image: url(../images/icons/t-T9-closed-quote.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+	}
+}
+
+
+button {
+	@include font_size(14px);
+	@include line_height(24px);
+}
+
+.btn-txt {
+	//left-indent: -10000px;
+	display: none;
+}
+.nobr {
+	white-space: nowrap;
+}
+p {
+	margin-bottom: 15px;
+}
+strong, b{
+	font-weight: bold;
+}
+
+#top-bar-wrap {
+	.top-bar-section ul li > a {
+  	//@include standard_font;
+	}
+}
+.portlet {
+	li, p, h4 {
+		@include font_size(13px);
+		@include line_height(18px);
+	}
+	.portlet-items {
+		li {
+			@include font_size(10px);
+			a {
+				@include font_size(13px);
+				@include line_height(17px);
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			.event-date {
+				@include font_size(13px);
+			}
+		}
+	}
+}
+
+.panel-body {
+	h2 {
+		@include font_size(18px);
+		//@include line_height(24px);
+		letter-spacing: .03em;		
+	}
+	.h2 {@include font_size(18px);
+		//@include line_height(24px);
+		letter-spacing: .03em;}
+	h3 {
+		@include font_size(15px);
+		@include line_height(18px);
+		letter-spacing: .01em;
+		font-weight: normal;
+		margin-top: 0;
+	}
+}
+
+
+#content {
+	#top-panel-row {
+		.panel-body {
+			.narrow-col {
+				p, li, a {
+					@include font_size(15px);
+					@include line_height(18px,!important);
+				}
+			}
+		}
+		
+		.middle-panel, .right-panel {
+			h3 {
+				text-transform: uppercase;
+			}
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	
+	}
+}
+
+#content-row { 
+	#nested-left { // T8 nested column "Important Dates"
+		padding-left: 0;
+		h3, h4, p {
+			@include font_size(13px,!important);
+			@include line_height(18px,!important);
+		}
+	}
+}
+
+/*.col-lg-4 {
+	h2 {
+    font-weight: bold !important;
+    @include font_size(30px, !important);
+    margin-bottom: 15px;
+	}
+    
+}*/
+
+.about-bio {
+	h3{
+	font-weight: bold;
+	}	
+}
+.pager {
+	.pager-string {
+		@include font_size(13px);
+		@include line_height(25px);
+	}
+}
+.sidebar {
+	a { 
+		@include font_size(13px);
+	}
+	h3 {
+		a { // Main selector to change sidebar headings
+			text-transform: uppercase;
+			@include font_size(13px);
+			@include line_height(18px,!important);
+			letter-spacing: 0.1em;
+			padding-bottom: 4px;
+		}
+	}
+	li {
+		@include font_size(13px,!important);
+		@include line_height(15px,!important);
+	}
+	.panel-heading {
+		h3.panel-title {
+			//padding-top: 0 !important; // override #am-content styles
+		}
+	}
+	.vcard {
+		@include font_size(13px);
+		@include line_height(18px);
+		.adr, #email-phone {
+			@include line_height(18px);
+		}
+	}
+}
+#content-row { // was #content, #am-content
+	.vcard {
+		.adr, #email-phone {
+			@include line_height(18px,!important);
+		}
+	}
+	.sidebar {
+		.panel-body {
+			li, a, p {
+				@include font_size(13px);
+				@include line_height(18px);
+			}
+		}
+	}
+}
+
+
+	figcaption, .figcaption {
+		text-align: right;
+		@include font_size(11px);
+		@include line_height(15px);
+		color: #000;
+		text-transform: uppercase;
+		padding-top: 6px;
+		em {
+			text-transform: none !important;
+		}
+	}
+
+#content {
+	form {
+		input, select, textarea {
+			@include font_size(13px);
+			@include line_height(18px);
+		}
+		.req-txt {
+			@include font_size(10px);
+		}
+	}
+}
+
+.corner-box {
+	h2, h3, p, li, a {
+		color: #FFF;
+	}
+	.box-content {
+		h2 {
+			padding: 15px 0 10px 0 !important;
+			@include font_size(24px);
+			letter-spacing: 0.075em;
+		}
+		h3 {
+			padding: 7px 0 !important;
+			@include font_size(18px);
+			font-weight: normal !important;
+		}
+	}
+}
+#content-row { // was #content, #am-content
+	.box-content {
+		p {
+			@include font_size(13px,!important);
+			@include line_height(20px, !important);
+		}
+	}
+}
+
+.sidebar-info {
+	h4 {
+		font-weight: bold;
+		@include font_size(16px);
+	}
+}
+
+.uc {
+	text-transform: uppercase;
+	letter-spacing: 0.1em !important;
+}
+
+
+.content-title {
+	padding-bottom: 30px;
+	@include font_size(36px);
+	@include line_height(43px);
+	letter-spacing: 0.01em;
+	margin-top: 0 !important;
+}
+
+// TODO: Revise specificity using content, am-content
+#content-row { // was #content, #am-content
+	h2, h2 a {
+		@include font_size(24px, !important);
+		font-weight: normal;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	h3 {
+		@include font_size(15px);
+		@include line_height(25px);
+		font-weight: bold;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+	.intro + h2 {
+		padding-top: 0;
+	}
+	h2 + ul, h3 + ul {
+		padding: 0;
+		margin: 0;
+	}
+	.inline-content ul {
+		margin-top: 0 !important;
+	}
+	#thumb-section {
+		h3 {
+			font-weight: normal !important;
+		}
+		.panel-group {
+			section {
+				.readmore {
+					@include font_size(15px,!important);
+				}
+			}
+		}
+	}
+	.narrow-col {
+		h2, h3 {
+			padding-bottom: 0;
+		}
+	}
+}
+
+#nested-left {
+	.read-more {
+		@include font_size(12px,!important);
+	}
+}
+
+// Bio
+body.bio {
+	#summary {
+		width: 100%;
+		#jumplinks {
+			width: 32.5% !important;
+			ul {
+				margin-right: 35px;
+				li {
+					padding-left: 0 !important;
+					background-image: none !important;
+					text-align: right;
+					a {
+						@include font_size(15px);
+						@include line_height(22px);
+					}
+				}
+			}
+		}
+		#education {
+			width: 83% !important;
+			ul {
+				margin-top: 10px;
+				li {
+					@include font_size(15px);
+					@include line_height(18px,!important);
+					margin-bottom: 0;
+					padding-bottom: 7px;
+					padding-left: 0 !important;
+					background-image: none !important;
+					
+					span {
+						display:flex;
+					}
+				} 
+			
+			}
+		}
+	}
+	
+}
+#cm-content {
+	p.intro {
+		margin-bottom: 45px;
+	}
+}
+
+// TODO: Make it easier to override styles from the section below, especially from _portlet.scss
+#content-row { // was #content, #am-content
+	p, li, ol, div {
+		@include line_height(24px,!important); 
+	}
+	p {
+		@include font_size(15px);
+		@include line_height(24px);
+		&.intro {
+			@include font_size(18px);
+			@include line_height(30px,!important);
+		}
+	}
+	li, ol, li a {
+		@include font_size(15px);
+		@include line_height(24px);
+	}
+	.breadcrumb {
+		p {
+			@include font_size(12px);
+			@include line_height(15px);
+			margin-bottom: 0;
+			a {
+				@include font_size(12px);
+				@include line_height(15px);
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+#footer {
+	#copyright {
+		@include font_size(12px);
+	}
+}
+
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	// Bio
+	body.bio {
+		.content-title {
+			display: none;
+		}
+		.bio-card {
+			h4.fn { // full name ... replacing content-title in mobile view
+				padding-bottom: 30px;
+				@include font_size(23px);
+				@include line_height(25px);
+				letter-spacing: 0.01em;
+				margin-top: 4px !important;
+			}
+		}
+	}
+	blockquote {
+		margin-left: -17px !important;
+		margin-right: 0;
+		padding-left: 30px;
+		background-color: $rec_blue_light;
+		.bq-content {
+			background-position: 5px 5px;
+			padding-right: 2px !important;
+			padding-left: 5px !important;
+		}
+		// JS generated inner wrap
+		.close-quote {
+			padding: 0 30px 0 0;
+	    background-position: right bottom;
+		}
+	}
+	.sidebar {
+		h3 {
+			@include font_size(13px);
+			@include line_height(40px);
+			letter-spacing:.1em;
+		}
+	}
+
+	// TODO: specificity
+	#content-row { // was #content, #am-content
+		
+		h1 {
+			padding-bottom: 20px;
+		}
+		h2, h2 a {
+			@include font_size(16px, !important); // yellow bars
+			font-weight: normal;
+			//padding-top: 15px;
+			//padding-bottom: 15px;
+		}
+		.breadcrumb {
+			p {
+				margin-bottom: 15px;
+				a {
+					-webkit-text-size-adjust: none;
+					@include font_size(10px,!important);
+					@include line_height(13px,!important);
+				}
+			}
+		}
+		
+		.panel-group {
+			.row.panel {
+				.panel-title {
+					min-height: 40px;
+					a {
+						@include font_size(12px,!important); // was 18
+						@include line_height(25px,!important); // was 40
+					}
+				}
+			}
+			.right-panel {
+				.panel-title {
+					
+				}
+			}
+		}
+		
+	}
+	
+	figure {
+		figcaption {
+			padding-right: 15px;
+			padding-left: 15px;
+			-webkit-text-size-adjust: none;
+		}
+	}
+
+	.panel-group {
+
+		#middle-row {
+			h2 {
+				@include font_size(18px,!important);
+				@include line_height(24px);
+			}
+		}
+	}
+	
+	// T6 Research Lab heading thumb sections
+	#thumb-section {
+		.panel-group {
+			.panel-heading {
+				.panel-title {
+					a {
+						@include font_size(18px,!important);
+						@include line_height(45px,!important);
+					}
+				}
+			}
+		}	
+	}
+	
+	// Blue box formatting: T5: TODO: Combine
+	.corner-box {
+		.box-content {
+			p, li, a {
+				@include font_size(15px);
+				@include line_height(18px);
+			}
+		}
+	}
+	
+}
+/*
+body.res-lab {
+	#content-row div {
+		> h2 {
+			@include font_size(24px,!important);
+			@include line_height(28px);
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}*/
+// T6 Research Lab heading thumb sections
+#thumb-section {
+	.panel-group {
+		.panel-heading {
+			.panel-title {
+				a {
+					@include font_size(24px);
+					@include line_height(70px);
+				}
+			}
+		}
+	}	
+	section {
+		h4 {
+			@include font_size(20px,!important);
+			margin-bottom: 25px;
+		}
+	}
+}
+
+/* // Don't need this global ...
+#content-row { // was #content, #am-content, and #cm-content {
+	ul {
+		li {
+			@include font_size(15px,!important);
+			@include line_height(24px);
+		}
+	}
+}
+*/
+
+body.home {
+	#bottom-panel-row {
+		h2 {
+			font-weight: normal !important;
+		}
+	}
+}
+
+/*----- tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) {	// width > 768
+	.top-panel {
+		#content-row { // was #content, #am-content, and #cm-content {
+			.narrow-col {
+				color: #FFF;
+				h2 {
+					text-align: center !important;
+				}
+				h3, p {
+					text-align: left !important;
+				}
+				.btn {
+					
+				}
+			}
+		}
+		&.left-panel, &.left-panel, &.left-panel {
+			h2 {
+				text-align: center !important;
+			}
+		}
+		/*
+		&.left-panel {
+			//text-align: right;
+		}
+		&.middle-panel {
+			//text-align: center;
+		}
+		&.right-panel {
+			//text-align: left;
+		}
+		*/
+	}
+	
+	.container {
+		.sidebar {
+			.panel-heading {
+				.panel-title {
+					padding-top: 6px !important;
+					//@include font_size(16px, !important);
+					//@include line_height(16px, !important);
+				}
+			}
+		}
+	}
+	
+	// Blue box formatting: T8: TODO: Combine with non-specific box-content
+	.narrow-col {
+		h2 {
+			padding: 15px 0 10px 0 !important;
+			@include font_size(24px);
+			letter-spacing: 0.075em;
+			//text-transform: uppercase !important;
+		}
+		h3 {
+			padding: 7px 0 !important;
+			@include font_size(18px);
+			font-weight: normal !important;
+		}
+		p {
+			@include font_size(15px, !important);
+			@include line_height(20px, !important);
+		}
+	}
+	
+}
+
+/*----- Tablet breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-md-min) { // width < 992
+	
+	body.home {
+		// Text below banner in thumbnail / tab boxes
+		
+		#content, #am-content { // home desn't have #content-row
+			.narrow-col {
+				h2 {
+					@include font_size(17px);
+				}
+			}
+			
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-primary {
+							@include font_size(13px); // See All link
+							@include line_height(18px,!important);
+						}
+					}
+				}
+			}
+			#bottom-panel-row {
+				h2 {
+					@include font_size(18px);
+				}
+			}
+		}
+	}
+	
+	#content-row, #banner-row { // was #content, #am-content
+		.content-title {
+			@include font_size(26px);
+			@include line_height(28px);
+		}
+	}
+
+	// T6 Research Lab heading thumb sections
+	#thumb-section {
+		.panel-group {
+			.panel-heading {
+				.panel-title {
+					a {
+						@include font_size(16px,!important);
+						@include line_height(40px,!important);
+					}
+				}
+			}
+		}	
+	}
+
+}
+
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	body.home {
+		// Button text at bottom of happy boxes
+		#content, #am-content { // on home there is no #content-row
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-primary {
+							@include font_size(14px);
+							@include line_height(30px,!important);
+						}
+					}
+				}
+			}
+			#bottom-panel-row {
+				.panel-body {
+					li, a, p {
+						@include font_size(15px);
+						@include line_height(22px);
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
+
+	#content-row { // was #content, #am-content
+		
+		p, li, ol, div {
+			@include line_height(22px,!important); 
+		}
+		p {
+			@include font_size(13px);
+			@include line_height(22px);
+			&.intro {
+				@include font_size(16px,!important);
+				@include line_height(22px,!important);
+			}
+		}
+		li, ol, li a {
+			@include font_size(13px);
+			@include line_height(22px);
+		}
+		
+		h2 {
+			@include font_size(18px,!important);
+		}
+		.narrow-col {
+			h2 {
+				@include font_size(17px,!important);
+				@include line_height(24px,!important);
+			}
+		}
+	}
+
+	blockquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	// Blue box formatting: T5: TODO: Combine
+	.corner-box {
+		.box-content {
+			h2 {
+				padding: 10px 0;
+				@include font_size(16px);
+				letter-spacing: 0.075em;
+			}
+			h3 {
+				padding: 0;
+				@include font_size(11px);
+			}
+			p {
+				@include font_size(11px);
+				@include line_height(15px);
+			}
+		}
+	}
+	
+}
+
+@media screen and (max-width: $screen-lg-min) { // width < 1200
+	body.home {
+		// Text below banner in thumbnail / tab boxes
+		
+		#content, #am-content { // home does not have #content-row
+			.narrow-col {
+				p, li {
+					@include font_size(13px,!important);
+					@include line_height(15px,!important);
+					font-weight: normal !important;
+				}
+				a {
+					font-weight: normal ;}
+				h3 {
+					@include font_size(18px,!important);
+					@include line_height(22px,!important);
+					font-weight: normal !important;
+				}
+			}
+		}
+	}
+}
+
+/* /_typography.scss */

@@ -1,0 +1,204 @@
+/* _print.scss */
+
+/* This basic print stylesheet formats the home page for printing. Add additional styles as necessary to refine */
+
+@media print {
+	
+	@page { margin: 0.25in; }
+	
+	/* If background colors desired (mileage varies):
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+	*/
+	
+	* {
+		text-shadow: none !important;
+		color: #000 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+	}
+	.breadcrumb {
+		display:none;
+	}
+	.sidebar.sidebar-right {
+		display:none;
+	}
+	.doormatColumn.column-1, div.doormatColumn.column-2 {
+		display:none;
+	}
+	.util-nav {
+		display:none;
+	}
+	abbr{
+		visibility:hidden;
+	}
+		
+	// Reference text for links 
+	a, a:visited { 
+		text-decoration: underline; 
+	}
+	a[href]:after { 
+		content: " (" attr(href) ")"; 
+	}
+  abbr[title]:after { 
+		content: " (" attr(title) ")"; 
+	}
+  a[href^="javascript:"]:after, a[href^="#"]:after { 
+		content: ""; 
+	}
+	
+	.tab {
+		page-break-inside: avoid;
+		clear: both;
+	}
+	img {
+	  page-break-inside: avoid;
+	  max-width: 100% !important;
+	}
+	
+	h2, h3 { 
+		page-break-after: avoid; 
+	}
+	p, h2, h3 {
+	  orphans: 3;
+	  widows: 3;
+	}
+	table {
+	  border-collapse: collapse !important;
+	  thead { display: table-header-group; }
+	  tr { page-break-inside: avoid; }
+	  td, th { background: #fff !important; }
+	}
+	
+	div {
+		float: none !important;
+		position: static;
+		width: 100%;
+	}
+	
+	#top-panel-row .action-element .panel-body .narrow-col a, #top-panel-row .action-element .panel-body .narrow-col h2, #top-panel-row .action-element .panel-body .narrow-col h3, #top-panel-row .action-element .panel-body .narrow-col .content-wrap, #top-panel-row .action-element .panel-body .narrow-col .content-wrap p, #top-panel-row .action-element .panel-body .narrow-col .content-wrap li, .tab, #footer, #footer .foot-wrap ul li a, #footer .foot-wrap #vcard p, #footer .foot-wrap #vcard span, #footer .foot-wrap #vcard a {
+		background-color: #FFF !important;
+		color: #000 !important;
+	}
+
+	.top-bar-section, .jumbotron, .bcontroller, #middle-row #banner-caption, #more-content-button, #footer .foot-social, #uti-news, #uti-events, #uti-give, #uti-share, #uti-search, #footer .foot-wrap #foot-right, #foot-social, #footer .footer-nav, .pager, #left-area {
+		display: none !important;
+	}
+	
+	#top-panel-row, #bottom-panel-row {
+		 .panel-heading {
+		 	display: none !important;
+		 }
+		.action-element {
+			width: 100% !important;
+			padding-top: 0 !important;
+			.panel-body {
+				width: 100% !important;
+				.narrow-col {
+					width: 100% !important;
+				}
+			}
+		}
+	}
+	#top-panel-row {
+		overflow: visible !important;
+		height: 100% !important;
+	}
+	
+	a, p, li, span {
+		font-size: 1em !important;
+	}
+
+	.container, .foot-wrap {
+		margin-left: auto;
+		margin-right: auto;
+		width: 612px !important;
+	}
+	.container div {
+		margin-left: 0 !important; 
+		margin-right: 0 !important;
+	}
+
+	#util-bar-wrap {
+		padding-right: 0 !important;
+		text-align: center !important;
+	}
+
+	#util-bar-wrap {
+		.util-bar {
+			margin-top: 25px;
+			background-color: #FFF;
+			ul {
+				background-color: #FFF;
+				width: auto;
+				li {
+					float: none;
+				}
+			}
+			#uti-logo {
+				background-color: #FFF;
+				margin-left: auto !important;
+				margin-right: auto !important;
+				margin-bottom: 15px;
+				padding-left: 0 !important;
+				a {
+					display: inline !important;
+				}
+				// Clear link from logo
+				a[href]:after { 
+					content: ""; 
+				}
+			  abbr[title]:after { 
+					content: ""; 
+				}
+			}
+		}
+	}
+	
+	#top-bar-wrap {
+		margin-bottom: 25px;
+		border-bottom: 1px solid #CCC;
+		padding-bottom: 15px;
+		text-align: center !important;
+		.menu-icon {
+			display: none !important;
+		}
+		text-align: center !important;
+		ul {
+			background-color: #FFF;
+			width: 100%;
+			text-align: center !important;
+			li {
+				float: none;
+				a {
+					margin-left: auto !important;
+					margin-right: auto !important;
+					display: block !important;
+					// Note: Optionally print title attribute of logo instead of logo image
+				}
+			}
+		}
+	}
+	
+	#footer {
+		border-top: 1px solid #CCC;
+		div {
+			color: #000;
+		}
+		.foot-wrap {
+			text-align: center;
+		}
+		#copyright {
+			width: 100%;
+			text-align: center;
+		}
+	}
+	
+	.tab-title {
+		background-image: none !important;
+	}
+	
+}
+
+/* /_print.scss */
+

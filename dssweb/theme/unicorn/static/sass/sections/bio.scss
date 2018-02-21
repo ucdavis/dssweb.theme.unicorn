@@ -1,0 +1,328 @@
+@charset "utf-8";
+@import "variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+i {
+		font-style: italic !important;
+}
+#cm-section {
+		ul.content-items {
+			li {
+				margin-top: 10px;
+			}
+		}
+	}
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	// Bio card
+	// Note: Apply negative margins to top items in order to retain padding on remaining text in mobile view
+
+	.panel {
+		.panel-body {
+			margin-top: 0 !important;
+		}
+	}
+	
+	#content-row {
+		
+		#content, #am-content {
+			margin-top: 0 !important;
+			
+			.panel {
+				.panel-collapse.dont-close {
+					.panel-body {
+				    margin-left: 0 !important;
+						ul.portlet-items {
+							margin-left: 0 !important;
+						}
+					}
+				}
+			}
+			
+			.bio-card {
+				margin-bottom: 15px;
+				margin-left: -15px !important;
+				margin-right: -15px !important;
+				
+				.panel-heading {
+					padding: 0 !important;
+					display: none; // remove heading
+				}
+
+
+				
+				.breadcrumb, h4 {
+					margin-left: 15px; // add back margin removed to make photo/buttons flush left and right
+				}
+				h4 {
+					padding-bottom: 0;
+				}
+				.title.org {
+					p {
+						font-style: italic;
+						margin: 0;
+					}
+				}
+				
+				.portlet-content {
+					padding: 0 !important;
+					.vcard {
+						padding: 0;
+						// Note: Change photo dimensions in conjunction with the portlet-item list span padding below
+						div {
+							margin-left: 15px !important;
+						}
+						img.photo {
+							width: 214px; // careful
+							height: 214px; // careful
+						}
+						.portlet-items {
+							position: absolute;
+							//right: -15px;
+							left: 212px;
+							top: 0;
+							padding: 5px;
+							margin: 0;
+							width: 38.5%;
+							background-color: $rec_blue;
+							li {
+								padding-bottom: 0;
+								background-color: $tab_light_gray;
+								background-image: none;
+								margin-bottom: 4px; // override 10px
+								
+								&:last-child {
+									margin-bottom: 0;
+								}
+								> span {
+									// Note: Change the portlet-item list span padding in conjunction with the bio img.photo above
+									//padding: 48px 22px; // careful
+									//padding: 0 27px;
+									text-align: left;
+									
+									a {
+										//height: auto;
+										width: 100% !important;
+										display: inline-block !important;
+										padding: 5px 15px 5px 40% !important;
+										@include line_height(38px,!important);
+										background-position: 20% 50% !important; // override .vcard 'a' bg img position
+										text-decoration: none;
+										&:hover {
+											text-decoration: underline;
+										}
+									}
+									&.email-bio {
+										@include font_size(13px,!important);
+										letter-spacing: 0.05em;
+										background: url(../../images/icons/email-icon-m.png) 20% 50% no-repeat;
+									}
+									&.cv {
+										background: url(../../images/icons/pdf-icon-t.png) 19% 50% no-repeat; // note: horiz position is different
+									}
+									&.vcard-file {
+										background: url(../../images/icons/calendar-icon-m.png) 20% 50% no-repeat;
+									}
+									&.office {
+										background: url(../../images/icons/office-icon-m.png) 20% 50% no-repeat;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			#summary {
+				margin-bottom: 0;
+				
+				#jumplinks {
+					
+				}
+				
+				#education {
+					width: 100% !important;
+				}
+			}
+		}
+	
+	
+	}
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+
+	#content-row {
+		#summary { display:flex;
+			display: -webkit-flex; // safari mobile
+			#jumplinks { order:1;
+				#jumplinks-anchors {
+					margin-top: 0;
+					border-right: 1px solid $ucd_blue_70;
+					li {
+						padding-right: 15px !important;
+						padding-bottom: 4px;
+						a {
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+			
+			#education {
+				order:2;
+			}
+		}
+		.bio-card.portlet {
+			.portlet-items {
+				margin: 0;
+				li {
+					margin-bottom: 0;
+					> span {
+						a {
+							@include font_size(10px,!important);
+							@include line_height(42px,!important);
+						}
+					}
+				}
+			}
+		}
+	}
+	#cm-section {
+		ul.content-items {
+			button {
+				margin-top: 10px; 
+			}
+		}
+	}
+	.sidebar-right {
+		margin-top: 0 !important; // was 45px for top placement of bio portrait
+		.bio-card {
+			.panel-body {
+				padding-bottom: 0 !important;
+				.vcard {				
+					position: relative;
+					> div {
+						margin-right: 35px !important;
+					}
+					img.photo {
+						margin-top: 10px; // Note: Check portlet panel-body padding-top
+						/*margin-bottom: 25px; */
+						margin-left: auto;
+						margin-right: auto;
+						display: block;
+					}
+					h4 {
+						@include font_size(13px);
+						text-transform: uppercase;
+						letter-spacing: 0.05em;
+						font-weight: bold;
+						margin-left: 35px;
+						margin-right: 35px;
+						margin-top: 25px;
+					}
+					.title.org {
+						padding-left: 0;
+						margin-top: 15px;
+						margin-bottom: 25px;
+						p {
+							@include font_size(12px);
+							@include line_height(15px);
+							font-style: italic;
+							margin-bottom: 9px !important;
+						}
+					}
+					ul.portlet-items {
+						margin: 0;
+						border-top: 1px solid #FFF;
+						height: 40px;
+						li {
+							float: left;
+							height: 40px;
+							border-left: 1px solid #FFF;
+							background-color: $ucd_blue_10;
+							width: 33.33%;
+							text-align: center;
+							margin-bottom: 0; // override global margins
+							&:first-child { // use border-left and first child exclusion since last child (location) is not visible on desktop
+								border-left-width: 0 !important;
+							}
+							a {
+								display: inline-block;
+								margin-left: auto;
+								margin-right: auto;
+								height: 40px;
+								@include font_size(12px);
+								@include line_height(40px);
+								letter-spacing: 0.05em;
+								padding-left: 25px;
+								text-decoration: none;
+								&:hover {
+									text-decoration: underline;
+								}
+								background-position: 10% 50%;
+								background-repeat: no-repeat !important;
+							}
+							.email-bio a {
+								background-image: url(../../images/icons/email.gif);
+							}
+							.cv a {
+								background-image: url(../../images/icons/filetype/pdf.gif);
+							}
+							.vcard-file a {
+								//padding-left: 28px;
+								//background-position: 10% 50% !important;
+								background-image: url(../../images/icons/calendar-icon-t.png);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- "M" breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	
+	#content-row { // #content-row p overrides our values so pull it into scope
+		.sidebar-right {
+			.bio-card {
+				.panel-body {
+					.vcard {				
+						img.photo {
+							width: 95.5% !important;
+							margin-top: 5px !important;
+						}
+						.title.org {
+							padding-left: 0;
+							margin-top: 15px;
+							margin-bottom: 25px;
+							p {
+								@include font_size(13px,!important);
+								@include line_height(16px,!important);
+								margin-bottom: 9px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	.sidebar-right {
+		margin-top: 45px; // for top placement of bio portrait
+		.bio-card {
+			img.photo {
+				margin-top: 15px;
+			}
+		}
+	}
+}
+

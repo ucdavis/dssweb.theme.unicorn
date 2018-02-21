@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+		
+    <!-- #BeginEditable "title" -->
+    <title>Home</title>
+    <!-- #EndEditable -->
+		
+    <link type="text/css" href="../assets/vendor/reset.css" rel="stylesheet" />
+    <link type="text/css" href="../assets/vendor/topbar.css" rel="stylesheet" />
+		
+	  <link type="text/css" href="../assets/styles.css" rel="stylesheet" />
+	  <link type="text/css" href="../assets/sub-org.css" rel="stylesheet" />
+		
+    <!-- #BeginEditable "header" -->
+		<link type="text/css" href="../assets/vendor/jquery.cf.happybox.css" rel="stylesheet">
+		<link type="text/css" href="../bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+    <link type="text/css" href="../assets/sections/index.css" rel="stylesheet" />
+		
+    <!-- #EndEditable -->
+		
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/contrib/html5shiv.min.js"></script>
+    <script src="js/contrib/respond.min.js"></script>
+    <![endif]-->
+			
+  </head>
+
+	<!-- #BeginEditable "body-tag" -->
+	 <body>
+  <!-- #EndEditable -->
+	
+	  <div class="row jumbotron">
+			<div class="siders">
+				<div class="wall">
+		    	&nbsp;
+				</div>
+			</div>
+	  </div>
+	
+  <div class="container" id="main">
+    
+    <div id="util-bar-wrap" class="row">
+      <nav class="util-bar">
+        <ul>
+          <li class="hidden-xs" id="uti-news">
+            <a href="#">Latest News</a>
+          </li>
+          <li class="hidden-xs" id="uti-events">
+            <a href="#">Events</a>
+          </li>
+          <li class="hidden-xs" id="uti-give">
+            <a href="#">Give</a>
+          </li>
+          <li class="hidden-xs" id="uti-search">
+            <form action=".">
+              <input type="search" name="search" placeholder="Search" />
+            </form>
+          </li>
+          <li class="hidden-xs" id="uti-share">
+            <a href="#"></a>
+          </li>
+          <li id="uti-logo">
+            <a href="#">
+              <img src="images/logos/nav-logo.png" alt="UC Davis" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+		
+		<div id="top-bar-wrap" class="row">
+	    <nav class="top-bar" data-topbar="">
+	      <!-- Title -->
+	      <ul class="title-area">
+	        <li class="name">
+	          <h1>
+	            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="Psychology" title="Psychology" /></a>
+	          </h1>
+	        </li>
+	        <!-- Mobile Menu Toggle -->
+					<div class="toggle-topbar menu-icon">
+						<a href="#">
+							<span></span>
+						</a>
+					</div>
+	      </ul>
+	      <!-- Top Bar Section -->
+	      <section class="top-bar-section">
+	        <!-- Top Bar Right Nav Elements -->
+	        <ul class="left">
+	          <!-- Dropdown -->
+	          <li id="contact-btn" class="has-dropdown">
+	             <a href="/contact">contact</a>
+	            <ul class="dropdown">
+	              <li>
+	                <a href="#">This is a super long item to demonstrate button text flow</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 2</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 3</a>
+	              </li>
+	              <li class="has-dropdown">
+	              <a href="#">Sub-item 4</a> 
+	              <!-- Nested Dropdown -->
+	              <ul class="dropdown">
+	                <li>
+	                  <a href="#">Sub-item 2</a>
+	                </li>
+	                <li>
+	                  <a href="#">Sub-item 3</a>
+	                </li>
+	                <li>
+	                  <a href="#">Sub-item 4</a>
+	                </li>
+	              </ul></li>
+	              <li>
+	                <a href="#">Sub-item 5</a>
+	              </li>
+	            </ul>
+	          </li>
+	          <li id="students-btn" class="has-dropdown">
+	            <a href="t8_students.html">Students</a>
+	            <ul class="dropdown">
+	              <li>
+	                <a href="#">Sub-item 1</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 2</a>
+	              </li>
+	            </ul>
+	          </li>
+	          <li id="researc-btn" class="has-dropdown">
+	            <a href="#">Research</a>
+	            <ul class="dropdown">
+	              <li>
+	                <a href="#">Sub-item 1</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 2</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 3</a>
+	              </li>
+	            </ul>
+	          </li>
+	          <li id="people-btn" class="has-dropdown">
+	             <a href="t2_ourpeople.html">Our People</a>
+	            <ul class="dropdown">
+	              <li>
+	                <a href="#">Sub-item 1</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 2</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 3</a>
+	              </li>
+	              <li class="has-dropdown">
+	              <a href="#">Sub-item 4</a> 
+	              <!-- Nested Dropdown -->
+	              <ul class="dropdown">
+	                <li>
+	                  <a href="#">Sub-item 2</a>
+	                </li>
+	                <li>
+	                  <a href="#">Sub-item 3</a>
+	                </li>
+	                <li>
+	                  <a href="#">Sub-item 4</a>
+	                </li>
+	              </ul></li>
+	              <li>
+	                <a href="#">Sub-item 5</a>
+	              </li>
+	            </ul>
+	          </li>
+	          <li id="fac-serv-btn" class="has-dropdown">
+	            <a href="#">Facilities &amp; Services</a>
+	            <ul class="dropdown">
+	              <li>
+	                <a href="#">Sub-item 1</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 2</a>
+	              </li>
+	              <li>
+	                <a href="#">Sub-item 5</a>
+	              </li>
+	            </ul>
+	          </li>
+	        </ul>
+	      </section>
+	    </nav>
+		</div>
+    <!-- #BeginEditable "content" -->
+
+    <div class="landscape">
+      <div id="content-main">
+				
+				
+        <div class="panel-group" id="content-accordion">
+					
+					<div class="row" id="top-panel-row">
+					<!-- top panels -->
+          <div class="panel panel-default top-panel left-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-1" data-toggle="collapse" data-parent="#content-accordion">News</a>
+              </h4>
+            </div>
+						
+						<!-- Left bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter"
+            id="container-1">
+							<div class="panel-body">
+								<div class="narrow-col">
+									<h2>News</h2>
+									<div class="content">
+	              		<h3><a href="#">Meet the Experts: CMB research leads to new FDA-approved treatment for severe ...</a></h3>
+								 </div>
+              		<div class="bcontroller">
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More</a>
+             	 	 </div>
+								</div>
+							</div>
+            </div>
+						<!-- /Left bootstrap column -->
+          </div>
+          <!--/.panel -->
+					
+          <div class="panel panel-default top-panel middle-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-2" data-toggle="collapse" data-parent="#content-accordion">About</a>
+              </h4>
+            </div>
+						
+						<!-- Middle bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter"
+            id="container-2">
+              <div class="panel-body">
+								<div class="narrow-col">
+										<h2>About</h2>
+										<div class="content">
+										<p>
+											Psychology &ndash; a multifaceted program that looks at humans, animals and computer models, from neurons to relationships to cultures, and examples the scientific bases of behavior, thought and emotions.
+										</p>
+								
+		                <h3>Quick Facts</h3>
+		                <ul>
+		                  <li>
+		                    Nationally ranked faculty
+		                  </li>
+		                  <li>
+		                    Cutting-edge research
+		                  </li>
+		                  <li>
+		                    Most popular major at UC Davis
+		                  </li>
+		                </ul>
+									</div>
+              		<div class="bcontroller">
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More</a>
+             	 	 </div>
+								</div>
+              </div>
+            </div>
+						<!-- /Middle bootstrap column -->
+          </div>
+          <!--/.panel -->
+					
+          <div class="panel panel-default top-panel right-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-3" data-toggle="collapse" data-parent="#content-accordion">Events</a>
+              </h4>
+            </div>
+						
+						<!-- Right bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 action-element collapsible panel-collapse collapse no-gutter" id="container-3">
+              <div class="panel-body">
+								<div class="narrow-col">
+									<h2>Events</h2>
+									<div class="content">
+	                	<h3><a href="#">Biological Psychology Brown Bag Series</a></h3>
+	                	<h3><a href="#">Wed 06-11-2014</a></h3>
+									</div>
+              		<div class="bcontroller">
+                		<a class="btn btn-primary btn-home" href="#" role="button">Read&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More</a>
+             	 	 </div>
+								</div>
+              </div>
+            </div>
+						<!-- Right bootstrap column -->
+          </div>
+          <!--/.panel -->
+					<!-- /top panels -->
+				</div>
+				
+				<div class="row" id="middle-row">
+					<h2>Discover Psychology</h2>
+				</div>
+				
+				<div class="row" id="bottom-panel-row">
+					<!-- bottom panels -->
+          <div class="panel panel-default bottom-panel left-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-A" data-toggle="collapse" data-parent="#content-accordion">Courses on iTunes U</a>
+              </h4>
+            </div>
+						
+						<!-- Left bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter"
+            id="container-A">
+							<div class="panel-body">
+								<div class="narrow-col">
+	              	<h2>Courses on iTunes U</h2>
+	              	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit
+	              sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada.</p>
+	              	<p>
+	                	<a class="btn btn-primary btn-home" href="#" role="button">View details »</a>
+	              	</p>
+								</div>
+							</div>
+            </div>
+						<!-- /Left bootstrap column -->
+          </div>
+          <!--/.panel -->
+					
+          <div class="panel panel-default bottom-panel middle-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-B" data-toggle="collapse" data-parent="#content-accordion">Quick Facts</a>
+              </h4>
+            </div>
+						
+						<!-- Middle bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter"
+            id="container-B">
+              <div class="panel-body">
+								<div class="narrow-col">
+	                <h2>Quick Facts</h2>
+									<p>Note: Following does not reflect current list of templates</p>
+	                <ul>
+	                  <li>
+	                    <a href="t1_charts.html">t1_charts.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t2_ourpeople.html">t2_ourpeople.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t3_bio.html">t3_bio.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t4_adhoc.html">t4_adhoc.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t5_research.html">t5_research.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t6_research_area.html">t6_research_area.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t7_research_lab.html">t7_research_lab.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t8_research_project.html">t8_research_project.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t9_contact.html">t9_contact.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t10_students.html">t10_students.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t11_prospective_students.html">t11_prospective_students.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t12_grad_program.html">t12_grad_program.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t13_news.html">t13_news.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t14_events.html">t14_events.html</a>
+	                  </li>
+	                  <li>
+	                    <a href="t15_search.html">t15_search.html</a>
+	                  </li>
+	                </ul>
+								</div>
+              </div>
+            </div>
+						<!-- /Middle bootstrap column -->
+          </div>
+          <!--/.panel -->
+					
+          <div class="panel panel-default bottom-panel right-panel">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-target="#container-C" data-toggle="collapse" data-parent="#content-accordion">Latest Research</a>
+              </h4>
+            </div>
+						
+						<!-- Right bootstrap column -->
+            <div class="col-sm-4 col-md-4 col-lg-4 collapsible panel-collapse collapse no-gutter" id="container-C">
+              <div class="panel-body">
+								<div class="narrow-col">
+	                <h2>Latest Research</h2>
+	                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec malesuada lectus. Curabitur pharetra velit
+	                sit amet lectus porta auctor. Curabitur laoreet nisl ullamcorper ante posuere malesuada. Etiam vehicula consectetur
+	                ipsum, sit amet rhoncus magna euismod eu. Integer consectetur, eros sed tincidunt eleifend, ligula risus dignissim
+	                enim, sit amet dapibus sem lectus nec lectus. Quisque in tempor est. Mauris pulvinar lobortis sapien ac
+	                volutpat.</p>
+	                <p>
+	                  <a class="btn btn-primary btn-home" href="#" role="button">View details »</a>
+	                </p>
+								</div>
+              </div>
+            </div>
+						<!-- Right bootstrap column -->
+          </div>
+          <!--/.panel -->
+					<!-- /bottom panels -->
+				</div><!-- /row -->
+				
+        </div><!-- /panel-group -->
+      </div><!-- /content -->
+    </div><!-- /landscape -->
+    <!-- #EndEditable -->
+
+		<!-- Row below 3-column if needed -->
+		
+		<!-- /Row below -->
+		
+    <!-- Site footer -->
+    <!-- #BeginEditable "custom-footer" -->
+		<div id="footer" class="row">
+			<div class="foot-wrap">
+				<ul id="foot-social">
+					<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
+					<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
+					<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
+					<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
+					<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
+				</ul>
+				<div id="vcard">
+					<p>
+						<span class="org">Department of Psychology <br />
+						University of California, Davis</span><br />
+						<span class="street-address">135 Young Hall <br />
+						One Shields Avenue</span><br />
+						<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+					</p>
+					<p id="email-phone">
+						<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
+					</p>
+				</div>
+				<ul class="footer-nav hidden-xs" id="foot-left">
+					<li> <a href="/contact">contact</a></li>
+					<li><a href="t8_students.html">Students</a></li>
+					<li><a href="#">Research</a></li>
+					<li> <a href="t2_ourpeople.html">Our People</a></li>
+					<li><a href="#">Facilities & Services</a></li>
+				</ul>
+				<ul class="footer-nav hidden-xs" id="foot-center">
+					<li><a href="#">Latest News</a></li>
+					<li><a href="#">Events</a></li>
+					<li><a href="#">Give</a></li>
+				</ul>
+				<ul class="footer-nav" id="foot-right">
+					<li><a href="#">Admissions</a></li>
+					<li><a href="#">Advising</a></li>
+					<li><a href="#">Student Clubs</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+	
+				<p id="copyright">
+					Copyright &copy; 2014 &nbsp;All Rights Reserved
+				</p>
+			</div>
+	  </div><!-- /#footer -->
+    <!-- #EndEditable -->
+  </div>
+  <!-- /container -->
+	
+  <!-- JQuery & FX -->
+  <script type="text/javascript" src="../js/contrib/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/contrib/jquery.easing.1.3.js"></script>
+
+	<!-- Bootstrap grid & widgets -->
+  <script type="text/javascript" src="../js/contrib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap/collapse.js"></script>
+  <script type="text/javascript" src="../js/bootstrap/dropdown.js"></script>
+  <script type="text/javascript" src="../js/bootstrap/transition.js"></script>
+	
+	<!-- Foundation topbar menu -->
+  <script type="text/javascript" src="../js/foundation/js/foundation/foundation.js"></script>
+  <script type="text/javascript" src="../js/foundation/js/foundation/foundation.topbar.js"></script>
+	
+	<!-- Wallpaper -->
+	<script type="text/javascript" src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+	
+  <script>
+		$(".wall").wallpaper({
+			source: "images/banners/psychology-home-page-image1.jpg"
+		});
+	</script>
+	
+	<!-- Custom scripts -->
+	<script type="text/javascript" src="../js/plugins/jquery.cf.happybox.js"></script> <!-- Home page happy boxes -->
+	<script type="text/javascript" src="../js/jquery.cf.main.js"></script> <!-- Main custom JS file -->
+	   
+  <!-- #BeginEditable "custom-footer-js" -->
+   
+  <!-- #EndEditable -->
+   
+  <!-- #EndTemplate -->
+	</body>
+</html>

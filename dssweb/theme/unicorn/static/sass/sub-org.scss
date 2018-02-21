@@ -1,0 +1,170 @@
+@charset "utf-8"; 
+@import "variables"; // Do not remove; includes all framework variables and SASS mixins necessary for @include processing and $ variable assignments.
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+/* 
+		Sub Unit / Organization Style Overrides 
+		
+		Use this file directly or as a template to override DSS responsive theme styles.
+		Note: Breakpoint definitions below with ("N") represent breakpoints at which additional
+		JavaScript processing occurs during "browser resizing" on desktop browsers.
+
+*/
+
+/*----- Example custom breakpoint --------*/
+@media screen and (max-width: 440px) { // width < 440
+	/* Replace with your styles */
+}
+
+
+/*----- STANDARD STYLE TARGETS -------*/
+
+/*----- Mobile breakpoint ("S") --------*/
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+
+	/* Style adjustments for the wall banners */
+	body.home {
+		.wall {
+			height: 275px !important; // override banner height
+		}
+	}
+	
+}
+
+/*----- Tablet breakpoint ("M") -------*/
+
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	
+	/* Style adjustments for the wall banners */
+	body.home {
+		.wall {
+			height: 432px !important; // override banner height
+		}
+	}
+	
+	/* Name-logo and navigation adjustments for psychology navigation on tablet */
+	.top-bar {
+		.title-area .name a {
+			margin-top: 20px;
+			padding-right: 0;	
+		}
+		.top-bar-section {
+			ul li {
+				a {
+					@include font_size(12px, !important);
+					//letter-spacing: 0 !important;
+				}
+				ul.dropdown { // layout for 2nd tier dropdown
+					width: 200px !important;
+					li {
+						a {
+							// @include font_size(16px,!important); // inherit main menu type size
+							@include line_height(15px, !important); 
+							padding: 8px 12px;
+						}
+					}
+				}
+				&#fac-serv-btn { // change width of last main menu drop down that has this id
+					ul.dropdown { // layout for 2nd tier dropdown
+						width: 174px !important;
+					}
+				}
+				&#people-btn { // second level people dropdown pushes layout on tablet so restrict width
+					ul.dropdown {
+						ul.dropdown {
+							width: 50px !important; // TODO: Not affecting the menu
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.genericTile {
+		min-height: 195px !important; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+	}
+}
+
+/*----- Tablet up breakpoint -------*/
+
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				/* Note: Update formatting for navigation submenus here */
+				ul.dropdown {
+					//width: 200px !important;
+					li {
+						a {
+							//@include line_height(16px);
+							//padding: 4px 12px;
+							// if adding font-size here make sure to remove from Tablet breakpoint ("M") range above
+						}
+					}
+				}
+			}
+		}
+	}
+	// Tiles / Our people styles
+	.genericTile {
+		min-height: 172px; // based on a max total of 6 lines within tiles. Customize or use JS to apply equal heights
+	}
+
+}
+
+/*----- Desktop breakpoint ("L") -------*/
+
+@media screen and (min-width: $screen-sm-max) { // width > 991
+	/* Style adjustments for the wall banners */
+	body.home {
+		.wall {
+
+			height: 540px !important; // override banner height e.g., 540px (short), 650px (default, medium), 720px (tall)
+
+		}
+	}
+}
+
+/*----- IRREGULAR STYLE TARGETS -------*/
+@media screen and (min-width: $screen-sm-max) and (max-width: $screen-lg-min) { // 991 < width < 1310
+	// Use to correct menu item widths. For Psychology menu 16px pulls the menu up on Mac/Chrome
+	.top-bar .top-bar-section ul > li a {
+		padding-right: 16px !important;
+		padding-left: 16px !important;
+	}	
+}
+
+
+/*----- Target tablet, desktop, and higher -------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	/* Replace with your styles */
+}
+
+/*----- Target mobile and tablet -------*/
+@media screen and (max-width: $screen-sm-max) { // width < 991
+	/* Replace with your styles */
+}
+
+/*----- Target tablet up to 1310 width on desktop -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310
+	/* Replace with your styles */
+}
+
+
+/*----- Use this section to quickly test layout elements ... -------*/
+
+
+/*
+.wall {
+	border: 1px solid yellow;
+}
+.landscape {
+	border: 1px solid green;
+	.panel-group#content-accordion {
+		border: 1px solid red;
+		#top-panel-row {
+			border: 1px solid blue; 
+		}
+	}
+}
+*/

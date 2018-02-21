@@ -1,0 +1,58 @@
+
+/* 2014-06-12 RAK: TODO: Include documentation with exmaple for use of horizontal to vertical, non-bootstrap, responsive tables */
+
+
+/* RWD Tables */
+
+@media only screen and (max-width: 748px) {
+  /* Force table to not be like tables anymore */
+  .dss-rwd-table table,
+  .dss-rwd-table thead,
+  .dss-rwd-table tbody,
+  .dss-rwd-table th,
+  .dss-rwd-table td,
+  .dss-rwd-table tr {
+    display: block;
+  }
+   
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .dss-rwd-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+   
+  .dss-rwd-table tr { 
+    margin-bottom: 15px;
+  }
+   
+  .dss-rwd-table td {
+    /* Behave like a "row" */
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align:left;
+  }
+   
+  .dss-rwd-table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+   
+  /*
+  Label the data
+  */
+  .dss-rwd-table td:before { 
+    content: attr(data-title); 
+  }
+}
+/* /RWD Tables */

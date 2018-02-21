@@ -1,0 +1,5 @@
+<div id="portal-header">
+	<metal:block use-macro="here/slideshow_macros/macros/slideshow">
+	    slideshow here...
+	    </metal:block>
+</div>

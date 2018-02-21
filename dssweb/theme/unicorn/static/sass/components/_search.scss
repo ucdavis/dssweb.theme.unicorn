@@ -1,0 +1,97 @@
+/* components/_search.scss */
+
+#livesearch0 {
+	position: relative;
+	#livesearchLegend {
+	    background-color: $ucd_blue_100;
+			color: $ucd_blue_10;
+	    //padding: 0.4em 0.4em 0.4em 0.7em;
+			padding: 0;
+			@include line_height(80px);
+			letter-spacing: 0.01em;
+			font-size: 1.0625rem;
+	    width: 100%;
+			height: 80px;
+			text-align: center;
+			text-transform:none;
+	}
+	#LSResult {
+		display: none;
+		position: absolute;
+		top: 122px;
+		left: 4px; // align with left edge of search box
+		//background: none repeat scroll 0 0 rgba(229, 233, 239, 0.6);
+		background-color: $ucd_blue_10;
+		border: 1px solid $ucd_blue_90;
+		min-width: 425px; // allow for right expansion 210 - 
+		min-height: 80px;
+		margin: 0;
+		text-align: left;
+		ul {
+			margin-bottom: 0;
+			li {
+				float: none;
+				border-right-width: 0;
+				text-align: left;
+				border-bottom: 1px solid $ucd_blue_20;
+				padding-left: 0;
+				padding-right: 0;
+				&:last-child {
+					border-bottom-width: 0;
+					text-align: center;
+				}
+				&:hover {
+					background-color: $ucd_blue_20;
+					cursor: pointer;
+				}
+				a {
+					text-transform: none !important;
+					padding: 0.7em;
+					margin-top: 0;
+					text-align: left;
+					text-decoration: underline;
+					&:hover {
+						background-color: $ucd_blue_20;
+					}
+				}
+				img {
+					margin-left: 0.7em;
+				}
+				.LSDescr {
+					padding: 0 0.7em 0.7em 0.7em;
+				}
+			}
+		}
+	}
+}
+
+body.search-result {
+	#content-row {
+		margin-top: 0 !important; // rely on pager for top margin
+	}
+	#content-core {
+		.row {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+/* Search results page */
+
+#sort-left, #sort-right {
+	height: 35px;
+	@include line_height(35px);
+	select {
+		//@include font_size(16px);
+	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	#sort-left, #sort-right {
+		display: inline-block;
+		float: left;
+	}
+}
+
+/* /components/_search.scss */

@@ -1,0 +1,143 @@
+@charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+/* event.scss */
+
+#event-cta {
+	background-color: transparent;
+	.portlet-items {
+		margin-top: 0;
+	}
+}
+
+#accordion-e {
+	> div {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.rows {
+	border-top: 5px solid $rec_blue;
+	&.zebra {
+		.row:nth-child(even) {
+			background-color: transparent;
+		}
+		.row:nth-child(odd) {
+			background-color: $box_light_gray;
+		}
+
+		.row {
+			> div:first-child {
+				padding-top: 9px;
+			}
+			> div:last-child {
+				padding-top: 16px;
+			}
+		}
+		
+		h3 {
+			font-weight: normal !important;
+		}
+	}
+	
+}
+#content-core h3.uc {
+	letter-spacing: 0 !important;
+}
+#content-row {
+	margin-top: 35px;
+}
+
+#content-core {
+	.uc {
+		letter-spacing: 0.05em !important;
+	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	#content {
+		padding-right: 45px;
+	}
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+	.rows {
+		.row {
+			> div {
+				h3, p {
+					@include font_size(12.5px);
+				}
+			}
+		}
+	}
+	#event-cta {
+		text-align: center;
+		h3 {
+			display: none;
+		}
+		button {
+			float: none;
+			margin-bottom: 15px;
+		}
+		.portlet-items {
+			float: none;
+			li {
+				display: inline-block;
+				margin-right: 10px;
+				a {
+					width: auto !important;
+				}
+				&#vcal-icon {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// Treatment to replace gold with blue accordion buttons
+	/*
+	#accordion-e {
+		.panel-title {
+			a {
+				color: $ucd_blue_100 !important;
+				background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $rec_blue_40;
+				&.collapsed {
+					color: #FFF !important;
+					background: url(../../images/icons/white-arrow-right-sm.png) 98% 50% no-repeat $rec_blue;
+				}
+				&:hover {
+					color: $ucd_blue_100 !important;
+					background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $rec_blue_40;
+				}
+			}
+		}
+	}*/
+	
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	.rows {
+		.row {
+			> div:first-child {
+				text-align: right;
+			}
+		}
+	}
+	#event-cta {
+		button {
+			float: left;
+		}
+		.portlet-items {
+			float: right;
+			margin-top: 0 !important;
+		}
+	}
+
+}
+
+
+/* /event.scss */

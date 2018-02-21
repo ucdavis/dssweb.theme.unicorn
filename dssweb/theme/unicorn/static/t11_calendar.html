@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en"><!-- #BeginTemplate "/Templates/tiles.dwt" -->
+	<head>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+		
+		<!-- #BeginEditable "title" -->
+	    <title>Calendar</title>
+	  <!-- #EndEditable -->
+	  <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
+		<link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
+		
+	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
+	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
+		
+		<!-- #BeginEditable "header" -->
+		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+		<link href="assets/components/calendar.css" rel="stylesheet" />
+		 
+	  <!-- #EndEditable -->
+	
+	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	  <!--[if lt IE 9]>
+	    <script src="js/contrib/html5shiv.min.js"></script>
+	    <script src="js/contrib/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+  <!-- #BeginEditable "body-tag" -->
+  <body class="calendar">
+  <!-- #EndEditable -->
+		<div id="skip-link"><a href="#content" class="sr-only sr-only-focusable">Skip to main content</a></div>
+	  <div class="row jumbotron">
+			<div class="siders">
+				<div class="wall shadow-graphic">
+					&nbsp;
+				</div>
+			</div>
+		</div>
+
+	  <div id="main-container" class="container">
+	    <div id="util-bar-wrap" class="row">
+	      <nav class="util-bar">
+	        <ul>
+          	          <li class="hidden-xs" id="uti-home">
+                     <a href="#">
+                       <img src="images/icons/home.png" alt="Home" />
+                     </a>
+          	          </li>
+       	          <li class="hidden-xs" id="uti-contact">
+       	            <a href="contact">Contact</a>
+       	          </li>
+	          <li class="hidden-xs" id="uti-news">
+	            <a href="#">Latest News</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-events">
+	            <a href="#">Events</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-give">
+	            <a href="#">Give</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-search">
+	            <form action=".">
+								<label for="searchi" class="sr-only">Search</label>
+	              <input type="search" name="searchi" id="searchi" placeholder="Search" />
+								<input type="submit" name="submit" value="GO" />
+	            </form>
+	          </li>
+	          <li class="hidden-xs" id="uti-share">
+	            <a href="#"></a>
+	          </li>
+	          <li id="uti-logo">
+	            <a href="http://www.ucdavis.edu">
+	              <img src="images/logos/nav-logo.png" alt="UC Davis" />
+	            </a>
+	          </li>
+	        </ul>
+	      </nav>
+	    </div>
+
+			<div id="top-bar-wrap" class="row">
+		    <nav class="top-bar" data-topbar="">
+			
+		      <!-- Title -->
+		      <ul class="title-area">
+		        <li class="name">
+		            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="UC Davis Department of Psychology" title="UC Davis Department of Psychology" /></a>
+		        </li>
+ 			   <!--li id="logosm" class="justname">
+ 				   <h1>
+ 				     <a id="portal-logo">
+ 				 </h1>
+ 			  </li-->
+						<li id="toggle-topbar-item">
+			        <!-- Mobile Menu Toggle -->
+							<div class="toggle-topbar menu-icon">
+								<a href="#">
+									<span></span>
+								</a>
+							</div>
+						</li>
+		      </ul>
+			
+		      <!-- Top Bar Section -->
+		      <section class="top-bar-section">
+		        <!-- Top Bar Right Nav Elements -->
+		        <ul class="left">
+		          <!-- Dropdown -->
+		          <li id="contact-btn" class="has-dropdown">
+		            <a href="t7_contact.html">Contact</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">This is a super long item to demonstrate button text flow</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a> 
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="students-btn" class="has-dropdown">
+		            <a href="t8_students.html">Students</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="researc-btn" class="has-dropdown">
+		            <a href="#">Research</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="people-btn" class="has-dropdown">
+		             <a href="t2_ourpeople.html">Our People</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a> 
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="fac-serv-btn" class="has-dropdown">
+		            <a href="#">Facilities &amp; Services</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		        </ul>
+		      </section>
+		    </nav>
+			</div>
+	    <!-- #BeginEditable "content" -->
+		<div id="content-row" class="row">	
+			<div id="content">
+			
+				<!-- Page breadcrumb / title standalone -->
+				<div class="breadcrumb"><p><a href="t1_index.html">Home</a> <span class="bread-divider">|</span> <a href="t11_calendar.html">Events</a></p></div>
+				<h1 class="content-title">Calendar</h1>
+				<!-- /end -->
+			
+					
+		    <!-- Left Sidebar -->
+		    <div class="panel-group" id="accordion">
+		      <div class="sidebar sidebar-left col-xs-12 col-sm-12 col-md-12 col-lg-3" id="left-area">
+		        <div class="panel panel-default">
+		          <div class="panel-heading">
+		            <h3 class="panel-title op-sidebar-title menu-icon visible-xs">
+		              <p class="visible-xs view-all"><a data-parent="#accordion" data-target="#sbA" data-toggle="collapse">Filter By</a></p>								                
+	             
+		            </h3>
+		          </div>
+		          <div class="collapsible sidebar-panel panel-collapse collapse" id="sbA">
+		            <div class="panel-body">
+									<h4 class="uc hidden-md hidden-xs">View ...</h4>
+									<div class="subject" id="subject-all" title="All">
+										<p class="hidden-md hidden-xs"><a href="#">All</a></p>
+										<a href="#"><p class="hidden-lg view-all hidden-xs">View All</p></a>
+										<p class="visible-md" id="filter-by"><a href="#">Filter By:</a></p>
+									</div>
+									<fieldset class="widget-fieldset">
+										<form method="get" action=".">
+											<ul class="checkForm clearfix">
+										 
+											 <li id="criterion-subject-econometrics"><input class="subject" type="checkbox" title="Econometrics" value="" ><label for="Econometrics" title="Econometrics"><div class="color-box"></div>Econometrics<br /></label></li>
+										 
+											 <li id="criterion-subject-economic-history"><input class="subject" type="checkbox" title="Economic History" value="" ><label for="Economic History" title="Economic History"><div class="color-box"></div>Economic History<br /></label></li>
+										 
+											 <li id="criterion-subject-energy-environmental-economics"><input class="subject" type="checkbox" title="Industrial Organization" value="" ><label for="Industrial Organization" title="Industrial Organization"><div class="color-box"></div>Industrial Organization/Energy<br /></label></li>
+										 
+											 <li id="criterion-subject-international-economics"><input class="subject" type="checkbox" title="International Econonomics" value="" ><label for="International Econonomics" title="International Econonomics"><div class="color-box"></div>International Econonomics<br /></label></li>
+										 
+											 <li id="criterion-subject-macroeconomics"><input class="subject" type="checkbox" title="Macroeconomics" value="" ><label for="Macroeconomics" title="Macroeconomics"><div class="color-box"></div>Macroeconomics<br /></label></li>
+										 
+											 <li id="criterion-subject-public-finance-labor"><input class="subject" type="checkbox" title="Public Finance-Labor" value="" ><label for="Public Finance-Labor" title="Public Finance-Labor"><div class="color-box"></div>Public Finance-Labor<br /></label></li>
+										 
+											 <li id="criterion-subject-theory"><input class="subject" type="checkbox" title="Theory" value="" ><label for="Theory" title="Theory"><div class="color-box"></div>Theory<br /></label></li>									
+											</ul>
+										</form>									
+									</fieldset>					
+		              <ul class="sb-subitems">
+										<li id="ical-icon"><a href="#">iCal Export</a></li>
+										<li id="rss-icon"><a href="#">RSS Feed</a></li>
+		              </ul>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--End .sidebar-left -->
+		
+			<div id="content-core">
+		    <div id="calendar" class="query-path fc ui-widget query-Subject col-xs-12 col-sm-12 col-md-12 col-lg-9">
+			
+						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="view-filter" >
+							<div class="vf-selector"><a href="#">Today</a></div><div class="vf-selector selected"><a href="#">Month</a></div><div class="vf-selector"><a href="#">Week</a></div><div class="vf-selector"><a href="#">Day</a></div>
+						</div>
+						
+						 <div id="month-pager" class="pager col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<span class="pager-prev ui-icon ui-icon-circle-triangle-e"><a href="#"><span class="text-hide">Previous</span></a></span> <span class="pager-string fc-header-title">May 2014</span><span class="pager-next fc-button fc-button-next ui-state-default ui-corner-right"><a href="#"><span class="text-hide">Next</span></a></span>
+						</div>	
+				
+						
+						<table id="month" class="fc-header">
+							<thead>
+							<tr>
+							<th class="first"><span class="hidden-xs" title="Monday">Monday</span><span class="visible-xs" title="Monday">M</span></th>
+							<th><span class="hidden-xs" title="Tuesday">Tuesday</span><span class="visible-xs" title="Tuesday">Tu</span></th>
+							<th><span class="hidden-xs" title="Wednesday">Wednesday</span><span class="visible-xs" title="Wednesday">W</span></th>
+							<th><span class="hidden-xs" title="Thursday">Thursday</span><span class="visible-xs" title="Thursday">Th</span></th>
+							<th><span class="hidden-xs" title="Friday">Friday</span><span class="visible-xs" title="Friday">F</span></th>
+							<th class="weekend"><span class="hidden-xs" title="Saturday">Saturday</span><span class="visible-xs" title="Saturday">Sa</span></th>
+							<th class="weekend last"><span class="hidden-xs" title="Sunday">Sunday</span><span class="visible-xs" title="Sunday">Su</span></th>
+							</tr>
+							</thead>
+					
+							<tbody>
+							<tr>
+							<td class="previous"><span class="date">28</span>
+							<div class="day">
+								<div class="fc-event">									
+									<div class="fc-event-inner">
+										<span class="fc-event-title"><a href="#">Graham Elliot (UC San Diego)</a></span>	
+										<span class="fc-event-time">3:40pm</span>
+										<div class="color-box subject-box"></div>
+									</div>								
+								</div>
+							</div>
+							</td>
+							<td class="previous"><span class="date">29</span><div class="day">
+							<div class="fc-event">							
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Ruixe Jia (UC San Diego)</a></span>
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>							
+							</div>
+							</div></td>
+							<td class="previous"><span class="date">30</span><div class="day">
+							<div class="fc-event">								
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Ruixe Jia (UC San Diego)</a></span>
+									<span class="fc-event-time">4:10pm</span>
+									<div class="color-box subject-box"></div>
+								</div>						
+							</div>
+							</div></td>
+							<td><span class="date">1</span><div class="day">
+							<div class="todays-event fc-event">								
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Levine Family Series: Finn Kydland (UC Santa Barbara)</a></span>	
+									<span class="fc-event-time">4:00pm</span>
+									<div class="subjects">
+										<div class="color-box subject-box" style="background-color: #00573F;"></div>
+										<div class="color-box subject-box" style="background-color: #C6007E;"></div>
+										<div class="color-box subject-box" style="background-color: #ED8B00;"></div>
+										<div class="color-box subject-box" style="background-color: #FFCD00;"></div>
+										<div class="color-box subject-box" style="background-color: #78BE20;"></div>
+										<div class="color-box subject-box" style="background-color: #00B5E2;"></div>
+										<div class="color-box subject-box" style="background-color: #642667;"></div>
+									</div>
+								</div>							
+							</div>
+							</div></td>
+							<td><span class="date">2</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">3</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">4</span><div class="day">&nbsp;</div></td>
+							</tr><tr>
+							<td><span class="date">5</span><div class="day">
+							<div class="fc-event">								
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Steve Cicala (University of Chicago)</a></span>
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>					
+							</div>
+							<div class="fc-event">							
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Graham Elliot (UC San Diego)</a></span>	
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>								
+							</div>					
+							</div></td>
+							<td><span class="date">6</span><div class="day">
+							<div class="fc-event">							
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Graham Elliot (UC San Diego)</a></span>	
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>							
+							</div>
+							</div></td>
+							<td><span class="date">7</span><div class="day">
+							<div class="fc-event">								
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Graham Elliot (UC San Diego)</a></span>
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>							
+							</div>
+							</div></td>
+							<td><span class="date">8</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">9</span><div class="day">
+							<div class="fc-event">									
+								<div class="fc-event-inner">
+									<span class="fc-event-title">	<a href="#">Graham Elliot (UC San Diego)</a></span>
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>							
+							</div>
+							<div class="fc-event">									
+								<div class="fc-event-inner">
+									<span class="fc-event-title"><a href="#">Graham Elliot (UC San Diego)</a></span>	
+									<span class="fc-event-time">3:40pm</span>
+									<div class="color-box subject-box"></div>
+								</div>								
+							</div>
+							</div></td>
+							<td class="weekend"><span class="date">10</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">11</span><div class="day">&nbsp;</div></td>
+							</tr><tr>
+							<td><span class="date">12</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">13</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">14</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">15</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">16</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">17</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">18</span><div class="day">&nbsp;</div></td>
+							</tr><tr>
+							<td><span class="date">19</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">20</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">21</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">22</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">23</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">24</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">25</span><div class="day">&nbsp;</div></td>
+							</tr><tr>
+							<td><span class="date">26</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">27</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">28</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">29</span><div class="day">&nbsp;</div></td>
+							<td><span class="date">30</span><div class="day">&nbsp;</div></td>
+							<td class="weekend"><span class="date">31</span><div class="day">&nbsp;</div></td>
+							<td class="weekend next"><span class="date">1</span><div class="day">&nbsp;</div></td>
+							</tr>
+							</tbody>
+							</table>			
+				</div><!-- /#calendar -->
+			</div><!-- /#content-core -->
+    </div><!-- /#content-row -->
+	</div><!-- /#content -->
+  <!-- #EndEditable -->
+		
+		
+	<div id="footer" class="row">
+		<div class="foot-wrap">
+			<ul id="foot-social">
+				<li class="first"><a id="facebook-icon" href="#"><span class="text-hide">Facebook</span></a></li>
+				<li><a id="twitter-icon" href="#"><span class="text-hide">Twitter</span></a></li>
+				<li><a id="pinterest-icon" href="#"><span class="text-hide">Pinterest</span></a></li>
+				<li><a id="youtube-icon" href="#"><span class="text-hide">YouTube</span></a></li>
+				<li class="last"><a id="linkedin-icon" href="#"><span class="text-hide">LinkedIn</span></a></li>
+			</ul>
+			<div id="vcard">
+				<p>
+					<span class="org">Department of Psychology <br />
+					University of California, Davis</span><br />
+					<span class="street-address">135 Young Hall <br />
+					One Shields Avenue</span><br />
+					<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+				</p>
+				<p id="email-phone" class="hidden-xs">
+					<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
+				</p>
+			</div>
+			<div id="footer-middle">
+			<ul class="footer-nav hidden-xs" id="foot-left">
+				<li><a href="t7_contact.html">Contact</a></li>
+				<li><a href="t8_students.html">Students</a></li>
+				<li><a href="#">Research</a></li>
+				<li> <a href="t2_ourpeople.html">Our People</a></li>
+				<li><a href="#">Facilities & Services</a></li>
+			</ul>
+			<ul class="footer-nav hidden-xs" id="foot-center">
+				<li><a href="#">Latest News</a></li>
+				<li><a href="#">Events</a></li>
+				<li><a href="#">Give</a></li>
+			</ul>
+			<ul class="footer-nav" id="foot-right">
+				<li><a href="#">Admissions</a></li>
+				<li><a href="#">Advising</a></li>
+				<li><a href="#">Student Clubs</a></li>
+				<li><a href="#">Login</a></li>
+			</ul>
+		</div>
+
+			<p id="copyright">
+				Copyright &copy; 2007 &nbsp;All Rights Reserved.
+			</p>
+		</div>
+  </div><!-- /#footer -->
+		
+			<div class="sticky hidden-lg hidden-md hidden-sm">
+	      <nav class="util-nav">
+	        <ul class="util">
+	          <li>
+	            <div id="search-util-btn" class="util-btn ">
+	              <a href="#">
+	                <img src="images/icons/m-btn-search.png" alt="Search" />
+	              </a>
+	              <p>
+	                <a href="/@@search">Search</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="location-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-location.png" alt="Directions" />
+	              </a>
+	              <p>
+	                 <a href="/map">Map</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="share-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a class="addthis_button">
+	                <img src="images/icons/mobile-btn-share.png" alt="Share" />
+	               
+	              <p>
+	                Share
+	              </p> </a>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="email-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-email.png" alt="Email" />
+	              </a>
+	              <p>
+	                 <a href="/contact">contact</a>
+	              </p>
+	            </div>
+	          </li>
+	        </ul>
+	      </nav>
+	    </div><!-- /sticky -->
+		
+	  </div><!-- /container -->
+	
+		<!-- Bootstrap core JavaScript
+	      ================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	  <script type="text/javascript" src="js/contrib/jquery.min.js"></script>
+		<script type="text/javascript" src="js/contrib/jquery.easing.1.3.js"></script>
+		
+	  <script type="text/javascript" src="js/bootstrap/dropdown.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/collapse.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/transition.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.topbar.js"></script>
+	  <!--[if lt IE 9]>
+	      	<script src="js/contrib/respond.min.js"></script>
+	  <![endif]-->
+		<!-- #BeginEditable "custom-footer-js" -->
+	
+		<script type="text/javascript" src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+		
+	  <script id="wallpaper_fix">
+				$(".wall").wallpaper({ 
+				source: $('#theme_url').html() || '' + "images/banners/rec_blue_shadow.gif"
+			});
+		</script>
+		<script type="text/javascript" src="js/plugins/jquery.cf.happybox.js"></script>
+		<script type="text/javascript" src="js/jquery.cf.main.js"></script>
+		<!--script type="text/javascript" src="js/calendar-cf.js"></script-->
+  	<!-- #EndEditable -->
+	</body>
+<!-- #EndTemplate -->
+</html>

@@ -1,0 +1,55 @@
+/* components/_tiled-events.scss */
+
+#dssweb-tiled-events {
+    width: 100%;
+    @include clearfix;
+
+    .event-tile {
+        border: 1px solid $ucd_black_30;
+        background-color: $box_light_gray;
+        width: 250px;
+        height: 350px;
+        overflow: hidden;
+        float: left;
+        margin: 0px 15px 15px 0px;
+        text-align: center;
+		  
+
+        .event-image {
+            height: 250px;
+            width: 250px;
+            overflow: hidden;
+            background: transparent url('../images/Interdisciplinary-Learning_Fotor.jpeg') center no-repeat;
+            border-bottom: 5px solid $rec_blue;
+            img {
+                border-bottom: 5px solid $rec_blue;
+                height: 250px;
+                width: 250px;
+            }
+        }
+
+        .event-details {
+            height: 100px;
+            padding: 0.5em;
+            border: none;
+            overflow: hidden;
+
+            .event-date {
+                margin: 0;
+                padding: 0;
+                font-size: 125%;
+                font-weight: 800;
+                padding-bottom: 0.5em;
+            }
+            h3 {
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                line-height: 125%;
+            }
+        }
+    }
+
+}
+
+/* components/_tiled-events.scss */

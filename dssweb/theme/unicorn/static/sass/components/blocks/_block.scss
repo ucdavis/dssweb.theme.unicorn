@@ -1,0 +1,189 @@
+/* components/blocks/_block.scss */
+/* Styles for block-level components */
+
+//Styles for the Spotlight Block
+#spotlight-block {
+ background-color: #CCC;
+ border: 1px solid #000;
+}
+
+/* Contact uses hCard microformat / vCard RFC2426 */
+#sidebar-block-contact {
+	margin-top: 20px;
+	margin-bottom: 0; // reset
+	padding-left: 35px !important; // TODO: After #content change need !important, why?
+	padding-right: 15px !important;
+	li {
+		@include font_size(13px);
+		letter-spacing: 0.01em;
+		a {
+			text-decoration: none;
+			color:$ucd_blue_80;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.fn { // full name ... keep generic as we apply on both h4, li, and div elements
+		text-transform: uppercase;
+		font-weight: bold;
+		//letter-spacing: 0.1em;
+	}
+	.category { // position
+		font-style: italic;
+		@include font_size(12px);
+		margin-bottom: 5px;
+	}
+	.tel { // phone
+		margin-bottom: 5px;
+	}
+}
+
+#sidebar-block-contact, .vcard {
+	.email {
+		text-transform: uppercase;
+		a {
+			display: inline-block;
+			height: 16px;
+			padding-left: 22px;
+			background: url(../images/icons/email.gif) 0 70% no-repeat;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.sidebar-block-items {
+	background: $box_light_gray;	
+	padding-bottom: 10px;
+	text-align: left;
+	width: auto;
+	height: 100%;
+	padding-left: 15px;
+	margin-left: 35px;
+	list-style-type: circle;	
+}
+
+#corner-box-target {
+	position: relative;
+	.corner-box {
+		display: block;
+		width: 350px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 40, 85, 0.8);
+		.box-content {
+			margin: 15px 35px 30px 40px;
+		}
+		margin-bottom: 21px; // Note: If caption height changes, so should this. TODO: Apply in JS for cases where no figcaption ... but this is not part of design
+	}
+}
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+
+	.vcard {
+		.email {
+			display: block;
+			text-align: center;
+			a {
+				width: 60px;
+			}
+		}
+	}
+	ul#sidebar-block-contact { // assuming text-align center
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
+	/* This is moved via JS outside of the target on mobile */
+	.popup-sm {
+		position: absolute;
+		width: 100% !important;
+		z-index: 2;
+		background-color: $rec_blue;
+		padding: 15px;
+		.panel-body {
+			padding-top: 0;
+			
+		}
+		&.collapse, h2 {
+			display: none !important;
+		}
+		p, h3 {
+			@include font_size(15px,!important);
+		}
+	}
+	
+	#corner-box-target {
+		
+		figure {
+			position: relative;
+			figcaption {
+				height: 20px;
+			}
+			
+			.popup-sm-title {
+				position: absolute;
+				//bottom: 20px; // was 20px. set in JS
+		    background-color: rgba(0, 40, 85, 0.8);
+				color: #FFF;
+		    margin-left: 40%;
+		    width: 60%;
+				height: 40px;
+				
+				.sm-title {
+					a {
+						color: #FFF;
+						text-decoration: none;
+						@include font_size(16px);
+						@include line_height(20px);
+						display: inline-block;
+						width: 100%;
+				    padding-right: 15px;
+						padding-top: 9px !important;
+						padding-left: 20px !important;
+						background: url("../images/icons/white-arrow-down-sm.png") no-repeat scroll 90% 65% transparent;
+						&.collapsed {
+			    		background: url("../images/icons/white-arrow-right-sm.png") no-repeat scroll 90% 65% transparent;
+						}
+						&:hover {
+							background: url("../images/icons/white-arrow-down-sm.png") no-repeat scroll 90% 65% transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+/*----- tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) {	// width > 768
+
+}
+
+/*----- Tablet breakpoint --------*/
+// At point that left and right margins are gone
+@media screen and (max-width: $screen-md-min) { // width < 992
+	#corner-box-target {
+		.corner-box {
+			width: 220px;
+			.box-content {
+				margin: 0 15px 10px 20px;
+			}
+		}
+	}
+	.vcard {
+		#email-phone {
+			span {
+				padding-top: 8px !important; // make easier to touch / separate from phone number
+			}
+		}
+	}
+}
+
+/* /components/blocks/_block.scss */

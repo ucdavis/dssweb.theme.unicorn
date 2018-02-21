@@ -1,0 +1,79 @@
+/* styles for lab tiles */
+#dssweb-tiled-labs {
+   width: 100%;
+   @include clearfix;
+
+   .lab-tile {
+       border: 1px solid $ucd_black_30;
+       background-color: $box_light_gray;
+       width: 250px;
+       height: 350px;
+       overflow: hidden;
+       float: left;
+       margin: 0px 15px 15px 0px;
+		 position:relative; 
+		 
+		 .desc.wrapper {
+			 font-size:1.0rem;
+		 }
+       
+}
+.labWrapper {
+   
+}
+img.lab-image {
+   width: 100%;
+  height:120px;
+   overflow: hidden;
+   background: transparent url('../images/default_back.png') center no-repeat;
+	
+}
+    
+span.fade {
+
+	width:100%;
+	
+	 }
+span.labName {
+    position: absolute;
+    top: 60px;
+	 height:60px;
+	 width:100%;
+	 color:white;
+	 font-size:1.1rem;
+	 padding-left:5px;
+	 padding-top: 5px;
+	 background-image: url("../images/fade.png");
+	 
+}
+.pi-name p{
+	font-style:italic;
+	padding:5px 5px 0 5px;
+}
+.tile-desc {
+	position: absolute;
+	    top: 150px;
+	    padding: 0 5px 0 5px;
+	    font-size: .9rem !important;
+		 line-height: 1.2rem !important;
+		 height: 12rem;
+		 overflow: hidden;
+		 }
+	
+		 
+	span.desc:after {
+	  content: "";
+	  text-align: right;
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  width: 70%;
+	  height: 1.2em;
+	  background: linear-gradient(to right, rgba(242, 242, 242, 0), rgba(242, 242, 242, 1) 50%);
+	}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+}

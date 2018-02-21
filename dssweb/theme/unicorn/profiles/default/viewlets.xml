@@ -1,0 +1,10 @@
+<object>
+    <hidden manager="plone.portaltop" skinname="dssweb.theme.unicorn">
+        <viewlet name="plone.header" />
+    </hidden>
+	<order manager="plone.portaltop" skinname="dssweb.theme.unicorn"
+	           based-on="Plone Default">
+	        <viewlet name="dssweb.theme.unicorn.portalTop"
+	                 insert-before="*" />
+	    </order>
+	</object>

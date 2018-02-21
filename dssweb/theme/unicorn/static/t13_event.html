@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en"><!-- #BeginTemplate "/Templates/adhoc.dwt" -->
+	<head>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+		<!-- #BeginEditable "title" -->
+	    <title>Event</title>
+	  <!-- #EndEditable -->
+	  <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
+		<link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
+		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
+	  <link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
+
+		<!-- #BeginEditable "header" -->
+		<link href="assets/sections/event.css" rel="stylesheet" />
+	  <!-- #EndEditable -->
+
+	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	  <!--[if lt IE 9]>
+	    <script src="js/contrib/html5shiv.min.js"></script>
+	    <script src="js/contrib/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+  <!-- #BeginEditable "body-tag" -->
+  <body class="event">
+  <!-- #EndEditable -->
+		<div id="skip-link"><a href="#content" class="sr-only sr-only-focusable">Skip to main content</a></div>
+
+	  <div class="row jumbotron">
+			<div class="siders">
+				<div class="wall shadow-graphic">
+		    	&nbsp;
+				</div>
+			</div>
+	  </div>
+
+	  <div id="main-container" class="container">
+	    <div id="util-bar-wrap" class="row">
+	      <nav class="util-bar">
+	        <ul>
+          	          <li class="hidden-xs" id="uti-home">
+                     <a href="#">
+                       <img src="images/icons/home.png" alt="Home" />
+                     </a>
+          	          </li>
+       	          <li class="hidden-xs" id="uti-contact">
+       	            <a href="contact">Contact</a>
+       	          </li>
+	          <li class="hidden-xs" id="uti-news">
+	            <a href="#">Latest News</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-events">
+	            <a href="#">Events</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-give">
+	            <a href="#">Give</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-search">
+	            <form action=".">
+								<label for="searchi" class="sr-only">Search</label>
+	              <input type="search" name="searchi" id="searchi" placeholder="Search" />
+								<input type="submit" name="submit" value="GO" />
+	            </form>
+	          </li>
+	          <li class="hidden-xs" id="uti-share">
+	            <a href="#"></a>
+	          </li>
+	          <li id="uti-logo">
+	            <a href="http://www.ucdavis.edu">
+	              <img src="images/logos/nav-logo.png" alt="UC Davis" />
+	            </a>
+	          </li>
+	        </ul>
+	      </nav>
+	    </div>
+
+			<div id="top-bar-wrap" class="row">
+		    <nav class="top-bar" data-topbar="">
+
+		      <!-- Title -->
+		      <ul class="title-area">
+		        <li class="name">
+		            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="UC Davis Department of Psychology" title="UC Davis Department of Psychology" /></a>
+		        </li>
+ 			   <!--li id="logosm" class="justname">
+ 				   <h1>
+ 				     <a id="portal-logo">
+ 				 </h1>
+ 			  </li-->
+						<li id="toggle-topbar-item">
+			        <!-- Mobile Menu Toggle -->
+							<div class="toggle-topbar menu-icon">
+								<a href="#">
+									<span></span>
+								</a>
+							</div>
+						</li>
+		      </ul>
+
+		      <!-- Top Bar Section -->
+		      <section class="top-bar-section">
+		        <!-- Top Bar Right Nav Elements -->
+		        <ul class="left">
+		          <!-- Dropdown -->
+		          <li id="contact-btn" class="has-dropdown">
+		            <a href="t7_contact.html">Contact</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">This is a super long item to demonstrate button text flow</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a>
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="students-btn" class="has-dropdown">
+		            <a href="t8_students.html">Students</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="researc-btn" class="has-dropdown">
+		            <a href="#">Research</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="people-btn" class="has-dropdown">
+		             <a href="t2_ourpeople.html">Our People</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a>
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="fac-serv-btn" class="has-dropdown">
+		            <a href="#">Facilities &amp; Services</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		        </ul>
+		      </section>
+		    </nav>
+			</div>
+	    <!-- #BeginEditable "content" -->
+
+			<div id="content-row" class="row">
+
+			  <div id="content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="breadcrumb"><p><a href="index.html">Home</a> <span class="bread-divider">|</span> <a href="t11_calendar.html">Events</a></p></div>
+			    <h1 class="content-title">Inflammatory activity as a mediator of stress-induced executive dysfunction</h1>
+
+					<div id="content-core">
+
+						<div class="picture flush-bottom">
+							<img class="img-responsive" id="lead-image" src="images/temp/T13a-event-photo.jpg" alt="Photo Alt Tag" />
+						</div>
+
+						<div class="zebra rows">
+
+							<div id="event-speakers" class="row">
+								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+									<h3 class="uc">Speaker(s)</h3>
+								</div>
+								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+									<p class="attendees">Grant Shields</p>
+								</div>
+							</div><!-- /.row -->
+
+							<div id="event-datetime" class="row">
+								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+									<h3 class="uc">Date &amp; Time</h3>
+								</div>
+								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+									<p class="datetime">Monday, June 2, 2014, 12:10-1:00PM</p>
+								</div>
+							</div><!-- /.row -->
+
+							<div id="event-location" class="row">
+								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+									<h3 class="uc">Location</h3>
+								</div>
+								<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+									<p class="location">Young 166</p>
+								</div>
+							</div><!-- /.row -->
+
+							<div id="event-description" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+									<h3 class="uc">Description</h3>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+									<div class="inline-content">
+									<p>Although substantial work has illustrated that stress causes executive dysfunction, the biological mechanisms through which this happens still remain unclear. Past research has focused on cortisol as the mediating biomarker, but pharmacological research indicates that this is unlikely. As such, I am exploring the effects of proinflammatory cytokines—immune system proteins upregulated during stress—on executive function. In the current study, participants underwent a standardized stressor protocol (the TSST) or a control condition before completing an executive function task 45min post-stressor. Although the data are not yet all collected, preliminary analyses reveal marginal and significant effects in the expected direction, with both working memory- and set-shifting-related errors increased in the stressor condition. As will be discussed, the delay between the stressor and the executive function task indicates that proinflammatory cytokine activity is the likely cause of poorer performance. Biological data are not yet analyzed, however, as all data must be collected before these data may be assayed. Interpretations of these preliminary results and future directions will be discussed.
+	</p>
+									</div>
+								</div>
+							</div><!-- /.row -->
+
+							<div id="event-cta" class="row">
+								<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+									<h3 class="uc">&nbsp;</h3>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+									<button>Register</button>
+									<ul class="portlet-items">
+										<li id="ical-icon"><a href="#">iCal Export</a></li>
+										<li id="vcal-icon"><a href="#">vCal Export</a></li>
+										<li class="hidden-lg hidden-md" id="rss-icon"><a href="#">RSS Feed</a></li>
+									</ul>
+								</div>
+							</div><!-- /.row -->
+
+						</div><!-- /.event-rows -->
+
+					</div><!-- /#content-core -->
+
+			  </div>
+			  <!-- /#content -->
+
+
+
+	    <!-- #EndEditable -->
+			<div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+			  <div class="portlet">
+			  	<h3>Event Contact</h3>
+					<div class="portlet-content">
+			      <ul id="sidebar-block-contact" class="vcard">
+			        <li class="fn"><a href="#">Firstname Lastname</a></li>
+			        <li class="category">Title</li>
+			        <li class="tel">(530) 391-9165</li>
+							<li class="email"><a href="mailto:email@ucdavis.edu">Email</a></li>
+			      </ul>
+			    </div>
+			  </div>
+			  <!-- /.portlet -->
+
+		    <div class="portlet-double">
+		    	<h3>Related Events</h3>
+					<div class="portlet-content">
+						<ul class="portlet-items">
+							<li class="event-item"><span class="event-date">08/25/14</span><span class="event-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+						 <li class="event-item"><span class="event-date">09/15/14</span><span class="event-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+							  <li class="event-item"><span class="event-date">10/20/14</span><span class="event-title"><a href="#">Susan Rivera Lorem Lorem dolar ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod</a></li>
+						</ul>
+		      </div>
+		    </div>
+		    <!-- /.portlet -->
+
+
+				</div><!-- /.sidebar-right -->
+
+			</div><!-- /#content-row -->
+
+
+
+			<div id="footer" class="row">
+				<div class="foot-wrap">
+					<ul id="foot-social">
+						<li class="first"><a id="facebook-icon" href="#"><span class="btn-txt">Facebook</span></a></li>
+						<li><a id="twitter-icon" href="#"><span class="btn-txt">Twitter</span></a></li>
+						<li><a id="pinterest-icon" href="#"><span class="btn-txt">Pinterest</span></a></li>
+						<li><a id="youtube-icon" href="#"><span class="btn-txt">YouTube</span></a></li>
+						<li class="last"><a id="linkedin-icon" href="#"><span class="btn-txt">LinkedIn</span></a></li>
+					</ul>
+					<div id="vcard">
+						<p>
+							<span class="org">Department of Psychology <br />
+							University of California, Davis</span><br />
+							<span class="street-address">135 Young Hall <br />
+							One Shields Avenue</span><br />
+							<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+						</p>
+						<p id="email-phone" class="hidden-xs">
+							<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
+						</p>
+					</div>
+					<div id="footer-middle"> 
+					<ul class="footer-nav hidden-xs" id="foot-left">
+						<li><a href="t7_contact.html">Contact</a></li>
+						<li><a href="t8_students.html">Students</a></li>
+						<li><a href="#">Research</a></li>
+						<li> <a href="t2_ourpeople.html">Our People</a></li>
+						<li><a href="#">Facilities & Services</a></li>
+					</ul>
+					<ul class="footer-nav hidden-xs" id="foot-center">
+						<li><a href="#">Latest News</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Give</a></li>
+					</ul>
+					<ul class="footer-nav" id="foot-right">
+						<li><a href="#">Admissions</a></li>
+						<li><a href="#">Advising</a></li>
+						<li><a href="#">Student Clubs</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+				</div>
+				
+
+					<p id="copyright">
+						Copyright &copy; 2007 &nbsp;All Rights Reserved.
+					</p>
+				</div>
+		  </div><!-- /#footer -->
+
+			<div class="sticky hidden-lg hidden-md hidden-sm">
+	      <nav class="util-nav">
+	        <ul class="util">
+	          <li>
+	            <div id="search-util-btn" class="util-btn ">
+	              <a href="#">
+	                <img src="images/icons/m-btn-search.png" alt="Search" />
+	              </a>
+	              <p>
+	                <a href="/@@search">Search</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="location-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-location.png" alt="Directions" />
+	              </a>
+	              <p>
+	                 <a href="/map">Map</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="share-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a class="addthis_button">
+	                <img src="images/icons/mobile-btn-share.png" alt="Share" />
+	               
+	              <p>
+	                Share
+	              </p> </a>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="email-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-email.png" alt="Email" />
+	              </a>
+	              <p>
+	                 <a href="/contact">contact</a>
+	              </p>
+	            </div>
+	          </li>
+	        </ul>
+	      </nav>
+	    </div><!-- /sticky -->
+
+	  </div><!-- /container -->
+
+		<!-- Bootstrap core JavaScript
+	      ================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	  <script type="text/javascript" src="js/contrib/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/dropdown.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/collapse.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/transition.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.topbar.js"></script>
+	  <!--[if lt IE 9]>
+	      	<script src="js/contrib/respond.min.js"></script>
+	  <![endif]-->
+		<!-- #BeginEditable "custom-footer-js" -->
+
+		<script type="text/javascript" src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+
+        <script id="wallpaper_fix">
+			$(".wall").wallpaper({
+				source: $('#theme_url').html() || '' + "images/banners/rec_blue_shadow.gif"
+			});
+			var active_trail = "#uti-events";
+		</script>
+
+		<script type="text/javascript" src="js/jquery.cf.main.js"></script>
+
+  	<!-- #EndEditable -->
+	</body>
+<!-- #EndTemplate -->
+</html>

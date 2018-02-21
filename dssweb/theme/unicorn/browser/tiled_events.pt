@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+  <div metal:fill-slot="content-core">
+    <metal:block define-macro="content-core">
+     <div tal:define="Batch python:modules['plone.batching'].Batch;
+                       OldBatch python:modules['Products.CMFPlone'].Batch;
+                       b_start python:request.get('b_start', 0);
+                       contentFilter contentFilter|request/contentFilter|nothing;
+                       contentFilter python:contentFilter and dict(contentFilter) or {};
+                       limit_display limit_display|request/limit_display|nothing;
+                       limit_display python:limit_display and int(limit_display) or None;
+                       results python:view.query(b_start=b_start, custom_query=contentFilter, b_size=limit_display);
+                       is_batch python:isinstance(results, Batch) or isinstance(results, OldBatch);
+                       batch python:is_batch and results or Batch(results, 40, int(b_start), orphan=2);">
+		  <div tal:define="
+		          folderContents folderContents | python:context.getFolderContents();
+		          Batch python:modules['Products.CMFPlone'].Batch;
+		          b_start python:request.get('b_start', 0);
+		          batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, 40, int(b_start), orphan=2);">
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+        <div id="dssweb-tiled-events">
+         <tal:entries repeat="brain batch">
+          <tal:entry tal:define="title brain/Title;
+                                 url brain/getURL;
+                                 date brain/start;
+                                 has_lead_image brain/hasContentLeadImage;
+                                 img_url string:${url}/@@images/leadImage/eventtile">
+          <a href="#" title=""
+             tal:attributes="href url;
+                             title title;">
+            <div class="event-tile">
+              <div class="event-image">
+                <img tal:condition="has_lead_image"
+                     tal:attributes="src img_url" />
+              </div>
+              <div class="event-details">
+                <p class="event-date" tal:content="python:date.strftime('%B %-d, %Y')">December 5th, 2015</p>
+                <h3 tal:content="title">[event title]</h3>
+              </div>
+            </div>
+          </a>
+          </tal:entry>
+         </tal:entries>
+        </div>
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+      </div>
+	</div>
+    </metal:block>
+  </div>
+</body>
+</html>

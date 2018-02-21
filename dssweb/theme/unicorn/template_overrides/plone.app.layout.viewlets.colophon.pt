@@ -1,0 +1,9 @@
+<div tal:define="bview python:context.restrictedTraverse('@@banner-image')"
+     id="banner_info"
+     tal:attributes="class bview/bodyStyle"
+     style="display:"
+    >
+    Wallpaper for this page:
+    <span tal:content="bview/wallpaperURL"
+          tal:attributes="class bview/divStyle; id bview/contentId" />
+</div>

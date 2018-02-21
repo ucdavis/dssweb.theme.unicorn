@@ -1,0 +1,14 @@
+from datetime import datetime, timedelta
+
+def DateMath(self, start, mins):
+        request = self.REQUEST
+        RESPONSE = request.RESPONSE
+        form = request.form
+	start = start
+	mins = int(mins)
+	dt = datetime.strptime(start, '%Y-%m-%d %H:%M')
+	later = dt + timedelta(minutes = mins)
+	#request.form.setdefault('end-date-and-time', later)
+        laterstr = later.strftime('%Y-%m-%d %H:%M:%S')
+        return laterstr
+   

@@ -1,0 +1,49 @@
+@charset "utf-8";
+@import "variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+
+#content-core {
+	button {
+		width: auto;
+		a {
+			padding: 5px;
+			text-decoration: none;
+			color: #000;
+			@include font_size(14px);
+		}
+	}
+	ul#pubs {
+		margin: 5px 0 15px 2px;
+		li {
+			margin-top: 10px;
+		}
+	}
+}
+/*----- Mobile breakpoint --------*/
+// At point that left and right margins are gone
+i {
+		font-style: italic !important;
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767 
+
+
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+
+}
+
+/*----- "M" breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992
+	.sidebar-right {
+		margin-top: 116px;
+	}
+}
+

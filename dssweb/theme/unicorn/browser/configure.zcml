@@ -1,0 +1,118 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="dssweb.theme.unicorn">
+	 
+	 <include package="plone.app.contentmenu" />
+	 
+
+    <include package=".faceted_views" />
+
+    <browser:page
+        name="search"
+        class=".search.Search"
+        permission="zope2.View"
+        for="*"
+        template="search.pt"
+        layer="dssweb.theme.unicorn.interfaces.IThemeSpecific"
+        />
+   
+    <browser:page
+        name="updated_search"
+        class=".search.Search"
+        permission="zope2.View"
+        for="Products.CMFCore.interfaces.IFolderish"
+        layer="dssweb.theme.unicorn.interfaces.IThemeSpecific"
+        template="updated_search.pt"
+        />
+
+	 <browser:page
+	 	     name="departments-finder"
+	 	     for="zope.interface.Interface"
+	 	     class=".departments.DeptNamesView"
+	 	     permission="zope2.View"
+	 	     />
+    <browser:page
+        name="tiled-event-listing"
+        class=".unified_view.CollectionUnifiedView"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="tiled_events.pt"
+        />
+    <browser:page
+        name="tiled-people-listing"
+        class=".unified_view.CollectionUnifiedView"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="tiled_people.pt"
+        />
+    <browser:page
+        name="tiled-event-listing"
+        class=".unified_view.TopicUnifiedView"
+        permission="zope2.View"
+        for="Products.ATContentTypes.interfaces.IATTopic"
+        template="tiled_events.pt"
+        />
+
+    <browser:page
+        name="tiled-event-listing"
+        class=".unified_view.FolderUnifiedView"
+        permission="zope2.View"
+        for="Products.ATContentTypes.interfaces.IATFolder"
+        template="tiled_events.pt"
+        />
+    <browser:page
+        name="office-hours-listing"
+        class=".unified_view.CollectionUnifiedView"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="oh_list.pt"
+        />
+    <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Tiled event listing"
+        action="tiled-event-listing"
+        description="List events here in a tiled display"
+    />
+    <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Tiled people listing"
+        action="tiled-people-listing"
+        description="List people here in a tiled display"
+    />
+	  <browser:menuItem
+	        for="plone.app.collection.interfaces.ICollection"
+	        menu="plone_displayviews"
+	        title="Tiled event listing"
+	        action="tiled-event-listing"
+	        description="List events here in a tiled display"
+			  />
+   <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Tiled people listing"
+        action="tiled-people-listing"
+        description="List people here in a tiled display"
+		  />
+   <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Office Hours Listing"
+        action="office-hours-listing"
+        description="Office Hours lists"
+		  />
+	<browser:viewlet
+	    name="dssweb.theme.unicorn.portalTop"
+	    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+	    template="templates/unicorntop.pt"
+	    layer="dssweb.theme.unicorn.interfaces.IThemeSpecific"
+	    permission="zope2.View"
+	/>
+	
+    
+
+</configure>

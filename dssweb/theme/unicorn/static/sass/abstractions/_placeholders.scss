@@ -1,0 +1,29 @@
+// Placeholders
+
+/* Example use case:
+
+  %abstract-class {
+    font-family: Verdana;
+  }
+ 
+  #my-div {
+    @extend %abstract-class;
+  }
+ 
+  #my-other-div {
+    @extend %abstract-class;
+  }
+
+  ... compiles as:
+  #my-div, #my-other-div {
+    font-family: Verdana;
+  }
+
+*/
+
+//create a list reset style
+%reset_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,182 @@
+
+/* RAK: Example styles for calendar component and associated themes 
+ * Note: Used calendar.scss instead
+ */
+@import "ucd-variables";
+@import "variables";
+/*@import "vendor/bootstrap"; // custom import of only bootstrap components organized in the vendor/bootstrap folder */
+/*@import "vendor/bootstrap_overrides"; */
+@import "collective.js.custom.jquerymin"; // custom import of only bootstrap  components organized in the vendor/bootstrap folder 
+/*@import "forms"; */
+/*@import "fullcalendarorig"; */
+
+/* event pop up ui overrides */
+
+div#content.event-popup div div.eventDetails.vcard div.vertical-listing div#event-body.zebra.rows div.row div.popup-nocol {
+	width:100%;
+	
+ 				h3.uc {
+    		  	text-transform: none;
+    			font-weight:bold;
+				letter-spacing: normal!important;
+}
+}
+div#content.event-popup p.documentDescription {
+	margin-bottom:20px;
+}
+
+/* COLOR INDEXES */
+
+a#sfc-ical-export {
+    float: right;
+}
+.fc-today{
+	background: #E5E9EF;
+	border:none;
+}
+.fc-event {
+	font-size:.85em;
+}
+.fc-grid .fc-event-time {
+    font-size: .8rem; }
+	 
+	 .fc-event-time, .fc-event-title {
+	     padding: 0 1px;
+	 }
+	 .fc-event-title {
+	     font-size: .7rem;
+	 }
+	 
+.fc-event.fc-event-vert.fc-event-start.fc-event-end {border-radius:8px;}
+
+/* I kow this looks like a duplicate, but it's an override */
+.fc-event, .fc-event-vert, .fc-event-start, .fc-event-inner, .fc-event-end , .fc-event-bg {
+	border-radius:8px;
+}
+.fc-ltr .fc-event-hori.fc-event-end, .fc-rtl .fc-event-hori.fc-event-start {
+	border-radius:8px;
+}
+
+
+/*.fc-event .fc-event-inner {
+    border-radius: 4px;
+    border-width: 1px;
+	 
+ } */
+
+#calendar div.fc-event.colorIndex-undefined {
+    border:1px solid #AAAAAA;
+}
+#calendar div.fc-event.colorIndex-undefined a {
+    background-color: #AAAAAA;
+}
+label.colorIndex-undefined {
+    color: #AAAAAA;
+}
+
+#calendar a.colorIndex-0 {
+    border:3px solid $evergreen;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-0 {
+    color: $evergreen;
+}
+
+#calendar a.colorIndex-1 {
+    border:3px solid $cal_popp;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-1 {
+    color: $cal_popp;
+}
+
+#calendar a.colorIndex-2 {
+    border:3px solid $sun_grass;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-2 {
+    color: $sun_grass;
+}
+
+#calendar a.colorIndex-3 {
+    border:3px solid $wine_grape;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-3 {
+    color: $wine_grape;
+}
+
+#calendar a.colorIndex-4 {
+    border:3px solid $west_redbud;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-4 {
+    color: $west_redbud;
+ }
+
+#calendar a.colorIndex-5 {
+    border:3px solid $gold_lup;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-5 {
+    color: $gold_lup;
+}
+
+#calendar a.colorIndex-6 {
+    border:3px solid $sky_blue;
+	 background-color:transparent;
+}
+
+label.colorIndex-6 {
+    color: $sky_blue;
+}
+
+#calendar a.colorIndex-7 {
+    border:3px solid $rec_blue;
+	 background-color:transparent;
+
+}
+label.colorIndex-7 {
+    color: $rec_blue;
+}
+
+#calendar a.colorIndex-8 {
+    border:3px solid $cork_oak;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-8 {
+    color: $cork_oak;
+}
+
+#calendar a.colorIndex-9 {
+    border:3px solid #c7d42a;
+	 background-color:transparent;
+}
+
+
+label.colorIndex-9 {
+    color: #c7d42a;
+}
+
+#calendar a.colorIndex-10 {
+    border:3px solid #cd6031;
+	  background-color:transparent;
+}
+
+label.colorIndex-10 {
+    color: #cd6031;
+}

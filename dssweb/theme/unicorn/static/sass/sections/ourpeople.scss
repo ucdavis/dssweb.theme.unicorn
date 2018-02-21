@@ -1,0 +1,335 @@
+@charset "utf-8";
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+/* ourpeople.scss */
+
+/* Colors */
+$cardbg_blue: $ucd_blue_10;
+$empty_blue: $ucd_blue_20;
+$cardbg_gray: #e5e5e5;
+$ucdtxt_blue: #4D688C; // based on?
+
+// Temp hide left and middle happy boxes
+// Note: Use .invisible class in markup instead
+/*#container-1, #container-2 {
+	visibility: hidden;
+}*/
+
+
+
+#content {
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+#am-content {
+	p {
+		@include line_height(18px,!important);
+	}
+}
+.genericTile {
+	padding-left: 0;
+	padding-right: 20px; // override bootstrap padding for consistency with left margin of lab
+	border: 5px solid white; // for 10px margin between items
+	background-color: $cardbg_blue;
+	.personEntryWrapper{
+		/* top: -10px; // sync with .caption margin-top  removed by carol */
+		left: 0;
+		background: $empty_blue;
+		width: 100px;
+		position: relative;
+		height: 100px !important;	
+		float: left;
+	}
+}
+/*---- Person tile -----*/
+span.personName {
+position: relative;
+padding-left: 10px;
+display: flex;
+margin-right: 0;
+padding-top: 5px;
+padding-bottom: 0px;
+font-size:0.86em;
+display: -webkit-flex; /* Safari */
+}
+.labs {
+padding-top: 5px;
+}
+.genericTile p, .genericTile p a {
+	@include font_size(13px,!important);
+	font-size:0.77rem !important;
+}
+
+#am-content {
+	padding: 0 0 15px 20px;
+}
+.op-sidebar-title {
+	text-align:left;
+	text-transform:uppercase;
+	
+	span{
+		@include font_size(16px);
+		color:#000;
+	}
+}
+.sidebar{
+	margin-top: 20px;
+	color: $ucdtxt_blue;
+	> div {
+		margin-left: 0;
+	}
+}
+
+.caption {
+	position: relative;
+	/* margin-top: 10px; dp */
+	/*margin-top: -10px; */
+	
+	/*margin-left: 100px; // keep contact text from wrapping under photo */
+	left: 10px;
+
+	p {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	
+	.personName {
+		a {
+			font-weight: bold;
+		}
+	}
+	a {
+		color: $ucd_blue_70;
+	}
+	.job {
+		@include font_size(11px, !important);
+		font-style:italic;
+	}
+}
+.caption.no-photo {
+	margin-left: 20px;
+}
+#dropdown-icon{
+	float:right;
+}
+.lab{
+	clear:left;
+	padding:5px 0;
+	padding-left:15px;
+	padding-bottom:0px;
+
+}
+
+.table-header{
+	margin-bottom: 2px;
+	background: $rec_blue;
+	color: #fff;
+	padding-left: 10px;
+	height: 50px;
+	@include line_height(50px);
+}
+
+#top-panel-row {
+	.bcontroller {
+		.btn-home.btn-primary {
+			padding-top: 7px !important;
+			background-position: 50% 14px !important;
+		}
+	}
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+	
+	#sbA { // pull menu-icon associated dropdown to right, removing right white margin
+		background-color: rgba(255,255,255, 0.98);
+		border: 2px solid $ucd_blue_10;
+		margin-right: -2px;
+		position: absolute;
+		top: 50px;
+		//padding-top: 15px; // this leaves artifacts on mobile, use .panel-body > h4
+		z-index: 2;
+	}
+
+	#container-3 {
+		z-index: 20;
+		h2 {
+			display: none;
+		}
+		h3 {
+			a {
+				color: #FFF;
+			}
+		}
+		p {
+			color: #FFF; //#000;
+		}
+		.panel-body {
+			margin-top: 0;
+			padding-top: 0 !important; // was 15px
+			padding-bottom: 0 !important; // was 15px
+			padding-left: 15px !important;
+			background-color: $rec_blue;
+			.content-wrap {
+				padding-top: 15px;
+				padding-bottom: 0 !important;
+			}
+		}
+		.bcontroller {
+			margin-left: 15px;
+			.btn-primary {
+				margin-top: 0 !important;
+				background-image: none;
+				background-color: transparent;
+				color: #FFF !important;
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	#content {
+		.menu-icon-right {
+			margin-right: 75px; // clear before running into sub-menu-icon
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		#top-panel-row {
+			margin-top: 115px;
+			.right-panel {
+				.panel-heading {
+					width: 50%;
+					margin-left: 50%;
+					background-color: rgba(0, 40, 85, 0.8);
+					.panel-title {
+						text-transform: uppercase;
+						a {
+							background-color: transparent;
+							@include font_size(16px,!important); // happy box is 17px
+							background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+							&.collapsed {
+								background: url(../../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+							}
+							&:hover {
+								background: url(../../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.sidebar{
+		//background:  $cardbg_gray;
+		
+		.panel-heading {
+			z-index: 3;
+			position: absolute;
+			top: 5px; // careful; this must position menu-icon just above text (when not active) and with good margin (when active)
+			right: 18px;
+			background-color: transparent !important;
+			
+			// adjust styles for collapse sidebar menu-icon parent
+			.op-sidebar-title {
+				display: inline;
+				a {
+					background-image: none !important;
+				}
+			}
+			.panel-title a, .panel-title a:hover {
+				position: static !important;
+				background-color: transparent !important;
+				background: none;
+				text-align: right;
+				width: 60px; 
+				height: 60px;
+				.menu-icon {
+					position: relative;
+					display: block;
+					width: 60px; 
+					height: 60px;
+					background-color: #FFF;
+					border: 4px solid $cardbg_gray;
+					span:after {
+						display: block;
+						top: 15px;
+						left: 14px;
+					}
+				}
+			}
+		}
+		.collapsible{
+			background: $cardbg_gray;
+		}
+		.panel-body {
+			padding: 15px 20px 20px 20px !important;
+			#c5-all p a { // hmm, making ALL larger doesn't do the trick
+				//@include font_size(32px,!important);
+			}
+			#c5 span {
+				@include font_size(30px,!important);
+				@include line_height(30px);
+				height: 30px !important;
+				width: 32px !important;
+				text-align: center;
+			}
+			.checkForm {
+				padding-top: 8px !important;
+				margin-bottom: 8px;
+				li {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+
+	#am-content {
+		padding: 0 20px 20px 20px;
+	}
+	.panel-body{
+		padding: 10px 0 !important;
+	}
+	
+	.genericTile {
+		border: 3px solid white; // for 6px margin between items
+		background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $cardbg_gray;
+    .oemail-label, .officeLocation, .lab {
+    	display: none;
+    }
+	}
+}
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	.sidebar {
+		margin-top: 65px;
+	}
+}
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	.genericTile {
+		.personEntryWrapper{
+			width: 100px;
+			height: 100px !important;
+		}
+	}
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
+	.sidebar {
+		padding-right: 85px;
+	}
+}
+
+@media screen and (min-width: $screen-lg-min) {	 // width > 1310px
+
+
+}
+
+/* /ourpeople.scss */

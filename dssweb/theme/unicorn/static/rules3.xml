@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Apply the following rules to standard Plone pages -->
+    <rules css:if-content="#visual-portal-wrapper">
+	    <theme href="index.html" if="$home_page" />
+
+	    <theme href="index.html" css:if-content="body.portaltype-front-page" />
+
+
+            <theme href="t13_event_b.html" css:if-content="body.portaltype-event" />
+			<theme href="t13_event_b.html" css:if-content="body.portaltype-dsscourse" />
+		<theme href="t3_bio.html" css:if-content="body.portaltype-fsdperson" />
+		
+		<theme href="t7_contact.html" css:if-content="body.portaltype-dsscontact" />
+
+       <theme href="t5_generic_landing.html" css:if-content=".subsection-prospective-students"/>
+	  <theme href="t11_calendar.html" css:if-content=".template-solgemafullcalendar_view" />
+	  <theme href="t14_search.html" css:if-content=".template-search" />
+	  <theme href="t17_fullwidth.html" css:if-content=".portaltype-jqxgrid_page" /> 
+      <theme href="t4_adhoc2.html" />
+
+      <!-- Replace title with Plone's page title  -->
+      <replace css:theme="html head title" css:content="html head title" />
+
+      <!-- Copy base tag from Plone -->
+      <before css:theme-children="html head" css:content="html head base" />
+
+      <!-- Copy meta tags from Plone head -->
+      <before css:theme-children="html head" css:content="html head meta" />
+	  
+      <!-- merge classes from Plone body with theme body -->
+      <merge attributes="class" css:theme="body" css:content="body" />
+	  <!--BugHerd. Two rules to accomodate pages from dssmaster -->
+     <before css:theme-children="html head" css:if-content=".site-psychology">
+		 <script type='text/javascript'>
+		 (function (d, t) {
+		   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		   bh.type = 'text/javascript';
+		   bh.src = '//www.bugherd.com/sidebarv2.js?apikey=gcpxr8nleubizlym3u8aag';
+		   s.parentNode.insertBefore(bh, s);
+		   })(document, 'script');
+		 </script>
+	 </before>
+     <before css:theme-children="html head" css:if-content=".site-DSS-Master">
+	 <script type='text/javascript'>
+	 (function (d, t) {
+	   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	   bh.type = 'text/javascript';
+	   bh.src = '//www.bugherd.com/sidebarv2.js?apikey=gcpxr8nleubizlym3u8aag';
+	   s.parentNode.insertBefore(bh, s);
+	   })(document, 'script');
+	 </script>
+    </before>
+   
+      <!--Copy script tags from Plone head to end of body-->
+      <!--after css:theme-children="html body" css:content="html head script" /-->
+
+		  <!--Home Page Rules-->
+   <rules if="$home_page">
+  	  <drop css:theme="#content > div.row > div" />
+      <!--drop all the portal footers on the front page -->
+      <drop css:content="dd.portlet-footer" />
+      <drop css:content="dd.portletFooter"/>
+   </rules>
+
+   <rules css:if-content="body.portaltype-front-page">
+
+  	  <drop css:theme="#content > div.row > div" />
+      <!--drop all the portal footers on the front page -->
+      <drop css:content="dd.portlet-footer" />
+      <drop css:content="dd.portletFooter"/>
+	  
+   </rules>
+   
+
+      <before css:theme="#util-bar-wrap > nav" css:content="#iss-top" />
+	  <!--front-page -->
+	  
+	  
+      <replace css:theme-children="#top-bar-wrap > nav > ul > li.name"
+               css:content="#portal-logo"  />
+	 
+	  <!--ISS Specific Rules -->
+	  <rules css:if-content="body.site-ISS">
+      <replace css:theme-children="#left-front-column"
+               css:content=".portletContentLeadImageCollectionPortlet.front-page-events" />
+      <replace css:theme-children="#middle-front-column"
+               css:content=".portletContentLeadImageCollectionPortlet.journal" />
+      <replace css:theme-children="#right-front-column"
+               css:content=".portletContentLeadImageCollectionPortlet.available-grants" />
+		   </rules>
+		   
+	  <!--Other sites-->	   
+	  <!--front page -->
+         <rules css:if-content="body.portaltype-front-page" >	  
+		         <replace css:theme-children="#left-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.featured-courses" />
+		         <replace css:theme-children="#middle-front-column"
+		                  css:content=".portletContentLeadImageCollectionPortlet.quick-facts" />
+		         <replace css:theme-children="#right-front-column"
+		                  css:content-children=".static-right" />
+
+				        <!-- News Happy Box -->
+				        <replace css:content=".front-page-news > dl > dd"
+				                 css:theme-children="#container-1 > div > div > div.content-wrap"  />
+				        <copy attributes="href"
+				              css:content=".front-page-news > dl > dd.portletFooter > span:nth-child(2) > a"
+				              css:theme="#container-1 > div > div > div.bcontroller > a"  />
+
+				        <!--  About Happy Box -->
+				        <replace css:content="#content-core"
+				                 css:theme-children="#container-2 div.content-wrap"  />
+				        <copy attributes="href"
+				              css:content="#portaltab-quick-facts > a"
+				              css:theme="#container-2 > div > div > div.bcontroller > a" />
+
+				  		  <!-- Events Happy Box -->
+				  	    <copy css:content=".front-page-events > dl > dd"
+				              css:theme="#container-3 > div > div > div.content-wrap" />
+				    		<copy attributes="href"
+				              css:content=".front-page-events > dl > dd.portletFooter > span:nth-child(2) > a"
+				              css:theme="#container-3 > div > div > div.bcontroller > a"  />
+
+				    		<!-- Front Page -->
+				    		<copy css:content="#parent-fieldname-title" css:theme="#middle-row" />
+		   		   </rules> <!--end front page rules-->
+      <!-- rule to set up title to replace static logo on ipad/mobile -->
+      <replace css:theme-children=".justname h1">
+         <xsl:for-each css:select="a#portal-logo">
+           <xsl:value-of select="@title" />
+         </xsl:for-each>
+      </replace>
+
+ <!--drop the events and giving tabs so they can be moved to the utility menu -->
+      <drop content='//*[@id="portaltab-events"]' />
+	 <drop content='//*[@id="portaltab-give"]' />
+         <drop content='//*[@id="portaltab-news"]' />
+         <drop content='//*[@id="portaltab-quick-facts"]' />
+		 <drop content='//*[@id="portaltab-contact"]' />
+		 <drop content='//*[@id="portaltab-index_html"]' />
+		 <drop content='//*[@id="portaltab-intranet"]' />
+      <!--utility menu links -->
+	 <copy attributes="href"
+		 css:content="#portaltab-index_html > a"
+		 css:theme="#uti-home > a" />
+   <!--replace css:theme="#uti-home > a"
+                   css:content="#portaltab-index_html > a" method="raw" /-->
+	   <replace css:theme="#uti-contact > a"
+	                   css:content="#portaltab-contact > a" method="raw" />
+      <replace css:theme="#uti-events > a"
+               css:content="#portaltab-events > a" method="raw" />
+      <replace css:theme="li#uti-news > a" css:content="#portaltab-news > a" />
+	    <copy attributes="href"
+            css:content="#portaltab-give > a"
+            css:theme="#uti-give > a" />
+     
+
+      <!-- desktop menu bar -->
+	  
+      <!-- Disabled Mega <after css:content="#portal-globalnav" css:theme=".top-bar ul.title-area" / -->
+	  <drop theme='//*[@id="uti-share"]' />
+
+      <!-- mobile menu bar -->
+      <replace css:theme-children="ul.left" css:content-children="#portal-globalnav" />
+      <replace content="//ul[contains(@class,'submenu')]/@class">
+          <xsl:attribute name="class">dropdown</xsl:attribute>
+		  <xsl:attribute name="style">margin-top: 0px;</xsl:attribute>
+      </replace>
+      <replace content="//li[contains(@class,'dropdown')]/@class">
+          <xsl:attribute name="class">has-dropdown</xsl:attribute>
+      </replace>
+	  <!--main menu bar -->
+	  
+
+	    <replace css:theme="h2.homepage-title" css:content="h1#parent-fieldname-title" />
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if="$home_page">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
+	    </xsl:attribute>
+	    </replace>
+            <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-content="/html/body[contains(@class,'portaltype-front-page')]">
+	    <xsl:attribute name="class">
+	    <xsl:if test='contains(current(),"documentFirstHeading")'>homepage-title</xsl:if>
+	    </xsl:attribute>
+	    </replace>
+		<!-- Various rules to handle different template titles plus some unicorn to add the correct classes -->
+	    <rules css:if-content="h1#parent-fieldname-title">
+		<replace css:theme="h1.content-title"  css:content="h1#parent-fieldname-title" />
+	    </rules>
+		<rules css:if-content="h1.documentFirstHeading">
+			<replace css:theme="h1.content-title" css:content="h1.documentFirstHeading" />
+		</rules>
+	    <replace content="//h1[contains(@class,'documentFirstHeading')]/@class" if-not-content="/html/body[contains(@class,'portaltype-front-page')]">
+  	    <xsl:attribute name="class">
+          <xsl:if test='contains(current(),"documentFirstHeading")'>content-title</xsl:if>
+  	    </xsl:attribute>
+	    </replace>
+
+      <!-- Search Fixups -->
+      <drop css:content=".searchSection" />
+      <copy css:content="#portal-searchbox" css:theme="#uti-search" />
+	    <replace content="//div[@id='portal-searchbox']//input[@class='searchButton']/@value">
+	    <xsl:attribute name="value">GO</xsl:attribute>
+	    </replace>
+	    <!-- search results page -->
+	    <rules css:if-content=".template-search">
+		    <after css:theme="html body" css:content="html head script"/>
+		    <replace css:theme-children="#content-row" css:content="#content" />
+		    <drop css:theme=".title-box" />
+	    </rules>
+		    
+	    <!--related items-->
+	    <rules css:if-content="#viewlet-below-content-body">
+		    <after css:theme="#content-core" css:content="#viewlet-below-content-body" />
+	    </rules>
+	    
+         <!--- Footer -->
+	 
+         <copy css:content=".department-contact"
+                css:theme="#vcard" />
+         <drop css:content=".footer-nav > .portlet.portletNavigationTree" />
+         <replace css:theme-children="#footer-middle"
+                  css:content=".footer-nav > dl > dd > ul.navTree.navTreeLevel0"
+                  method="raw"/>
+	    <replace css:theme-children="#foot-social"
+					  css:content-children=".portlet-static-social-media > ul" />
+         <drop css:theme="#foot-center" />
+         <drop css:theme="#foot-right" />
+   	  <replace css:theme="#copyright" css:content="#portal-footer" />
+    
+  		
+  		
+  		<!-- Breadcrumbs for all but front page -->
+  		<replace css:theme-children=".breadcrumb" css:content="#portal-breadcrumbs" />
+  		<drop css:content="#breadcrumbs-you-are-here" />
+      <replace css:content=".breadcrumbSeparator">
+        <span class="bread-divider">|</span>
+      </replace>
+       
+
+    	<!-- Global Rules -->
+
+    	<!-- Description -->
+	<replace css:theme="p.intro" css:content="#parent-fieldname-description" />
+	<before css:theme="h1.content-title" css:content="#kssPortalMessage" />
+   <!--T11 Calendar -->
+   <rules css:if-content=".template-solgemafullcalendar_view">
+	   <after css:theme="html body" css:content="html head script"/>
+	   <replace css:theme-children="#calendar" css:content="#calendar" />
+	   <replace css:theme-children=".widget-fieldset" css:content="#fieldset-Subject" />
+	   <copy attributes="href"
+		 css:content="a#sfc-ical-export"
+		 css:theme="#ical-icon > a" />
+   <drop css:theme="#rss-icon" />		 
+	  
+   </rules>
+	   
+   <!--Portaltype Collection -->
+  
+	   <rules css:if-content=".portaltype-topic">
+		   <rules css:if-not-content=".template-solgemafullcalendar_view">
+		<before css:theme="#content-core" css:content="#parent-fieldname-description" />
+	   <replace css:theme-children="#content-core" css:content-children="#content" />
+   </rules>
+   </rules>
+   <rules css:if-content=".template_login-form">
+	<before css:theme="#content-core" css:content="#parent-fieldname-description" />
+   <replace css:theme-children="#content-core" css:content-children="#content" />
+ </rules>
+	   
+   <rules css:if-content=".template-criteria_form">
+   <replace css:theme-children="#content-core" css:content="#content-core" />
+</rules>
+   <rules css:if-content=".template-summary_view">
+	 <replace css:theme-children=".panel-body" css:content-children="#content-core" />
+     </rules>
+     <rules css:if-content=".template-all_content">
+    	 <replace css:theme-children=".panel-body" css:content-children="#content-core" />
+         </rules>
+ 
+    	<!-- Content-core-T4 --> 
+    	<replace css:theme-children=".panel-body" css:content="#content-core" css:if-content=".portaltype-document" />
+	<replace css:theme-children=".panel-body" css:content=".pfg-form" css:if-content=".portaltype-formfolder" />
+		<!--this rule breaks the faceted nav-->
+    	<!--replace css:theme-children=".panel-body" css:content="#content-core" css:if-theme=".adhoc" /-->
+    	
+        <before css:theme="#content-core"
+                css:content=".newsImageContainer" css:if-content=".portaltype-document" />
+	
+	
+	<rules css:if-content=".portaltype-dsstwocollumnpage">
+				 
+	    <before css:theme="#content-row"
+		         css:content=".topImageContainer" />
+        <replace css:theme-children="#content" css:content=".belowImageContent"/>
+   </rules>
+   <!-- content posts -->
+      <rules css:if-content=".portaltype-content-posts">
+	   
+	   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />     
+	</rules>
+	
+	<!--ploneformgen-->
+	<rules css:if-content=".template-fg_thankspage_view_p3">
+		<replace css:theme-children="#content" css:content="#content" />
+	</rules>
+    	
+        <!--before css:theme="#content-core"
+                css:content=".newsImageContainer" css:if-theme=".adhoc"/-->
+    <rules css:if-not-content=".subsection-prospective-students" >
+	 
+             <before css:theme="#content-core" css:content="#parent-fieldname-description" />
+         
+     </rules>
+    	<!-- Basic Right Portlet -->
+    	<replace css:theme-children=".sidebar-right" css:content=".portlet" />
+        
+    	<!-- Events Page -->
+      <rules css:if-content="body.portaltype-event">
+        <replace theme='//*[@id="content"]/h1'
+                 content='//*[@id="parent-fieldname-title"]' />
+        <before css:theme="#content-core"
+                css:content=".newsImageContainer" />
+        
+        <!--drop theme='//*[@id="content-core"]/div[1]' />
+        <replace css:theme="div.zebra.rows"
+                 css:content="#content-core > div" /-->
+		<replace css:theme="#content-core" css:content="#content-core" />   
+      </rules>
+	  
+	  <!---Courses Page-->
+       <rules css:if-content=".portaltype-jqxgrid_page" >
+    	   <replace css:theme="#content-core" css:content="#content-core" />
+	   <after css:theme="html body" css:content="html head script"/>
+       </rules>
+       <!-- File View -->
+	  <rules css:if-content=".portaltype-file">
+	  <replace css:theme="#content-core" css:content="#content-core" />
+  </rules>
+  <!--expanded course descriptions -->
+     <rules css:if-content=".portaltype-dsscourse">
+      <replace css:theme="#content-core" css:content="#content-core"/>
+	    </rules>
+
+	  <!--Person bio-->
+	   <rules css:if-content="body.portaltype-fsdperson">
+		   <replace css:theme="h1.content-title" css:content="h1.content-title" />
+		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+		  
+	   </rules>
+	   <!--Person directory Page Faceted Nav T2 -->
+	   <rules css:if-content=".template-facetednavigation_view">
+		   <after css:theme="html body" css:content="html head script"/>
+		    
+		    <!--after css:theme-children="html body" css:content="html head script" /-->
+			<replace css:theme="#am-content > p" css:content=".documentDescription" />
+		    <replace css:theme="h4.table-header" css:content="#faceted-center-column" />
+			<replace css:theme="#search-results" css:content="#faceted-results" />
+			<replace css:theme-children="#left-area" css:content-children="#left-area" />
+			<drop theme='//*[@id="pager-top"]' />
+		    <drop theme='//*[@id="pager-bottom"]' />
+
+	   </rules>
+	  <!--Prospective Students T5-->
+	   <rules css:if-content=".subsection-prospective-students" >
+             <drop css:content=".image-under-banner" />
+              <replace css:theme="#corner-box-target" css:content=".image-under-banner" method="raw" />
+		    	<replace css:theme-children="#nested-right" css:content="#content-core" />
+		</rules> 
+	   <!--Contact Page rules -->
+	   <rules css:if-content="body.portaltype-dsscontact" >
+		   <replace theme='//*[@id="google-map"]' content='//*[@id="viewlet-above-content-title"]' />
+		   <replace theme='//*[@id="content-core"]' content='//*[@id="content-core"]' />
+		   <!--replace css:theme-children=".sidebar-1" css:content=".side-contact" /-->
+		   <replace css:theme-children=".adr-only" css:content=".side-contact" />
+		   <replace css:theme-children=".sm-contacts" css:content=".key-contacts" />
+	   </rules>
+	  
+	   
+	   <!-- Folder listing views -->
+	   
+	   
+	   <rules css:if-content=".portaltype-folder">
+	   	   <rules css:if-not-content=".template-facetednavigation_view">
+			   <rules css:if-not-content=".template-solgemafullcalendar_view">
+				   <rules css:if-not-content=".template-search">
+	   		   <replace css:theme=".panel-body" css:content=".tileItem" />
+	   		   <replace css:theme="#content-core" css:content="#content-core"/>
+	   	   </rules>
+	   </rules>
+	   </rules> 
+   </rules>
+		   
+	  
+		   
+
+      
+      <replace css:theme="#wallpaper_fix">
+        <script id="wallpaper_fix">
+          $(".wall").wallpaper({
+              source: "@@banner-image"
+          });
+        </script>
+      </replace>
+	 
+
+      <!-- desktop megamenu animation -->
+      <after theme-children="html/body" css:if-content=".site-psychology">
+        <script type="text/javascript">
+          jQuery(function ($) {
+              var mmenu = $('#portal-globalnav li > ul.dropdown');
+
+              $('#portal-globalnav').hover(
+                  function() {
+                      mmenu.slideDown('fast');
+                  },
+                  function() {
+                      mmenu.hide();
+                  }
+              );
+          });
+        </script>
+      </after>
+	  <!--Individual Site rules -->
+	 
+      <!--Mobile -->
+      <!--drop theme='//*[@id="share-util-btn"]' /-->
+      <copy attributes="href" css:content="#portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f4953530a636f6e74616374 > div > p:nth-child(3) > a" css:theme="#email-util-btn > a" />
+      <!--temp drop extra mobile buttons because they don't yet work -->
+      <drop css:theme="#content-core > div.panel.panel-default.bottom-panel.left-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
+      <drop css:theme="#content-core > div.panel.panel-default.bottom-panel.middle-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
+      <drop css:theme="#content-core > div.panel.panel-default.bottom-panel.right-panel > div.panel-heading.hidden-lg.hidden-md > h4"  />
+
+<!--
+      <merge attributes="class" css:content="#banner_info" theme="/html/body" />
+      <copy attributes="class"
+        css:content="#banner_info span"
+        css:theme="div.jumbotron div div" />
+      <copy attributes="id"
+        css:content="#banner_info span"
+        css:theme="#content-row > div#content" />
+-->
+
+
+</rules>    
+
+
+    <!-- XSL templates here; must be in outermost rules tag -->
+
+<!--
+    <xsl:template match="img[@class='newsImage']/@src">
+        <xsl:attribute name="src"><xsl:value-of select="concat(substring-before(., '_mini'), '_large')" /></xsl:attribute>
+    </xsl:template>
+    <xsl:template match="img[@class='newsImage']/@height"></xsl:template>
+    <xsl:template match="img[@class='newsImage']/@width"></xsl:template>
+    <xsl:template match="img[@class='newsImage']/@class">
+        <xsl:attribute name="class">img-responsive</xsl:attribute>
+    </xsl:template>
+-->
+
+</rules>

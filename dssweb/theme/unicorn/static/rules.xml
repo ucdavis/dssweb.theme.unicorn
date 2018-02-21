@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Apply the following rules to standard Plone pages -->
+  
+  
+  	
+<rules css:if-content="#visual-portal-wrapper">
+	
+	<!--rules css:if-content=".userrole-member">
+		<theme href="lightindex.html"/>
+       <before css:theme-children="html head" css:content="html head base" />
+		<replace css:theme-children="html head" css:content="html head meta" />
+		<after theme-children="/html/head" content="/html/head/link | /html/head/style" />
+		<replace css:theme="html body" css:content="html body" />
+		
+	
+	</rules-->
+
+	
+
+	<theme href="index.html" css:if-content="body.portaltype-front-page" />
+   
+	
+	
+	
+	<!-- Replace title with Plone's page title  -->
+	<replace css:theme="html head title" css:content="html head title" />
+
+	<!-- Copy base tag from Plone -->
+	<before css:theme-children="html head" css:content="html head base" />
+
+	<!-- Copy meta tags from Plone head -->
+	<before css:theme-children="html head" css:content="html head meta" />
+
+	 
+	  <!-- bring in css from plone portal_css, since theme css is now registered -->
+	  <!--drop theme="/html/head/link" />
+	  <drop theme="/html/head/style" /-->
+
+	  <!-- Pull in Plone CSS -->
+	  <!--after theme-children="/html/head" content="/html/head/link | /html/head/style" /-->
+	   
+	  <!-- drop theme Javascript -->
+	  <!--drop theme="/html/body/script" /-->
+	  
+	  	  
+	 
+	  <!--pull in script tags from Plone head to end of body-->
+	  	<after css:theme="html head" css:content="html head script" />
+
+
+	<!-- merge classes from Plone body with theme body -->
+	<merge attributes="class" css:theme="body" css:content="body" />
+
+	  <!-- drop theme js -->
+	  
+	  <!--copy javascript in from registry -->
+  
+
+  <rules css:if-content="body.portaltype-front-page">
+      <!--drop css:content="html head script" /-->
+	  
+
+ 	 
+	 
+  
+  </rules>
+  <!--colors for people portlets -->
+</rules>
+</rules>

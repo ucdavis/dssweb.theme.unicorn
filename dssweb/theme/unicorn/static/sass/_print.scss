@@ -1,0 +1,241 @@
+/* Removes certain elements when printing, and apply basic font styles
+   for the remaining content. */
+@media print {
+	
+	@page { margin: 0.25in; }
+	
+   /*If background colors desired (mileage varies):
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact */
+
+	
+
+body {
+	font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+}
+.collapse {
+    display: block !important;
+    height: auto !important;
+	padding-left:15px;
+}
+div#util-bar-wrap {
+    margin-top: -35px;
+}
+.util-bar{
+   background-color: #DAAA00;
+    height: 40px;
+    margin-top: 56px;
+    margin-left: auto
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+	font-weight: bold;
+	line-height: 125%;
+	page-break-inside: avoid;
+	page-break-after: avoid;
+}
+h1, h2 {
+	letter-spacing: -0.05em;
+}
+li#uti-logo {
+	float:right;
+}
+li#uti-logo a.blue {
+	display:none;
+}
+li#uti-logo a.gold {
+	float:right;
+	border-bottom:0px;
+
+}
+
+
+
+.top-bar-section ul {
+	display:none;
+}
+li#logosm.justname > h1 {
+	display:none;
+}
+#toggle-topbar-item > div {
+	display:none;
+}
+.sidebar-right {
+	display:none;
+}
+.portlet-thingies {
+	display:none;
+}
+div.doormatColumn.column-1, div.doormatColumn.column-2 {
+	display:none;
+}
+#doormat-container .doormatColumn {
+    /* float: left; */
+    margin: 0px 0px;
+}
+.column-0 {
+    color: #000;
+	text-align:center;
+	width:100%;
+    /* width: 26%; */
+}
+#event-description > div.col-xs-12.col-sm-12.col-md-8.col-lg-8 > div {
+	margin-top: -45px;
+	padding-left: 35%;
+}
+#content {
+	width:100%;
+}
+a {
+	text-decoration: none;
+	border-bottom: 0.1em solid gray;
+	color: black;
+}
+#portal-column-content {
+	width: 95%;
+}
+
+.documentDescription {
+	font-weight: bold;
+}
+pre {
+	border: 1pt dotted black;
+	white-space: pre;
+	font-size: 8pt;
+	overflow: auto;
+	padding: 1em;
+}
+table.listing,
+table.listing td {
+	border: 1pt solid black;
+	border-collapse: collapse;
+}
+table.listing td,
+table.listing th {
+    padding: 6px;
+}
+
+/* Page break class for use when printing */
+div.pageBreak {
+	page-break-before: always;
+}
+
+/* Basic styles for listing and document views */
+#content dt {
+	margin:1em 0 0.625em;
+}
+#content p, #content table {
+	margin-bottom:0.625em;
+	margin-top:0;
+}
+.relatedItems {
+	display:none;
+}
+#category.documentByLine{
+	visibility:hidden;
+}
+#category.documentByLine a {
+	visibility:visible;
+	font-size: 1.5rem;
+	color: $rec_blue;
+	float:right;
+	padding-right:20px;
+	
+}
+/*#content .documentDescription, #content #description {
+    margin:0.5em 0 1.31em; 
+} */
+#footer .foot-wrap {
+   display:none;
+}
+
+
+/* Uncomment these if you want link addresses inserted along with the link text
+   when you print.
+#content a:link:after,
+#content a:visited:after {
+   content: " [" attr(href) "] ";
+}
+*/
+
+/* Hide all the elements that are irrelevant for printing */
+div.top,
+.jumbotron,
+li.hidden-xs,
+#portal-siteactions,
+.hiddenStructure,
+#portal-searchbox,
+#portal-globalnav,
+#portal-personaltools,
+#portal-breadcrumbs,
+#edit-bar,
+#portal-column-one,
+#portal-column-two,
+#portal-languageselector,
+.contentViews,
+.contentActions,
+.help,
+.sticky,
+.legend,
+.portalMessage,
+.documentActions,
+.netscape4,
+#viewlet-below-content .reply,
+#viewlet-below-content .discussion,
+#kss-spinner,
+#review-history,
+#content-history,
+.listingBar,
+#portal-footer,
+#portal-colophon,
+.skipnav,
+#kss-spinner,
+#review-history,
+#content-history,
+.listingBar,
+.link-presentation,
+input.standalone,
+.overlay,
+.managePortletsFallback,
+.close,
+.link-parent,
+#event-url,
+.draggingHook,
+#foldercontents-order-column,
+input.context,
+.visualNoPrint {
+	display: none;
+}
+
+/* Image alignment classes */
+.image-left {
+	float: left;
+	clear: both;
+	margin: 0.5em 1em 0.5em 0;
+	border: 0.4pt solid Black;
+}
+.image-inline {
+	float: none;
+}
+.image-right {
+	float: right;
+	clear: both;
+	margin: 0.5em;
+	border: 0.4pt solid Black;
+}
+dd.image-caption {
+	text-align:left;
+	padding: 0; margin:0;
+}
+dl.captioned {
+	padding: 0.8em;
+}
+.newsImageContainer {
+	float:right;
+	margin: 0 0 0.5em 1em;
+	width: 16em;
+}
+
+
+}

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en"><!-- #BeginTemplate "/Templates/adhoc.dwt" -->
+	<head>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+		<!-- #BeginEditable "title" -->
+	    <title>t16_tables.html</title>
+	  <!-- #EndEditable -->
+	  <link type="text/css" href="assets/vendor/reset.css" rel="stylesheet" />
+		<link type="text/css" href="assets/vendor/topbar.css" rel="stylesheet" />
+		<link type="text/css" href="bower_components/Wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+	  <link type="text/css" href="assets/styles.css" rel="stylesheet" />
+		<link type="text/css" href="assets/sub-org.css" rel="stylesheet" />
+
+		<!-- #BeginEditable "header" -->
+	  <link type="text/css" href="assets/sections/tables.css" rel="stylesheet" />
+	  <!-- #EndEditable -->
+
+	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	  <!--[if lt IE 9]>
+	    <script src="js/contrib/html5shiv.min.js"></script>
+	    <script src="js/contrib/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+  <!-- #BeginEditable "body-tag" -->
+  <body class="ad-hoc">
+  <!-- #EndEditable -->
+		<div id="skip-link"><a href="#content" class="sr-only sr-only-focusable">Skip to main content</a></div>
+
+	  <div class="row jumbotron">
+			<div class="siders">
+				<div class="wall shadow-graphic">
+		    	&nbsp;
+				</div>
+			</div>
+	  </div>
+
+	  <div id="main-container" class="container">
+	    <div id="util-bar-wrap" class="row">
+	      <nav class="util-bar">
+	        <ul>
+          	          <li class="hidden-xs" id="uti-home">
+                     <a href="#">
+                       <img src="images/icons/home.png" alt="Home" />
+                     </a>
+          	          </li>
+       	          <li class="hidden-xs" id="uti-contact">
+       	            <a href="contact">Contact</a>
+       	          </li>
+	          <li class="hidden-xs" id="uti-news">
+	            <a href="#">Latest News</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-events">
+	            <a href="#">Events</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-give">
+	            <a href="#">Give</a>
+	          </li>
+	          <li class="hidden-xs" id="uti-search">
+	            <form action=".">
+								<label for="searchi" class="sr-only">Search</label>
+	              <input type="search" name="searchi" id="searchi" placeholder="Search" />
+								<input type="submit" name="submit" value="GO" />
+	            </form>
+	          </li>
+	          <li class="hidden-xs" id="uti-share">
+	            <a href="#"></a>
+	          </li>
+	          <li id="uti-logo">
+	            <a href="http://www.ucdavis.edu">
+	              <img src="images/logos/nav-logo.png" alt="UC Davis" />
+	            </a>
+	          </li>
+	        </ul>
+	      </nav>
+	    </div>
+
+			<div id="top-bar-wrap" class="row">
+		    <nav class="top-bar" data-topbar="">
+
+		      <!-- Title -->
+		      <ul class="title-area">
+		        <li class="name">
+		            <a id="name-icon" href="index.html"><img src="images/logos/psychology-logo.gif" alt="UC Davis Department of Psychology" title="UC Davis Department of Psychology" /></a>
+		        </li>
+ 			   <!--li id="logosm" class="justname">
+ 				   <h1>
+ 				     <a id="portal-logo">
+ 				 </h1>
+ 			  </li-->
+						<li id="toggle-topbar-item">
+			        <!-- Mobile Menu Toggle -->
+							<div class="toggle-topbar menu-icon">
+								<a href="#">
+									<span></span>
+								</a>
+							</div>
+						</li>
+		      </ul>
+
+		      <!-- Top Bar Section -->
+		      <section class="top-bar-section">
+		        <!-- Top Bar Right Nav Elements -->
+		        <ul class="left">
+		          <!-- Dropdown -->
+		          <li id="contact-btn" class="has-dropdown">
+		            <a href="t7_contact.html">Contact</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">This is a super long item to demonstrate button text flow</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a>
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="students-btn" class="has-dropdown">
+		            <a href="t8_students.html">Students</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="researc-btn" class="has-dropdown">
+		            <a href="#">Research</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="people-btn" class="has-dropdown">
+		             <a href="t2_ourpeople.html">Our People</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 3</a>
+		              </li>
+		              <li class="has-dropdown">
+		              <a href="#">Sub-item 4</a>
+		              <!-- Nested Dropdown -->
+		              <ul class="dropdown">
+		                <li>
+		                  <a href="#">Sub-item 2</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 3</a>
+		                </li>
+		                <li>
+		                  <a href="#">Sub-item 4</a>
+		                </li>
+		              </ul></li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		          <li id="fac-serv-btn" class="has-dropdown">
+		            <a href="#">Facilities &amp; Services</a>
+		            <ul class="dropdown">
+		              <li>
+		                <a href="#">Sub-item 1</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 2</a>
+		              </li>
+		              <li>
+		                <a href="#">Sub-item 5</a>
+		              </li>
+		            </ul>
+		          </li>
+		        </ul>
+		      </section>
+		    </nav>
+			</div>
+	    <!-- #BeginEditable "content" -->
+
+			<div id="content-row" class="row">
+
+			  <div id="content" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="breadcrumb"><p><a href="index.html">Home</a> <span class="bread-divider">|</span> <a href="#">Current Students</a> <span class="bread-divider">|</span> <a href="#">Degrees</a></p></div>
+			    <h1 class="content-title">Psychology: Bachelor of Arts</h1>
+
+					<div id="content-core">
+						<p class="description intro">
+							<strong>Requirements for Declaring Major:</strong> Completion of lower division courses with a combined GPA of 2.50 (all courses must be taken for a letter grade). A 2.00 GPA is required in upper division Psychology and overall UCD course work.
+						</p>
+						
+						<div id="cm-section">
+							<section class="clearfix">
+								<h2>Lower Division</h2>
+								<div class="inline-content">
+									<p class="description">
+										Students who <strong>entered college prior to Fall 2012</strong> have an additional preparatory course included in requirements for declaring the major: Sociology/Cultural Anthropology.
+									</p>
+									<table id="lowD" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<tr class="row header hidden-xs">
+											<td class="col-lg-5 col-md-5">
+												Description
+											</td>
+											<td class="col-lg-7 col-md-7">
+												Courses
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12 first">
+												<h3 class="visible-xs">Description</h3>
+												Psychology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">1</a>, <a href="#">41</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Statistics
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">13</a> or <a href="#">100</a>
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Biological Sciences
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">2A</a> or <a href="#">10</a> and one of the following: <a href="#">Anthropology 1</a>, <a href="#">Molecular &amp; Cellular Biology 10</a>, <a href="#">Neurobiology, Physiology &amp; Behavior 10</a>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</section>
+							
+							<section>
+								<h2>Upper Division (40 units)</h2>
+								<div class="inline-content">
+									<p class="description">
+										Forty (40) upper division units including <strong>6 core group courses:</strong> 2 from two of the four Core Groups and 1 from each of the remaining two Core Groups. The remainder of the 40 required units can be taken from other Core Group courses or Psychology courses that are not in the Core Groups. None-Core Group courses are called "Psychology Electives".
+									</p>
+									<table id="uppD" class=" table table-bordered ">
+										<tr class="row header hidden-xs">
+											<td class="col-lg-2 col-md-3" width="33%">
+												Core Group
+											</td>
+											<td class="col-lg-4 col-md-4" >
+												Emphasis
+											</td>
+											<td class="col-lg-6 col-md-5">
+												Courses
+											</td>
+										</tr>
+										<tr class="row core">
+											<td class="col-lg-2 col-md-3 col-sm-12 col-xs-12 first">
+												<p class="visible-xs group">Core Group A</p>
+												<p class="hidden-xs">A</p>
+											</td>
+											<td class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Emphasis</h3>
+												<p class="emph">Preception/Cognition &amp; Cognitive Neuroscience</p>
+											</td>
+											<td class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">100</a>, <a href="#">130</a>, <a href="#">131</a>, <a href="#">132</a>, <a href="#">135</a>, <a href="#">136</a>
+											</td>
+										</tr>
+										<tr class="row alt core">
+											<td class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+											<p class="visible-xs group">Core Group B</p> 
+											<p class="hidden-xs">B</p>
+											</td>
+											<td class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Emphasis</h3>
+												<p class="emph">Biological Psychology</p>
+											</td>
+											<td class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">101</a>, <a href="#">113</a>, <a href="#">121</a>, <a href="#">123</a>, <a href="#">125</a>, <a href="#">126</a>, <a href="#">137</a>, <a href="#">159</a>
+											</td>
+										</tr>
+										<tr class="row core">
+											<td class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+											<p class="visible-xs group">Core Group C</p>
+											<p class="hidden-xs">C</p>
+											</td>
+											<td class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Emphasis</h3>
+												<p class="emph">Social/Personality</p>
+											</td>
+											<td class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">151</a>, <a href="#">152</a>, <a href="#">154</a>, <a href="#">158</a>, <a href="#">161</a>, <a href="#">162</a>, <a href="#">168</a>
+											</td>
+										</tr>
+										<tr class="row core alt">
+											<td class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+												<p class="visible-xs group">Core Group D</p> 
+												<p class="hidden-xs">D</p>
+											</td>
+											<td class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Emphasis</h3>
+												<p class="emph">Developmental</p>
+											</td>
+											<td class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">140</a>** or <a href="#">Human Development (HDE) 110A</a>, <a href="#">HDE 100B</a>, <a href="#">141</a> or <a href="#">HDE 101</a>, <a href="#">142</a> or <a href="#">HDE 102</a>, <a href="#">143</a>, <a href="#">146</a>, <a href="#">148</a>
+											</td>
+										</tr>
+										<tr class="row">
+											<td class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="aster">
+												**asterisk text goes here
+											</td>
+										</tr>
+									</table>
+								</div>
+							</section>
+							<section>
+								<h2>Psychology Electives (16-18 units)</h2>
+								<div class="inline-content">
+									<p class="description">
+										To fullfill the elective courses requirement, select any of the Psychology (PSC) courses below, or additional PSC courses from the Core groups above.
+									</p>
+									<table id="elect" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<tr class="row header hidden-xs">
+											<td class="col-lg-5 col-md-5">
+												Description
+											</td>
+											<td class="col-lg-7 col-md-7">
+												Courses
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12 first">
+												<h3 class="visible-xs">Description</h3>
+												Statistical Analysis of Psychological Data
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">103A</a>, <a href="#">103B</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Applied Psychometrics: An Introduction to Measurement Theory
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">104</a>
+										</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Questionnaire and Survey Research Methods
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">107</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Agent-Based Modeling
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">120</a>
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Comparative Neuronatomy
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">124</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Psychology and Law
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">153</a>
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Environmental Awareness
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">155</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Stereotyping, Prejudice, and Stigma
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">157</a>
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Introduction to Clinical Psychology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">165</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Research in Cognitive and Social Pyschology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">180A</a>
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Research in Biological Psychology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">180B</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Research in Personality and Social Psychology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">180C</a>
+											</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												History of Psychology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">185</a>
+											</td>
+										</tr>
+										<tr class="row alt item">												<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Seminar in Psychology
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a h<a href="#">190</a>										</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Fieldwork in Psychology</br>
+												(4 units max toward major)
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a h<a href="#">192</a>										</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Specialty Study for Honors Students
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a h<a href="#">194HA-HB</a>										</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Special Study for Advanced Undergraduates								
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a href="#">199</a>
+											</td>
+										</tr>
+										<tr class="row alt item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Directed Group Study	
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												<a h<a href="#">198</a>										</td>
+										</tr>
+										<tr class="row item">
+											<td class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+												<h3 class="visible-xs">Description</h3>
+												Other Non-Deparmental Courses
+											</td>
+											<td class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+												<h3 class="visible-xs">Courses</h3>
+												Courses appoved for Upper Division only										</td>
+										</tr>
+									</table>
+								</div>
+							</section>
+						</div><!-- /.cm-section -->
+						
+					</div><!-- /#content-core -->
+			  </div>
+			  <!-- /#content -->
+				<!-- #EndEditable -->
+				<div class="sidebar sidebar-right col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					
+					<div class="portlet contacts pcch">
+						<h3>Contact</h3>
+						<div class="portlet-content">
+		
+					  	<div class="vcard office">
+								<h4 class="org lh">
+									<a class="url" href="http://psychology.ucdavis.edu/advising/">Advising Information</a>
+								</h4>
+								<h4 class="fn">Paul Hastings</h4>
+								<p class="category">Advisor</p>
+								<div class="adr">
+									<span class="street-address">141 Young Hall&nbsp;
+									<br>
+									One Shields Avenue</span>
+									<br>
+									<span class="locality">Davis</span>
+									,
+									<abbr class="region" title="California">CA</abbr>
+									<span class="postal-code">95616</span>
+								</div>
+								<div class="tel">(530) 752-9572</div>
+								<div class="email"><a href="mailto:">Email</a></div>
+								<div class="office-hours">
+									<div class="office-hours-note">Appointment Hours:</div>
+									<div class="day-time-row">T, Th 9:00 - 11:30AM</div>
+									<div class="day-time-row">M, W 1:30 - 3:30PM</div>
+									<div class="appt-service-row">
+										<a href="https://cas.ucdavis.edu/cas/login?service=https%3a%2f%2fappointments.ucdavis.edu%2fdefault.aspx%3fcalendar%3d21"><img src="images/icons/book-now-btn.png"/></a>
+									</div>
+								</div>
+							</div><!-- /.vcard -->
+
+					  </div>
+					</div>
+					<!-- /.portlet -->
+					
+				</div><!-- /.sidebar-right -->
+				</div><!-- /#content-row -->
+
+
+
+			<div id="footer" class="row">
+				<div class="foot-wrap">
+					<ul id="foot-social">
+						<li class="first"><a id="facebook-icon" href="#"><span class="text-hide">Facebook</span></a></li>
+						<li><a id="twitter-icon" href="#"><span class="text-hide">Twitter</span></a></li>
+						<li><a id="pinterest-icon" href="#"><span class="text-hide">Pinterest</span></a></li>
+						<li><a id="youtube-icon" href="#"><span class="text-hide">YouTube</span></a></li>
+						<li class="last"><a id="linkedin-icon" href="#"><span class="text-hide">LinkedIn</span></a></li>
+					</ul>
+					<div id="vcard">
+						<p>
+							<span class="org">Department of Psychology <br />
+							University of California, Davis</span><br />
+							<span class="street-address">135 Young Hall <br />
+							One Shields Avenue</span><br />
+							<span class="locality">Davis</span>, <abbr class="region" title="California">CA</abbr> <span class="postal-code">95616</span>
+						</p>
+						<p id="email-phone" class="hidden-xs">
+							<span class="email"><a href="mailto:">Email</a></span> | <span class="tel">(530) 752-1880</span>
+						</p>
+					</div
+					<div id="footer-middle">
+					<ul class="footer-nav hidden-xs" id="foot-left">
+						<li><a href="t7_contact.html">Contact</a></li>
+						<li><a href="t8_students.html">Students</a></li>
+						<li><a href="#">Research</a></li>
+						<li> <a href="t2_ourpeople.html">Our People</a></li>
+						<li><a href="#">Facilities & Services</a></li>
+					</ul>
+					<ul class="footer-nav hidden-xs" id="foot-center">
+						<li><a href="#">Latest News</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Give</a></li>
+					</ul>
+					<ul class="footer-nav" id="foot-right">
+						<li><a href="#">Admissions</a></li>
+						<li><a href="#">Advising</a></li>
+						<li><a href="#">Student Clubs</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+                   </div>
+					<p id="copyright">
+						Copyright &copy; 2007 &nbsp;All Rights Reserved.
+					</p>
+				</div>
+		  </div><!-- /#footer -->
+
+			<div class="sticky hidden-lg hidden-md hidden-sm">
+	      <nav class="util-nav">
+	        <ul class="util">
+	          <li>
+	            <div id="search-util-btn" class="util-btn ">
+	              <a href="#">
+	                <img src="images/icons/m-btn-search.png" alt="Search" />
+	              </a>
+	              <p>
+	                <a href="/@@search">Search</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="location-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-location.png" alt="Directions" />
+	              </a>
+	              <p>
+	                 <a href="/map">Map</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="share-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-share.png" alt="Share" />
+	              </a>
+	              <p>
+	                <a href="#">Share</a>
+	              </p>
+	            </div>
+	          </li>
+	          <li>
+	            <div id="email-util-btn" class="util-btn hidden-lg hidden-md">
+	              <a href="#">
+	                <img src="images/icons/mobile-btn-email.png" alt="Email" />
+	              </a>
+	              <p>
+	                 <a href="/contact">contact</a>
+	              </p>
+	            </div>
+	          </li>
+	        </ul>
+	      </nav>
+	    </div><!-- /sticky -->
+
+	  </div><!-- /container -->
+
+		<!-- Bootstrap core JavaScript
+	      ================================================== -->
+	  <!-- Placed at the end of the document so the pages load faster -->
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	  <script type="text/javascript" src="js/contrib/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/dropdown.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/collapse.js"></script>
+	  <script type="text/javascript" src="js/bootstrap/transition.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.js"></script>
+		<script type="text/javascript" src="js/foundation/js/foundation/foundation.topbar.js"></script>
+	  <!--[if lt IE 9]>
+	      	<script src="js/contrib/respond.min.js"></script>
+	  <![endif]-->
+		<!-- #BeginEditable "custom-footer-js" -->
+
+		<script type="text/javascript" src="bower_components/Wallpaper/jquery.fs.wallpaper.js"></script>
+
+        <script id="wallpaper_fix">
+			$(".wall").wallpaper({
+				source: $('#theme_url').html() || '' + "images/banners/rec_blue_shadow.gif"
+			});
+		</script>
+		<script type="text/javascript" src="js/jquery.cf.main.js"></script>
+ 	<!-- #EndEditable -->
+	</body>
+<!-- #EndTemplate -->
+</html>

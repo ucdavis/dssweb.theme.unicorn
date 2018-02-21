@@ -1,0 +1,463 @@
+/* components/_banners.scss */
+
+.jumbotron {
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: center; 
+	margin-top: 20px; 
+	background-color: transparent;
+	
+  h1{
+		font-weight: normal;
+		display: none;
+  }
+	
+	// Make absolute so we don't need negative margin-top on home/index
+	// Comment .wall styles
+	position: absolute;
+	z-index: -100; // arrange wallpaper to back position
+	width: 100%;
+	
+}
+// Fix wallpaper placement
+.wall {
+	//position: absolute; // don't need if jumbotron is absolute
+	//z-index: -100; // arrange wallpaper to back position
+	top: 0;
+	width: 100%;
+	height: 160px;
+	// Example Bio page
+	&.shadow-graphic {
+		height: 176px;
+	}
+	// Example Our People page
+	&.shadow-am-graphic {
+		height: 160px;
+	}
+}
+
+
+#banner-row {
+	figure {
+		
+	}
+	#banner-row-col1 {
+		
+	}
+}
+#banner-caption {
+	visibility:hidden;
+	position: absolute;
+	top: 0;
+	right: 0; //40px; // tablet focus
+	@include font_size(12px);
+	@include line_height(15px);
+	text-transform: uppercase;
+	text-align: right;
+	padding-top: 6px; // was 10px
+	//color:$rec_blue;
+}
+
+body.has-shadow-am {
+	#banner-caption {
+		position: static;
+		color: #000 !important;
+	}
+	#banner-caption + #content-row {
+		margin-top: 15px;
+	}
+}
+.title-box {
+	padding: 25px;
+	background-color: $box_light_gray;
+}
+
+#top-panel-row {
+	.bcontroller {
+		.btn-home.btn-primary {
+			height: 32px;
+			//padding-top: 6px !important; // adjust depending on height to push button down
+			background: url(../images/icons/white-arrow-up.png) 50% 17px no-repeat $rec_blue;
+			@include line_height(30px);
+			text-transform: uppercase;
+		}
+	}
+}
+
+/*----- Mobile breakpoint --------*/
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	// handle banners on mobile 
+	
+	// Remove any caption on mobile where figure was created
+	#banner-row {
+		figcaption {
+			display: none;
+		}
+	}
+	
+	body.res-lab {
+		#banner-row {
+			.figcaption {
+				display: none;
+			}
+		}
+	}
+	
+	.siders {
+		margin-right: 0;
+		.wall {
+			//top: 80px;
+			// Width changed via JS on resize
+			//height: 250px !important;
+			//width: 100% !important;
+			&.shadow-graphic {
+	    	height: 85px !important;
+			}
+			&.shadow-am-graphic {
+				top: 80px;
+				// 2014-10-13 RAK: TODO: This triggers on tablet in portrait orientation
+				//height: 160px !important;
+			}
+		}
+	}
+	body.home {
+		.siders {
+			.wall {
+				top: 0;
+				//display: none;
+			}
+		}
+	}
+	
+	body.contact-type {
+		#banner-row {
+			display: none;
+		}
+	}
+	
+	.bcontroller {
+		.btn-home.btn-primary {
+			background: none 0 0 no-repeat transparent !important;
+		}
+	}
+	
+	// Minified banner box
+	.minify-sm {
+		width: 160px;
+		float: right;
+		.panel-heading {
+			background-color: rgba(0, 40, 85, 0.8);
+			.panel-title a {
+				background-color: transparent;
+				
+				//color: $ucd_blue_100 !important;
+				//top: 0;
+				background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+				&.collapsed {
+					//color: #FFF !important;
+					background: url(../images/icons/white-arrow-right-sm.png) 90% 50% no-repeat transparent;
+				}
+				&:hover {
+					//color: $ucd_blue_100 !important;
+					background: url(../images/icons/white-arrow-down-sm.png) 90% 50% no-repeat transparent;
+				}
+			
+			}
+		}
+		// Action element is container that appears below when minified tab is clicked
+		.action-element {
+			position: absolute;
+			left: 15px; // was 0
+			width: 95.8%; // TODO: better don't define width if it wasn't breaking right margin
+			z-index: 300;
+			h2 {
+				display: none;
+			}
+			h3 {
+				a {
+					padding-top: 0;
+					color: #FFF;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.panel-body {
+				margin-top: 0;
+				padding-top: 0;
+				background-color: $rec_blue;
+				color: #FFF;
+				p {
+					color: #000;
+				}
+			}
+		}
+	}
+	#content-row {
+		margin-top: 0 !important;
+		#am-content, #cm-content {
+			margin-top: 0 !important;
+		}
+	}
+	#content > #banner-caption {
+		display: none;
+	}
+	
+	// Students banner button (see also t8 and t5 that have different treatments)
+	body.students {
+		#content {
+			#top-panel-row {
+				.right-panel { 
+					width: 100%;
+					.panel-heading {
+			    	margin-left: 40% !important;
+			    	width: 60% !important;
+						h4.panel-title {
+							a {
+								@include font_size(16px,!important);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	body.students, body.ourpeople {
+		#container-3 {
+			.narrow-col {
+				background-color: $rec_blue !important;
+			}
+		}
+	}
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991px
+	.siders {
+		// Note: This removes the 15px white strip to right of the wallpaper when 
+		// initial-scale=1.0 is removed from the meta
+		// TODO: Determine underlying cause -> test on other tablets
+		margin-right: -24px !important; // was -12px
+		.wall {
+			&.shadow-graphic {
+	    	height: 145px !important;
+			}
+			&.shadow-am-graphic {
+				top: 0;
+				height: 503px !important
+			}
+		}
+	}
+	.narrow-col {
+		h2 {
+			@include font_size(18px,!important); // force here ... check
+			letter-spacing: 0;
+		}
+	}
+	body.students {
+		.narrow-col {
+			h2 {
+				//@include font_size(17px,!important);
+			}
+		}
+	}
+}
+/*----- Desktop or tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+
+	/* 3-column banner panel set - intended to use happybox behavior / plugin */
+	
+	.siders {
+		.wall {
+			&.shadow-graphic {
+	    	
+			}
+			&.shadow-am-graphic {
+				height: 503px !important;
+			}
+		}
+	}
+	
+	body.home {
+		.siders {
+			
+		}
+		.narrow-col {
+			h2 {
+				margin-left: 0 !important;
+				text-align: center !important;
+			}
+		}
+	}
+	
+	body.res-lab {
+		#content-row {
+			//margin-top: 0 !important; // let js handle this
+		}
+	}
+	
+	#content {
+		.narrow-col {
+			li {
+				background-image: url(../images/bullets/white-square.gif)
+			}
+		}
+	}
+	.top-panel {
+		.action-element {
+			.narrow-col {
+				//width: 88%; // Determines width of "happy box" blue elements
+				color: #FFF;
+				background-color: $ucd_blue_100;
+				//border: 1px solid $ucd_blue_100;
+				//@include opacity(0.70);
+				a {
+					color: #FFF;
+					text-decoration: none;
+				}
+				h2 {
+					margin-top: 0 !important;
+					font-weight: normal !important;
+					margin-bottom: 0;
+				}
+				h3 { // Note: These are headlines within the happy boxes
+					
+				}
+				.content-wrap {
+					margin-left: 0;
+					h3:first-child {
+						padding-top: 0 !important;
+						margin-top: 0;
+					}
+				}
+				.bcontroller {
+					.btn-home.btn-primary {
+						width: 100%;
+						height: 32px;
+						display: inline-block;
+						//border: 1px solid white;
+						padding-top: 0 !important;
+						background: url(../images/icons/white-arrow-up.png) 50% 12px no-repeat $rec_blue;
+						text-align: center;
+						//color: #000 !important;
+						
+					}
+				}
+				
+				&:hover {
+					//background-color: $ucd_blue_80;
+					cursor: pointer;
+				}
+			}
+		}
+		&.left-panel {
+			.action-element {
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin-left: auto;
+			}
+		}
+		&.middle-panel {
+			.action-element {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.narrow-col {
+				margin: 0 auto;
+				text-align: left !important;
+				h2 {
+					text-align: center !important;
+				}
+			}
+		}
+		&.right-panel {
+			.action-element {
+				padding-left: 0;
+			}
+			.narrow-col {
+				margin-right: auto;
+				margin-left: 0;
+				h2 {
+					margin-left: 15px;
+					//text-align: center !important;
+				}
+			}
+		}
+	}
+	
+}
+
+/*----- Tablet breakpoint --------*/
+@media screen and (max-width: $screen-md-min) { // width < 992
+	body.home {
+		#content {
+			#top-panel-row {
+				.narrow-col {
+					.bcontroller {
+						.btn-home.btn-primary {
+							background-position: 50% 8px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Desktop breakpoint ("L") -------*/
+@media screen and (min-width: $screen-sm-max) { // width > 991
+	
+	body.home {
+		.wall {
+			height: 720px; // was 650px
+		}
+	}
+	
+	#banner-caption {
+		//right: 80px; // tablet focus
+	}
+	
+	.siders {
+		.wall {
+			&.shadow-graphic {
+				
+			}
+			&.shadow-am-graphic {
+				height: 594px !important;
+			}
+		}
+	}
+	
+	.top-panel {
+		.action-element {
+			.narrow-col {
+				.bcontroller {
+					.btn-home.btn-primary {
+						
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: $screen-lg-min) { // width > 1310
+	
+	// pull in right boxes; sub pages
+	#top-panel-row { 
+		padding-left: 57px; // orig. 55px but req special adjustment after placement of bottom arrow icon on home
+		padding-right: 57px; 
+		#more-content-button {
+			left: 50px;
+		}
+	}
+	#middle-row { // add padding to middle-row to ensure banner caption positioning
+		margin-left: 42px;
+		margin-right: 42px;
+	}
+}
+/* /components/_banners.scss */

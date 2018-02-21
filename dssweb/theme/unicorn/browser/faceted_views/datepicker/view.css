@@ -1,0 +1,128 @@
+.faceted-datepicker-widget label.text-field {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+#c0_widget > fieldset > legend {
+	display:none;
+}
+
+.calBox {
+  background-color: transparent;
+  padding: 2px;
+  -moz-border-radius: 4px;
+  text-align: center;
+  color: white;
+}
+
+.calElement {
+  margin: 1px;
+  display: inline-block;
+  overflow:hidden;
+}
+
+.calYear {
+	display:none;
+  font-size: 20px;
+  border-bottom: 1px dashed #666;
+  padding-bottom: 5px;
+  margin-bottom: 5px
+}
+
+.calYear .calElement {
+  border: 1px solid #999999;
+ /* background-color: #999999; */
+  
+}
+
+.calMonth {
+  border-bottom: 1px dashed #666;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.calMonth .calElement {
+  font-size: 14px;
+  border: 1px solid #999999;
+/*  background-color: #999999; */
+}
+
+.calDay {
+}
+
+.calDay .calElement {
+  font-size: 12px;
+  border: 1px solid #999999;
+  background-color: #999999;
+  color:#fff;
+}
+
+.calDay .calElement.prev {
+  background: transparent url(++theme++dssweb.theme.unicorn/images/prev.png) no-repeat 0 0;
+  width: 18px;
+      height: 35px;
+      border: none;
+      margin-right: 5px;
+}
+
+.calDay .calElement.next {
+  background: transparent url(++theme++dssweb.theme.unicorn/images/next.png) no-repeat 0 0;
+  
+  width: 18px;
+      height: 35px;
+      border: none;
+      margin-left: 5px;
+}
+
+span.calElement.next:hover, span.calElement.prev:hover {
+  cursor: pointer;
+  border:1px solid #00B5E2;
+}
+
+.calDay .calElement .dayNumber {
+  font-size: 20px;
+}
+
+
+.calMonth .calElement.selected {
+  background-color: #ddd;
+  border: 1px solid #002855;
+  -moz-border-radius: 3px
+}
+
+span.calElement:hover {
+  background-color: #ddd;
+  border: 1px solid #002855;
+  -moz-border-radius: 3px;
+  cursor: pointer;
+}
+.calDay .calElement:hover {
+   color: #002855;
+}
+
+.calElement.today {
+  border: 1px solid #00B5E2;
+  -moz-border-radius: 3px
+}
+#faceted-form fieldset {
+    margin: 0.5em;
+    padding: 1em 0.5em 0.5em 0.5em;
+   /* border: 1px solid #002855; */
+}
+/* Drop date and month on mobile */
+@media screen and (max-width: 440px) {
+	div.calYear {
+		display:none;
+	}
+	div.calMonth {
+		display:none;
+	}
+	
+}
+
+
+

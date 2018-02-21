@@ -1,0 +1,576 @@
+
+/* - faceted_view.css - */
+@media screen {
+
+/* - ++resource++eea.faceted-navigation.css - */
+/* Stylesheet for the 'eea facetednavigation' */
+/*
+*/
+.faceted-noborder {
+  background:transparent none repeat scroll 0 0;
+  border: medium none;
+}
+
+.faceted-form {
+  padding: 1em 0 0 0;
+  margin: 0;
+  width: auto;
+}
+
+.faceted-widget {
+}
+/*tiles */
+.caption .tile-email{
+	font-size:0.6875rem !important;;
+}
+/* Areas
+*/
+
+/* End Areas */
+
+.faceted-clear {
+  clear: both;
+}
+.listingBar {
+text-align: center;
+padding-bottom: 3em;
+font-size: 1.25rem;
+}
+.listingBar a {
+	font-size: 1.25rem;
+}
+
+.faceted-left-column div.faceted-text-widget input[type=submit] {
+  float: right;
+}
+
+.faceted-right-column div.faceted-text-widget input[type=submit] {
+  float: right;
+}
+
+.faceted-left-column div.faceted-text-widget input[type=text] {
+  width: 99%;
+}
+
+.faceted-right-column div.faceted-text-widget input[type=text] {
+  width: 99%;
+}
+
+.faceted-left-column div.faceted-select-widget select{
+  width: 100%;
+}
+
+.faceted-right-column div.faceted-select-widget select{
+  width: 100%;
+}
+
+.faceted-left-column div.faceted-resultsperpage-widget select{
+  width: 100%;
+}
+
+.faceted-right-column div.faceted-resultsperpage-widget select{
+  width: 100%;
+}
+
+.faceted-left-column div.faceted-sorting-widget select{
+  width: 100%;
+}
+
+.faceted-right-column div.faceted-sorting-widget select{
+  width: 100%;
+}
+
+#faceted-form fieldset {
+  margin: 0.5em;
+  padding: 1em 0.5em 0.5em 0.5em;
+  border: 1px solid #ccc;
+}
+
+.widget-fieldset legend {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+#c3_widget > fieldset > legend {
+	color:#808080;
+}
+dl#c3 {
+  display: flex;
+}
+.faceted-results {
+	padding-top:.5em;
+}
+
+/* Loading image
+---------------- */
+
+.faceted_loading {
+  text-align: center;
+}
+
+/* Sections
+=========== */
+
+.faceted-section-header {
+}
+
+#faceted-form .ui-widget {
+  font-size: 1em;
+}
+
+#faceted-form .ui-helper-reset {
+  font-size: 1em;
+}
+
+#faceted-form .ui-accordion .ui-accordion-content {
+  padding: 0px;
+  overflow: hidden;
+  border-width: 0;
+  border-style: none;
+}
+
+/* Inactive state
+*/
+#faceted-form .ui-accordion .ui-state-default {
+  border: none;
+  background: none;
+  background-color: #95b229;
+  margin: 0 0.5em;
+}
+
+#faceted-form .ui-accordion .ui-state-default a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#faceted-form .ui-accordion .ui-state-default a:hover {
+  border: none;
+  color: #e9efcd;
+}
+
+/* Active state
+*/
+#faceted-form .ui-accordion .ui-state-active {
+  border: none;
+  background: none;
+  background-color: #e9efcd;
+  margin: 0 0.5em;
+}
+
+#faceted-form .ui-accordion .ui-state-active a{
+  color: #8e004d;
+  font-weight: bold;
+}
+
+#faceted-form .ui-accordion .ui-state-active a:hover{
+  border: none;
+  cursor: text;
+}
+
+/* Lock - Unlock
+*/
+.faceted-widget-locked legend{
+  color: #CCC;
+}
+
+.faceted-lock-overlay {
+  background: none;
+}
+
+.faceted-widget-loading {
+  background-image:url(../../++resource++faceted_images/ajax-loader-small.gif);
+  background-position:95% 1.5em;
+  background-repeat:no-repeat;
+}
+
+.faceted-widget-loading-msie {
+  background-position: 95% 2.5em;
+}
+/* Errors
+========= */
+.faceted-widget-error {
+  display: none;
+}
+
+#faceted-form .faceted-sections-buttons {
+  float: right;
+  margin-right: 0.5em;
+}
+
+#faceted-form .faceted-sections-buttons a {
+  display: none;
+  color: #95B229;
+}
+
+.eea-preview-items:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.checkbox.view.css - */
+.faceted-checkbox-item-disabled {
+  color: gray;
+}
+
+.faceted-zero-count-hidden .faceted-checkbox-item-disabled {
+  display: none ! important;
+}
+
+.widget-fieldset {
+}
+
+.widget-fieldset ul {
+  margin: 0px;
+  list-style: none ! important;
+}
+
+.widget-fieldset ul li input {
+  clear: both;
+  float: left;
+}
+
+.widget-fieldset ul li label {
+  font-weight: normal;
+  padding-left: 0.5em;
+  display: flex;
+  span {
+	  position:absolute;
+	  right:15%;
+  }
+}
+.faceted-checkbox-more {
+  text-align: right;
+}
+
+.faceted-checkbox-less {
+  text-align: right;
+}
+
+/* faceted operator start */
+.faceted-operator {
+  text-align: right;
+  margin-top: -20px;
+}
+
+.faceted-operator label {
+  font-weight: normal;
+}
+
+.faceted-operator a,
+.faceted-operator a:visited,
+.faceted-operator a:hover {
+  color: #95B229;
+  border: none;
+  text-decoration: none;
+}
+/* faceted operator end */
+
+
+/* - ++resource++eea.facetednavigation.widgets.sorting.view.css - */
+.faceted-sorting-errors {
+  display: none;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.text.view.css - */
+.faceted-text-widget label.text-field {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.daterange.view.css - */
+.faceted-daterange-widget-form div {
+  float: left;
+  margin-left: 0.5em;
+}
+
+.faceted-daterange-widget-form div label {
+  display: block;
+}
+
+.faceted-daterange-widget-form input {
+  width: 10em;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.alphabets.view.css - */
+.faceted-zero-count-hidden .faceted-alphabetic-letter-disabled {
+  display: none;
+}
+
+.faceted-top-column .faceted-alphabetic-widget {
+  text-align: center;
+}
+
+.faceted-center-column .faceted-alphabetic-widget {
+  text-align: center;
+}
+
+/*.faceted_letter {
+  color: #95B229;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 0.2em 0 0.2em;
+  background-color: transparent;
+} */
+
+.faceted_letter:hover{
+  color: $rec_blue;
+  font-size:1.2em;
+  background-color: transparent;
+}
+
+/*.faceted_letter_selected {
+  background-color: #ccc;
+  color: orange;
+  font-size: 1.7em;
+} */
+
+.faceted-alphabetic-letter-disabled {
+  color: gray;
+  cursor: auto;
+}
+
+.faceted-alphabetic-letter-disabled:hover{
+  color: gray;
+  background-color: transparent;
+}
+
+/* custom person entry view */
+.personEntry a {
+	color: $ucd_blue_70;
+}
+p.personName {
+padding-left: 110px;
+} /*dp */
+
+/*.lab {
+float: right;
+} */ /*dp*/
+
+/*dp*/
+/* - ++resource++eea.facetednavigation.widgets.tagscloud.view.css - */
+.tags-cloud li {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  color: #95B229;
+}
+
+.tags-cloud li:hover{
+  color: orange ! important;
+}
+
+.faceted-tag-disabled {
+  color: #ccc ! important;
+}
+
+li.faceted-tag-disabled:hover {
+  color: #ccc ! important;
+}
+
+.faceted-tag-selected {
+  color: orange ! important;
+  font-size: 110%;
+}
+
+.faceted-zero-count-hidden li.faceted-tag-disabled {
+  display: none ! important;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.debug.view.css - */
+.faceted-debug-widget pre {
+  max-height: 200px;
+}
+
+.faceted-debug-widget dt {
+  clear: both;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.range.view.css - */
+.faceted-range-widget-form div {
+  float: left;
+  margin-left: 0.5em;
+}
+
+.faceted-range-widget-form div label {
+  display: block;
+}
+
+.faceted-range-widget-form input {
+  width: 10em;
+} 
+
+
+/* - ++resource++eea.facetednavigation.widgets.radio.view.css - */
+.faceted-radio-item-disabled {
+  color: gray;
+}
+
+.faceted-zero-count-hidden .faceted-radio-item-disabled {
+  display: none ! important;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.criteria.view.css - */
+.faceted-criteria-syndication-rss {
+  float: right;
+  padding: 0.2em;
+}
+
+.faceted-criteria-syndication-skos {
+  float: right;
+  padding: 0.2em;
+}
+
+.faceted-criteria {
+  text-align: left;
+  padding-left: .5em;
+  color: white;
+}
+
+.faceted-criteria a {
+  /*color: #95B229 !important; */
+  text-decoration: none !important;
+  border: none !important;
+  color:white;
+}
+
+.faceted-criteria a:visited {
+ /* color: #95B229 !important; */
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.faceted-criteria span {
+  padding-left: 0.2em;
+  padding-right: 0.5em;
+}
+
+.faceted-criteria dt{
+  font-weight: bold;
+  color:white;
+  background-color:$rec_blue;
+}
+.faceted-criteria dd{
+  margin-left: 1.5em;
+  font-weight: normal;
+}
+
+.faceted-criteria-reset {
+}
+
+.faceted-criteria-hide-show {
+  float: left;
+  margin-right: 1em;
+}
+
+.faceted-criteria-hide {
+}
+
+.faceted-criteria-show {
+  display: none;
+}
+
+.faceted-criteria-count {
+  display: none;
+}
+
+.search-selection-widget {
+	border: 1px solid $rec_blue;
+}
+
+/* - ++resource++eea.facetednavigation.widgets.date.view.css - */
+.faceted-date-widget form {
+  margin: 2em;
+  margin-top: 0;
+}
+
+.faceted-date-widget-form .ui-slider span.ui-slider-label {
+  position:relative;
+}
+
+.faceted-date-widget-form .ui-state-default,
+.faceted-date-widget-form .ui-widget-content .ui-state-default {
+  background-image: none;
+  background-color: #e9efcd;
+  border-color: #95b229;
+  border-width: 1px;
+  border-style: solid;
+  margin: 0;
+}
+
+.faceted-date-widget-form .ui-slider {
+  border: 1px solid #95b229;
+}
+
+.faceted-date-widget-form .ui-slider-tooltip {
+  border: 1px solid #aaa;
+}
+
+.faceted-date-widget-form .ui-slider-horizontal {
+  margin-left:-0.6em;
+}
+
+.faceted-date-widget-form .ui-widget-header {
+  background-image: none;
+  background-color: #e9efcd;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.path.view.css - */
+.faceted-path-widget input {
+  width: 99%;
+}
+
+.tree {
+  position: absolute ! important;
+  background-color: #FFFFFF;
+  border: 1px dotted #CCCCCC;
+}
+.tree > .ltr > li {
+  display: block ! important;
+}
+
+.tree li a {
+  border: none ! important;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.select.view.css - */
+.faceted-select-item-disabled {
+  color: gray;
+}
+
+.faceted-zero-count-hidden .faceted-select-item-disabled {
+  display: none;
+}
+
+.faceted-select-widget label.select-field {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.portlet.view.css - */
+.faceted-portlet-widget fieldset {
+  margin: 0.5em;
+  padding: 0em;
+}
+
+}

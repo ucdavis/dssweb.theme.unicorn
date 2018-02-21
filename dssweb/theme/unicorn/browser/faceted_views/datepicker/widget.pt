@@ -1,0 +1,22 @@
+<div class="faceted-widget faceted-datepicker-widget" style="display: none"
+     i18n:domain="eea" tal:define="
+  error_view nocall:context/@@faceted.widget.error;
+  wid python:view.data.getId();
+  hidden python:view.hidden;
+  default_value python:view.default or '';
+  css string:faceted-widget ${view/css_class};
+  css python:hidden and css + ' faceted-widget-hidden' or css;"
+  tal:attributes="id string:${wid}_widget; class css">
+
+<fieldset class="widget-fieldset"
+  tal:define="title python:view.data.get('title', '')">
+  <legend tal:content="
+    python:view.translate(title)" i18n:translate="">Text Widget</legend>
+  <form action="." method="get"
+    tal:on-error="structure python:error_view(error=error, cid=wid)">
+  <div class="datepicker" style="width:100%"
+       tal:attributes="data-picked-date default_value;"></div>
+
+  </form>
+</fieldset>
+</div>

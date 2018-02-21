@@ -1,0 +1,591 @@
+/* _navigation.scss */
+
+// Secondary (top) gold menu
+.util-bar{
+	
+	background-color: $ucd_bright_gold;	
+	height: 40px;
+
+	margin-top: 56px;
+	margin-left: auto;
+	//margin-right:15px; // changes with addition of row wrap ... 105px was previous disabled value 
+	ul {
+		height:100%;
+		
+		li {
+			float:left;
+			padding-left:3px;
+			padding-right:3px;
+			//display:inline;
+			height:100%;
+			text-align: center;
+			border-right:1px solid #fff;
+			&:hover {
+				background-color: $ucd_bright_gold_70;
+			}
+			a {
+				display:inline-block;
+				margin-top: 12px;
+				
+				margin-right:auto;
+				margin-left:auto;
+				
+				text-decoration:none;
+				color:#000;
+				text-transform: uppercase;
+				@include font_size(14px);
+				letter-spacing: 0.050em;
+				text-align: center;
+				
+			}
+			input{
+				/*width:190px;*/
+				height: 35px;
+				text-transform: uppercase;
+				@include font_size(14px);
+				letter-spacing: 0.050em;
+				margin-top: 2px;
+				text-align:left;
+				padding-left:10px;
+			}
+		}
+	}
+	#uti-home{
+		width:6.00%;
+		a {
+			margin-top:5px;
+		}
+	}
+	#uti-contact {
+		width:14.00%;
+	}
+	#uti-news {
+		width:10.96%; //160px
+	}
+	#uti-events {
+		width:10.96%; //80px
+	}
+	#uti-give {
+		width:10.96%; //80px
+	}
+	#uti-search {
+		width: 28.36%;//207px
+		
+		form {
+			position: relative;
+			input {
+				width: 75%;
+			}
+			input[type="submit"] {
+				height: auto;
+				width: 20%;
+				padding: 0;
+				@include line_height(26px);
+				text-align: center;
+				background-color: $ucd_bright_gold_70;
+				border: 1px solid $ucd_bright_gold_40;
+				&:hover {
+					background-color: $ucd_bright_gold;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	#uti-share {
+		width: 5%; //44px
+		a {
+			display: inline-block;
+			width: 15px;
+			height: 17px;
+			background: url(../images/icons/share.png) top left no-repeat;
+		}
+	}
+	#uti-logo {
+		border-right-width: 0;
+		position: relative;
+		overflow: hidden; // keep from flowing off right
+		width: 18%; // was 125px;
+		a {
+			.gold {display:hidden;}
+			
+		}
+	}
+}
+.caret {
+	margin-left:15px;
+}
+.menu-icon {
+	//display:none;
+	background-color: $tab_light_gray;
+	position:relative;
+	top:-25px;
+
+	span::after {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 0;			
+			box-shadow: 0 0px 0 2px $ucd_blue_100, 0 7px 0 2px $ucd_blue_100, 0 14px 0 2px $ucd_blue_100, 0 21px 0 2px $ucd_blue_100 !important;
+			width: 25px !important; 
+		}
+}
+
+// Blue primary menu
+.top-bar {
+	background-color: $ucd_blue_100;
+	
+	
+	// WARNING: Setting top-bar height is problem for the foundation top-bar function across responsive breakpoints ... be careful
+	// height: 80px; // WARNING: THIS BLOWS HIDING THE SUB MENU
+	// padding-bottom: 35px; // without box-sizing
+	padding-bottom: 80px; // with box-sizing
+	
+	.title-area {	
+		//z-index: 5;
+		/* top:15px; THIS NEGATIVELY IMPACTS THE FORMAT OF THE TOPBAR MENU */
+		.name {
+			
+			a {
+				// border-right: 1px solid white; // set to check right margin of dept name graphic
+				display: inline-block;
+				width: 370px; 
+				height: 80px;	
+				padding-left: 0;
+				
+				text-decoration: none;
+				&#name-icon, &#portal-logo {
+					//background: url(../images/logos/name.gif) top left no-repeat; // set image in HTML code to retain scalable/responsive image
+					img {
+						height: 100%;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	
+	// NOTE: To MODIFY POSITION OF PRIMARY MENU ITEMS use the width % below under > li and &#fac-serv-btn
+	// fac-serv-btn is an example for a button title that needs special width.
+	
+	.top-bar-section {	
+			height: 100%;
+		/* .right {} if we have markup with left drops */
+		
+		.left { // Note: .left and .right Foundation topbar classes which determine the position of menu items with respect to submenu dropdowns
+			width: 66.36%; // 60.9% for 430px a tag / 66.36% for 370px a tag. was 65%. Determines width of primary menu to right of name image
+			height: 100% !important;
+			
+			// Parent level buttons
+			 > li {
+
+				background-color: $ucd_blue_100 !important;
+				/* width: 9.6%; // was 18% with .right. width of primary menu items */ // TODO: 2014-09-24 RAK: Eval
+
+				height: 80px; // was 100%
+				text-align: center;
+				
+				ul.dropdown { z-index:800;
+					li {
+						text-align: left;
+					}
+					> li.has-dropdown {
+						> a {
+							background: url(../images/icons/blue-100-right-arrow.png) 96.5% 50% no-repeat;
+							&.moved { // when menu slides ...
+								background: url(../images/icons/blue-100-right-arrow-down.png) 96.5% 50% no-repeat;
+							}
+							&:after { // remove CSS drop arrow
+								border-color: none !important;
+								border-style: none !important;
+								border-width: 0 !important;
+							}
+							// remove foundation topbar double-pointer
+							&:after {
+								content: none !important;
+							}
+						}
+					}
+				}
+				&#fac-serv-btn {
+					//width: 17%;
+				}
+				// Menu hover medium blue
+				&:hover {
+					background-color: $ucd_blue_70 !important;
+				}
+				
+				> a {
+					//margin-top: 17px;
+					height: 80px;
+					line-height: 80px !important;
+					padding: 0 25px; // <=============== change left/right padding of main menu items here. Note: Using percentages will be relative to width of button and not to width of the menu bar.  Iss menu breaking decreased from 27 to 25 by Carol
+				}
+				a {
+					//position:relative;
+					//top:17px;
+					
+					width:100%;
+					background-color:transparent !important;
+					text-align: left;
+					text-decoration: none;
+					@include font_size(17px);
+					@include line_height(28px);
+					
+					letter-spacing: 0.01em; // was 0.025em which breaks menu with Lucida Sans font
+					/* padding:0 !important; */ // TODO: 2014-09-24 RAK: Eval
+					
+					&:hover {
+						//text-decoration: underline;
+					}
+					
+					// gets rid of carets in nave
+					&:after{
+						display: none !important;
+					}
+					
+					white-space: normal; // to let sub menu text wrap
+					
+				}
+				// First level dropdown
+				ul {
+					//top: 100%; // expand height of primary menus: TODO: Do this another way since it kills the menu feature and address next level UL
+					li {
+						background-color:$ucd_blue_10 !important;
+						
+						a {
+							/* padding: 6px 0 !important; */
+							color: $ucd_blue_100 !important;
+							@include line_height(24px);
+							&:after {
+								display: block !important;
+								margin-top: 0;
+								line-height: 0.5 !important;
+							}
+							&:hover {
+								background-color: $ucd_blue_20 !important;
+							}
+						}
+						&:last-child {
+							a {
+								padding-bottom: 12px !important;
+							}
+						}
+						ul { // third level
+							top: 0 !important;
+						}
+					}
+				}
+				/*.dropdown{ // TODO: Don't need this specific selector ...
+					top:100%;
+					li{
+						background-color:$ucd_blue_100 !important;
+					}
+				}*/
+			}
+		}
+	}
+}
+
+.util-bar li.active-trail {
+	background-color:$ucd_bright_gold_40;
+}
+.top-bar .top-bar-section .left > li.active-trail > a {
+	background-color:$ucd_blue_70 !important;
+}
+
+
+.sticky {
+	position: fixed;
+	z-index: 10; // otherwise T2 and T11 filters overlay the sticky menu on mobile
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 70px;
+	background-color: $sticky_nav_color !important;
+	width: 100%;
+	.util-nav {
+		height: 100%;
+		ul.util {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 100%;
+			.last{
+				border-right:none;
+			}
+			li {
+				float: left;
+				width: 25%;
+				height: 100%;
+				border-right: 1px solid black;
+				padding-top: 15px;
+				&:last-child {
+					border-right-width: 0;
+				}
+				.util-btn {
+					height: 100%;
+					a {							
+						color: #000;	
+						text-decoration: none;
+						img {
+							display: block;
+							margin-left: auto;
+							margin-right: auto;
+						}
+					}
+					p {
+						margin-top: 3px;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Small breakpoint --------*/
+@media screen and (max-width: 440px) { // width < 440
+	// TODO: If possible, remove this breakpoint
+}
+
+/*----- Mobile breakpoint (navigation.scss) -------*/
+@media screen and (max-width: $screen-xs-max) { // width =< 767px
+	// To have util bar slide into place rather than being same width as navigation
+	.util-bar {
+		margin-top: 0 !important;
+		height: 30px;
+		ul {
+			li {
+				a {
+					margin-top: 6px;
+				}
+			}
+		}
+		#uti-logo {
+			margin-left: 16px !important; // Note: Use to adjust logo with left border of department name
+		}
+	}
+					
+	.top-bar {
+		// Do not set height of top-bar in mobile!
+
+		padding-bottom: 0;
+		
+		// Downscale name.gif 
+		.title-area {	
+			.name {
+				a {
+					//padding-left: 15px;
+					width: 215px !important;
+					height: 55px !important;
+				}
+			}
+		}
+		.toggle-topbar {
+			&.menu-icon {
+		    margin-top: 0;
+		    top: 0;
+				height: 55px;
+				margin-right: 15px;
+				padding-top: 9px;
+			}
+		}
+		.top-bar-section {
+			.left {
+				> li {
+					> a {
+						padding: 0 15px 0 20px !important;
+						@include font_size(16px,!important);
+						@include line_height(45px,!important);
+						/*color:$ucd_blue_100; */
+						
+					}
+					li {
+						a {
+							@include line_height(20px,!important);
+						}
+					}
+					> ul.dropdown {
+						// layout for 2nd tier menu on mobile
+						> li {
+							//min-height: 45px;
+							a {
+								@include line_height(20px,!important);
+								padding-top: 8px !important;
+								padding-bottom: 8px!important;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.expanded {
+			.title-area {
+				background-color: $ucd_blue_100;
+			}
+			.top-bar-section {
+				.left {
+					width: 100%;
+					> li {
+						width: 100% !important;
+						height: 55px;
+						background-color: $ucd_blue_10 !important;
+						> ul.dropdown > li {
+							background-color: $ucd_blue_10 !important;
+						}
+						&.has-dropdown, ul.dropdown > li.has-dropdown {
+							> a {
+								color: $ucd_blue_100;
+								background: url(../images/icons/blue-100-right-arrow.png) 94% 25% no-repeat !important;
+								&.moved {
+									background: url(../images/icons/blue-100-right-arrow-down.png) 94% 25% no-repeat !important;
+								}
+								&:hover {
+									background-color: $ucd_blue_20 !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+						
+}
+
+/*----- Tablet breakpoint -------*/
+/* Note: use of !important will override previous breakpoint */
+@media screen and (max-width: $screen-sm-max) { // width =< 991px
+
+	// reset row negative margins
+	#util-bar-wrap, #top-bar-wrap, #banner-row {
+		margin-left: 0 !important; // logo / unit title left margin (was negative). Note: Adding margin here makes a blue left border on mobile
+		//margin-right: 0 !important; // pulls collapsed menu icon to left in desktop but creates right margin on iphone landscape
+		//margin-right: -15px !important; // no effect across devices
+	}
+	
+	// To have util bar slide into place rather than being same width as navigation
+	.util-bar {
+		//margin-top: 0 !important;
+		max-width: 650px;
+		ul li input {
+			 width: 170px;
+		}
+		#uti-logo {
+			width: auto; // switch from percentage ...
+			margin-left: 5px; // Note: Use to adjust logo with left border of department name
+		}
+	}
+
+
+}
+
+/*----- Tablet up breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.top-bar {
+		.top-bar-section {
+			// DO NOT set to static on mobile! This will disable sub menu functions!
+			position: static; // reset from relative since this then overlaps the title link on the left
+			ul {
+				ul.dropdown { // layout for 2nd tier dropdown
+					width: 200px !important;
+					li {
+						a {
+							padding: 8px 12px; // was 4px 12px
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Tablet breakpoint -------*/
+/* Note: To adjust navigation items for tablet display please make changes in sub-org.scss */
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768px < width < 991px
+
+	.util-bar {
+		#uti-logo {
+		/*	width: 22%; */
+		}
+	}
+
+	.top-bar {
+		height: 80px; // Added to force height on entire name-logo navigation bar on tablet
+		.title-area {
+			.name {
+				a {
+					padding-left: 0;
+					width: 200px !important;
+					height: 40px !important;
+				}
+			}
+		}
+	}
+		
+}
+
+@media screen and (max-width: $screen-md-min) { // width < 992
+	#util-bar-wrap {  
+		.util-bar {
+			margin-top: 25px;
+		}
+	}
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-md-min) { // width > 992px
+	.util-bar {
+		max-width: 768px;
+	}
+	.top-bar {
+		.top-bar-section {
+			ul {
+				ul.dropdown { // layout for 2nd tier dropdown
+					li {
+						a {
+							padding: 8px 24px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-lg-min) { // 768 < width < 1310px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				// Adjust padding for menu items for desktops
+				> li {
+					a {
+						padding-right: 17px !important; 
+						padding-left: 17px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*----- Large Desktop breakpoint -------*/
+@media screen and (min-width: $screen-lg-min) { // width > 1310px
+	.top-bar {
+		.top-bar-section {
+			ul {
+				// Adjust padding for menu items for large desktops
+				> li {
+					a {
+						/* padding-right: 27px !important; */ // .has-dropdown > a applies 10px padding-right; TODO: equalize
+						padding-right: 27px;
+						padding-left: 27px;
+					}
+				}
+			}
+		}
+	}
+}
+/* /_navigation.scss */

@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+  <div metal:fill-slot="content-core">
+    <metal:block define-macro="content-core">
+      <div tal:define="Batch python:modules['plone.batching'].Batch;
+                       OldBatch python:modules['Products.CMFPlone'].Batch;
+                       b_start python:request.get('b_start', 0);
+							  support_view context/@@facnav_support;
+							  department_finder context/@@departments-finder;
+                       contentFilter contentFilter|request/contentFilter|nothing;
+                       contentFilter python:contentFilter and dict(contentFilter) or {};
+                       limit_display limit_display|request/limit_display|nothing;
+                       limit_display python:limit_display and int(limit_display) or None;
+                       results python:view.query(b_start=b_start, custom_query=contentFilter, b_size=limit_display);
+                       is_batch python:isinstance(results, Batch) or isinstance(results, OldBatch);
+                       batch python:is_batch and results or Batch(results, 40, int(b_start), orphan=2);">
+		  
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+        
+         <tal:entries repeat="brain batch">
+			<tal:block define="obj brain/getObject;">
+			<div id="dssweb-tiled-people" class="genericTile col-md-6 col-sm-12 col-xs-12">
+			<div class="personEntry">
+		
+          <tal:entry tal:define="title brain/Title;
+                                 url brain/getURL;
+                                 date brain/start;
+                                 description obj/Description|string:;
+					                  title obj/pretty_title_or_id|string:;
+					                  desc_or_title python:description or title;
+					                  lastname obj/getLastName;
+											website python:support_view.getFirstWebsite(obj);
+					                  url python:support_view.navRootRelativeUrl(obj);
+					                  image_thumb exists:obj/image_thumb;
+									      person_email python:obj.getEmail();
+											department department_finder/getQueryDepartment;
+					                  image_tag python:getattr(obj, 'tag', None);">
+										
+			
+										
+          <a href="#" title=""
+             tal:attributes="href url;
+                             title title;">
+            
+					<span class="personEntryWrapper" tal:condition="image_thumb">
+                <img style="border: none" tal:attributes="
+                  title desc_or_title;
+                  alt title;
+                  src string:$url/image_thumb"/>
+					</span>
+						
+				   <span class="personName" tal:content="title">Title</span>
+				</a>
+              <div class="caption linesm">
+                   <tal:block tal:define="
+                     personMembershipInformation python:department.getMembershipInformation(obj);">
+                     <p class="jobdesc-lg"
+                       tal:condition="personMembershipInformation/getPosition | nothing"
+                       tal:content="personMembershipInformation/getPosition" />
+                     <p class="phone-wrapper-sm">
+ 	 					   <a class="tile-email" tal:attributes="href string:mailto:${person_email}" tal:content="structure person_email" />
+ 							<br>
+							 
+                       <span tal:condition="personMembershipInformation/getDept_officePhone | nothing" tal:replace="structure personMembershipInformation/getDept_officePhone"></span>
+							 
+  							 <span tal:omit-tag="" tal:condition="website">
+							
+  							  <span tal:condition="personMembershipInformation/getDept_officePhone | nothing"> | </span>			 
+  							  <a class="tile-email" tal:attributes="href website">Website</a> 
+  							</span>
+						</p>
+						
+					       
+               
+
+                     <p class="phone-wrapper-sm"
+                       tal:condition="personMembershipInformation/getDept_officeAddress | nothing"
+                       tal:content="personMembershipInformation/getDept_officeAddress" />
+							  
+							  
+                   
+	  				  	      <div class="office-hours" tal:condition="personMembershipInformation/getOfficeHours">
+	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
+	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours" tal:condition="personMembershipInformation/getOfficeHours">
+	  				              	 
+	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+												  
+													 Office Hours </span>
+													
+												</p>
+											
+												
+											
+	
+							 </span>
+						 </div>
+			         </tal:block>
+	  				  	      
+                 </div> <!--caption -->
+					  
+					 
+				  	      
+					
+              
+        
+          </tal:entry>
+		 </div>
+	 </div>
+		   </tal:block>
+         </tal:entries>
+			<div class="visualClear"> <!--    --></div>
+		  
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+      </div>
+    </metal:block>
+  </div>
+</body>
+</html>

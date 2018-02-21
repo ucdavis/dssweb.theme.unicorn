@@ -1,0 +1,477 @@
+@charset "utf-8";
+@import "variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+/* CSS Document */
+
+/* index css */
+#util-bar-wrap {
+	.util-bar {
+		
+	}
+}
+
+// undo left margin for home page
+.content-main > div, .content-main > h1 {
+    margin-left: 0;
+}
+.right-panel {
+	.panel-body {
+		.narrow-col {
+			float: left;
+		}
+	}
+}
+
+.bottom-panel{
+	.narrow-col {
+		.btn-primary {
+			color: $ucd_blue_100 !important;
+			text-transform: uppercase;
+			@include font_size(18px);
+			text-decoration: none;
+		}
+	}
+	&.right-panel {
+		img {
+		/*	width: 100%; */
+			padding-right: 5px;
+		}
+		ul {
+			margin-top: 7px !important;
+		}
+	}
+}
+
+#content {
+	ul {
+		li {
+			background-image: url("../../images/bullets/white-square.gif") !important;
+		}
+	}
+	#right-front-column {
+		ul li {
+			padding-left: 0 !important;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+.tab {
+	background-color: $tab_light_gray;
+	height: 100px;
+	margin-bottom: 10px;
+	width: 100%;	
+	cursor: pointer;
+	img {
+		float: left;
+		//display: block;
+	}
+	
+ // this version works well except on iPad which pushes text down
+	.tab-title {
+		width: 100%;
+		height: 100%;
+		padding-right: 8%;
+		padding-left: 115px;
+		position: relative;
+		background: url(../../images/icons/blue-100-right-arrow.png) 97% 50% no-repeat;
+		a {
+			text-decoration: none;
+			text-align: left;
+			position: absolute;              
+			top: 50%;                         
+			transform: translate(0, -50%);	
+			margin-left: auto;
+			margin-right: 8%;
+			//color:$ucd_blue_100;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	} 
+	/*.tab-title {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		padding-right: 8%;
+		padding-left: 15px !important;
+		position: relative;
+		background: url(../../images/icons/blue-100-right-arrow.png) 97% 50% no-repeat;
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin-right: 8%;
+			text-decoration: none;
+			text-align: left;
+			//position: absolute;              
+			//top: 50%;                         
+			//transform: translate(0, -50%);	
+			//color:$ucd_blue_100;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}*/
+	
+} // /tab
+
+// 2014-09-09 RAK: TODO: Possibly remove ... we want to keep resolution of Bootstrap variables intact
+@media screen and (max-width: 440px) {		
+	.content-main {
+		h2{
+			text-align: center;
+		}
+	}
+}
+
+/*----- Mobile breakpoint ("S") --------*/
+
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+	
+	.wall {
+		margin-top: 85px; // push banner below navigation items
+		height: 432px;
+	}
+	
+	// Top margin above home page buttons
+	#top-panel-row {
+		margin-top: 40px !important;
+	}
+	
+	.tab {
+		padding: 0 !important;
+		.tab-title {
+			background-position: 98% 50% !important;
+			a {
+				// Remove vertical centering of text to accommodate longer titles
+				top: 15%;                         
+				transform: translate(0, -15%);
+			}
+		}
+	}
+	
+	.right-panel .panel-body .narrow-col {
+	    float: none;
+	}
+	
+	.panel-title{
+		a {
+			//background-color: rgba(0, 40, 85, 0.8); // TODO: Why is this needed?
+		}
+	}
+	
+	.row.panel { // top and bottom panels
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;		
+		.panel {
+			.panel-body {
+				//background-color: rgba(0, 40, 85, 0.8);
+				h2{
+					display: none;
+				}
+			}
+		}
+	}
+	
+	#top-panel-row { // just top, happy box panels
+		.panel {
+			.panel-heading {
+				background-color: rgba(0, 40, 85, 0.8);
+				.panel-title {
+				
+					a {
+						text-align: center !important;
+						text-transform: uppercase;
+						color: #FFF !important;
+						background-image: none;
+						background-color: transparent;
+						padding-left: 0 !important;
+						&.collapsed {
+							color: #FFF !important;
+							background-image: none;
+							background-color: transparent; //rgba(0, 40, 85, 0.8);
+						}
+						&:hover {
+							color: $ucd_blue_100 !important;
+							background-image: none;
+							background-color: $rec_blue_40; //rgba(0, 40, 85, 0.8);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#middle-row {
+		h2 {
+			background-color: $rec_blue;
+			color: #FFF;
+			text-align: center;
+			margin-top: 0;
+			@include font_size(18px);
+			@include line_height(21px,!important);
+			text-transform: uppercase;
+			padding: 8px 0;
+			&:hover {
+				color: $ucd_blue_100;
+				background-color: $rec_blue_40;
+			}
+		}
+	}
+	
+	// home page ...	
+	.panel-group { // #content-accordion
+		
+		margin-right: 0;
+		> .panel { // #top-panel-row
+			margin-bottom: 0;
+			.panel {
+				margin-bottom: 5px; // TODO: when panel open in mobile remove margin between panel-heading and active-element. Add margin after active-element. Careful about setting margins without thorough testing.
+				.panel-heading {
+					//height: 28px;
+				}
+				.action-element {
+					//background-color: rgba(0, 40, 85, 0.8);
+					//border: 1px solid #FFF;
+					//margin-bottom: 15px;
+				}
+				.panel-body {
+					//border-bottom: 2px solid white;
+					padding-top: 0;
+					.narrow-col {
+						padding: 0;
+
+						.content-wrap {
+							padding-top: 15px; // for home page mobile
+							h3, dd {
+								padding-top: 0;
+								a {
+									color: #FFF;
+								}
+							}
+						}
+						.bcontroller {
+							padding-left: 15px;
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	#bottom-panel-row { // top and bottom panels
+		width: auto;
+		margin-left: 15px;
+		margin-right: 15px;
+		.bottom-panel {
+		
+			// "See All" link ...
+			.narrow-col p.bcontroller {
+				background-color: $tab_light_gray;
+				.btn-primary {
+					display: block;
+					height: 40px;
+					width: 100%;
+					padding-top: 12px;
+				}
+			}
+			
+			.bcontroller {
+				padding-bottom: 0 !important;
+			}
+			
+			&.right-panel {
+				img {
+					margin-bottom: 15px;
+				}
+			}
+			
+			// TODO: Almost exact same as for #thumb-section .panel-heading in _theme.scss
+			.panel-heading {
+
+				.panel-title {
+					a {
+						display: block;
+						//height: 40px; // TODO: Bug - a-height appears to keep panels from showing when others open
+						background: url(../../images/icons/blue-100-right-arrow-down.png) 98% 50% no-repeat $ucd_bright_gold_40;
+						&.collapsed {
+							background: url(../../images/icons/blue-100-right-arrow.png) 98% 50% no-repeat $ucd_bright_gold;
+						}
+						&:hover {
+							cursor: pointer !important;
+							background-color: $ucd_bright_gold_40;
+						}
+					}
+				}
+			}
+			.panel-body {
+				//background-color: rgba(0, 40, 85, 0.8);
+				h2 {
+					display: none;
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	
+	/* Style adjustments for the partial-cover home wall component */
+
+	.wall {
+		height: 540px; // e.g., 540px (short), 650px (default, medium), 720px (tall)
+	}
+	
+	// Top margin above home page buttons
+	#top-panel-row {
+		margin-top: 0; // unset mobile top margin applied to top of home page buttons
+	}
+
+	#middle-row {
+		h2{
+			@include font_size(36px, !important);
+			@include line_height(25px);
+			margin-top: 45px;
+			margin-bottom: 25px;
+			text-align: center;
+		}
+	}
+	
+	// Force on iPad
+	#content {
+		#middle-row {
+			h2{
+				@include font_size(36px, !important);
+			}
+		}
+	}
+	
+	#bottom-panel-row {
+		.narrow-col {
+			h2{
+				text-align: center;
+				margin-bottom: 15px;
+			}
+			p {
+				color: $ucd_blue_100;
+			}
+		}
+		.left-panel .narrow-col {
+		    margin-left: auto;
+				
+		}
+		.middle-panel .narrow-col {
+		    margin: 0 auto;
+		}
+		.right-panel .narrow-col {
+		    margin: 0 auto;
+		}
+	}
+	
+}
+
+/*----- Tablet breakpoint -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	.wall {
+		height: 432px !important;
+	}
+	
+	body.home #content .narrow-col li a {
+		@include font_size(12px,!important);
+	}
+	
+	body.home #content #top-panel-row .narrow-col .bcontroller .btn-home.btn-primary {
+		background-position: 50% 17px !important;
+	}
+	
+	// sync top and bottom row column widths on home
+	#top-panel-row, #bottom-panel-row {
+		
+		.narrow-col {
+			//width: 90% !important;
+
+			.bcontroller {
+				.btn-home.btn-primary {
+					//height: 32px !important; // was 20px
+					margin-top: 0;
+					padding-top: 6px !important;
+					@include font_size(12px);
+					@include line_height(20px, !important);
+				}
+			}
+			
+			h3 {
+				font-weight: normal;
+				@include line_height(15px);
+			}
+			/*.tab {
+				height: 63px;
+				img {
+					height: 63px;
+					width: 63px;
+				}
+				.tab-title {
+					margin-left: 0;
+					padding-left: 76px;
+					a {
+						//top: 10px; // TODO: breaks desktop resized to tablet width but required for iPad
+						@include font_size(12px,!important);
+					}
+				}
+			} // /tab*/
+			.tab {
+				//padding: 0 !important;
+				height: 63px;
+				img {
+					height: 63px;
+					width: 63px;
+				}
+				.tab-title {
+					margin-left: 0;
+					padding-left: 72px; // was 76px
+					background-position: 98% 50% !important;
+					a {
+						// Remove vertical centering of text to accommodate longer titles
+						top: 15%;        
+						margin-right: 6% !important;                 
+						transform: translate(0, -15%);
+						@include font_size(11px,!important);
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+@media screen and (min-width: $screen-lg-min) {	 // width > 1310px
+	
+	.content-main h2 {
+		text-align: center;
+	}
+	
+	// Sync with #top-panel-row _banners.scss dimensions
+	#bottom-panel-row {
+		padding-left: 57px;
+		padding-right: 57px;
+	}
+	
+	#top-panel-row {
+		#more-content-button {
+			left: 50px;
+		}
+	}
+	/* Custom Styles for this breakpoint */
+
+}

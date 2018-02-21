@@ -1,0 +1,142 @@
+
+@font-face {
+	font-family: 'lsr';
+	src: url('fonts/lucida/LucidaSansRegular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'lsb';
+	src: url('fonts/lucida/LucidaSansBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@function em($px, $base: $BASE) {
+  @return ($px / $base) * 1.0em;
+}
+
+@mixin font_size($px, $important: null) {
+  font-size: $px $important; //Fallback in px
+  font-size: ($px / $BASE) * 1rem $important;
+}
+
+@mixin line_height($px, $important: null) {
+  line-height: $px $important; //Fallback in px
+  line-height: ($px / $BASE) * 1rem $important;
+}
+
+@mixin standard_font() {
+  color: #000;
+	font-family: "Lucida Grande", "Lucida Sans", "Verdana", sans-serif;
+  //font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  @include font_size(16px);
+  line-height: em(21px);
+}
+
+@mixin fontface_regular_font() {
+  color: #000;
+	font-family: 'lsr';
+  @include font_size(16px);
+  line-height: em(21px);
+}
+@mixin fontface_bold_font() {
+  color: #000;
+	font-family: 'lsb';
+  @include font_size(16px);
+  line-height: em(21px);
+}
+@mixin square-bullet-list() {
+	list-style-type: none;
+	li {
+		background-image: url(../images/bullets/black-square.gif);
+		background-repeat: no-repeat;
+		background-position: 0px 5px;
+		padding-left: 14px; 
+		ul {
+			margin-top: 7px;
+			margin-bottom: 0 !important;
+			li {
+				
+			}
+		}
+	}
+}
+@mixin white-square-bullet-list() {
+	list-style-type: none;
+	li {
+		background-image: url(../images/bullets/white-square.gif);
+		background-repeat: no-repeat;
+		background-position: 0px 5px;
+		padding-left: 14px; 
+		ul {
+			margin-top: 7px;
+			margin-bottom: 0 !important;
+			li {
+				
+			}
+		}
+	}
+}
+@mixin multiline-ellipsis($height, $lineheight, $ellipsiswidth) {
+
+$ellipsiswidth: 3em !default;
+
+	.ellipsis {
+		overflow: hidden;
+		height: $height;
+		line-height: $lineheight; }
+
+	.ellipsis:before {
+		content:"";
+		float: left;
+		width: 5px; height: $height; }
+
+	.ellipsis > *:first-child {
+		float: right;
+		width: 100%;
+		margin-left: -5px; }		
+
+	.ellipsis:after {
+		content: "\02026";
+
+		float: right; position: relative;
+		top: -25px; left: 100%; 
+		width: $ellipsiswidth; margin-left: -$ellipsiswidth;
+		padding-right: 5px;
+		
+		text-align: right;
+		background: white;
+		background: -webkit-gradient(linear, left top, right top,
+				from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+			background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);			
+			background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+			background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+			background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+	}
+
+}
+@mixin bp-huge {
+  @media only screen and (min-width: 992px) {
+    @content;    
+  }  
+}
+
+@mixin bp-medium {
+  @media only screen and (min-width: 768px) {
+    @content;    
+  }  
+}
+
+@mixin bp-small {
+  @media only screen and (min-width: 440px) {
+    @content;    
+  }  
+}
+@mixin define-breakpoint($name) {
+  &:after {
+    content: $name;
+    display: none;
+  }
+}
+

@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* jquery.cf.happybox.scss */
+@import "variables"; // for BASE font size and mixin font_size()
+@import "ucd-variables";
+@import "vendor/bootstrap/variables"; // to bring in width variables that we are not overriding
+
+.top-panel .action-element .narrow-col {
+	background: rgba(0, 40, 85, 0.8);
+}
+
+/*----- Mobile breakpoint ("S") --------*/
+
+@media screen and (max-width: $screen-xs-max) { // width < 767
+	
+	// Fix home page happy box layout by overriding bootstrap float on top-panel-row
+	
+	#content, #am-content {
+		
+		#top-panel-row, #bottom-panel-row {
+			.panel-body {
+				margin-top: 0;
+				.narrow-col {
+					.bcontroller {
+						padding: 0 15px 15px 15px;
+					}
+				}
+			}
+		}
+		#top-panel-row, #bottom-panel-row {
+			.panel-heading {
+				h4.panel-title, h4.panel-title a {
+					@include font_size(18px, !important);
+				}
+			}
+		}
+	}
+}
+
+/*----- Target tablet, desktop, and higher -------*/
+
+@media screen and (min-width: $screen-sm-min) {	// width > 768
+	
+	.cf-happybox-processed {
+		overflow: hidden;
+	}
+	
+}
+
+
+/* /jquery.cf.happybox.scss */

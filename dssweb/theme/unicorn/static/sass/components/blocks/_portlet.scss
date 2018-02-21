@@ -1,0 +1,327 @@
+/* components/blocks/_portlet.scss */
+
+.uc.read-more, h4.uc { // portlet-content
+	letter-spacing: 0.05em !important;
+}
+
+// TODO: Change if content / am-content styles from _typography.scss become less restrictive
+body.res-lab {
+	#content, #am-content {
+		.portlet {
+			p {
+				@include font_size(13px,!important);
+				@include line_height(18px,!important); 
+			}
+		}
+	}
+}
+
+#content-row {
+	.portlet {
+		margin-bottom: 5px;
+		// Apply this class for standard padding
+		.default-portlet-padding {
+			margin: 25px 35px;
+		}
+	
+		/*p, h4 {
+			margin: 15px 35px 8px 35px; 
+		} */
+		h4.org, .org p {
+			margin: 0;
+		}
+		
+		h4.org {
+			margin-bottom: 15px;
+		}
+		
+		.portlet-content {
+			.flyer {
+				width: 178px;
+				height: 230px;
+				display: block;
+				margin: 25px auto;
+			}
+		}
+	
+		ul.portlet-items {
+			margin: 15px;
+			margin-bottom: 0 !important; // was 25px;
+			margin-left: 35px;
+		
+			.read-more {
+				margin-bottom: 0 !important;
+			}
+			
+			li {
+				background-image: none;
+				padding-left: 0;
+				a {
+					color: $ucd_blue_70;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				em {
+					@include font_size(11px,!important);
+				}
+
+				margin-bottom: 10px; //20px;
+				&:last-child {
+					margin-bottom: 0;	
+				}
+				.event-date {
+					display: block;
+					padding-top: 5px;
+				}
+			}
+		
+			// portlet-items types & variations
+			&.with-bullets {
+				@include square-bullet-list();
+				margin: 15px 25px 25px 35px;
+			}
+		}
+	
+		.form-wrap {
+			padding: 25px 15px;
+			input[type="submit"] {
+				margin-top: 15px;
+			}
+		}
+	
+		.panel-body {
+			padding: 0;
+			//padding-top: 5px; // Note: Will break t3 office/labs portlet top padding
+			padding-bottom: 20px;
+			.vcard {
+				padding: 0;
+				> div {
+					margin-left: 35px !important;
+					margin-right: 35px !important; // was 15px
+					padding: 0;
+				}
+				div {
+					@include font_size(12px, !important);
+					
+					div {
+						margin-left: 0;
+					}
+				
+					&.office-hours {
+						margin-bottom: 2px;
+						div {
+							margin: 0;
+							@include line_height(18px,!important);
+						}
+					}
+				}
+			
+				// Vcard types 
+				&.office {
+					padding-bottom: 15px; // was 15px, if relying on h4 margin use 15px-amount for spacing
+					&:first-child {
+						// don't space directly on first child since t6 will break
+						h4.fn {
+							padding-top: 20px; // override 12px on first occurance
+						}
+					}
+					&:last-child {
+						padding-bottom: 0;
+					}
+					
+					// Undo margin on adjecent elements
+					h4 + h4.fn {
+						padding-top: 0 !important;
+					}
+					
+					// Repeat treatement; TODO: create mixin
+					h4 {
+						min-height: 28px;
+						background-color: $box_header_blue !important;
+						padding: 12px 35px !important;
+						padding-bottom: 10px;
+						letter-spacing: 0.05em;
+						font-weight: bold;
+						&.fn { // headings used for individuals
+							min-height: auto !important;
+							background-color: transparent !important;
+							text-transform: uppercase;
+							padding-bottom: 0 !important;
+							margin: 0 !important;
+						}
+						a {
+							@include font_size(13px);
+							text-decoration: none;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+					.category {
+						margin-top: 0;
+						margin-bottom: 0;
+						font-style: italic;
+						@include font_size(12px);
+					}
+					.category + .adr {
+						margin-top: 2px;
+					}
+				}
+			}
+			
+		}
+	
+		// Portlet types & variations
+	
+		// Using vcard for person, no light blue heading
+		&.contacts {
+			.panel-body {
+				//padding-top: 15px;
+				padding-bottom: 20px;
+				h4 {
+					background-color: transparent !important;
+				}
+			}		
+		}
+		
+		// Using vcard for person with light blue heading, email, and office hours
+		&.contacts.pcch {
+			.office {
+				// Repeat treatement; TODO: create mixin
+				h4 {
+					background-color: transparent !important;
+					padding-top: 0 !important;
+				}
+				h4.lh {
+					min-height: 28px;
+					background-color: $box_header_blue !important;
+					padding: 12px 35px !important;
+					padding-bottom: 10px;
+					letter-spacing: 0.05em;
+					font-weight: bold;
+					&.fn { // headings used for individuals
+						text-transform: uppercase;
+						padding-bottom: 0;
+						margin: 0;
+						padding-top: 0;
+						min-height: auto;
+					}
+					a {
+						@include font_size(13px);
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+			.panel-body {
+				padding-top: 0;
+			}
+			.email {
+				margin-bottom: 10px;
+			}
+			.appt-service-row {
+				margin-top: 15px !important;
+			}
+		}
+		// Single address portlet
+		&.adr-only {
+			.panel-body {
+				padding-top: 21px;
+				padding-bottom: 20px;
+				.adr {
+					padding-top: 0 !important;
+				}
+			}
+			&:last-child {
+				padding-bottom: 15px !important;
+			}
+		}
+		
+		// Single contact portlet
+	
+	}
+}
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768 but triggers on ipad)
+
+	#content-row {
+		.portlet {
+			.breadcrumb {
+				p {
+					margin: 0;
+				}
+			}
+			&.adr-only {
+				&:last-child {
+					padding-bottom: 0 !important;
+				}
+			}
+		}
+	}
+	
+	.panel-body {
+		padding-top: 20px;
+		ul.portlet-items {
+			margin-left: 5px !important;
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	
+	.sidebar .vcard {		
+		text-align: center;
+		&.office {
+			//margin-top: -15px; // breaks on t3 mobile
+			h4.fn {
+				min-height: auto !important;
+			}
+		}
+		div { 			
+			//width: 200px;
+			margin-left: auto !important;
+			margin-right: auto !important;
+			.adr {
+				margin-top: 0px;
+			}
+		}
+	}
+	.sidebar {
+		img.img-responsive {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+	.search-result, .contact-type {
+		.email {		
+			a {
+				padding-top: 5px;
+				padding-left: 20px;
+				width: 100px;
+				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+				background-position: 20px 60%; 
+			}
+		}
+	}
+
+	.panel {
+		margin-bottom: 5px;
+	}
+
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768
+	#content-row {
+		.portlet {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+/* /components/blocks/_portlet.scss */
